@@ -1,0 +1,48 @@
+<overrides>
+	<!-- In here you should put the site modifications you want to make -->
+
+	<!-- set up the database - in this example use JNDIPool to config database
+       in container -->
+	<file name=".*WEB-INF/config\.xml">
+		<replaceXML xpath="resources">
+      <resource enabled="true">
+        <name>main-db</name>
+        <provider>jeeves.resources.dbms.JNDIPool</provider>
+        <config>
+					<context>java:/comp/env</context>
+        	<resourceName>jdbc/geonetwork</resourceName>
+        	<url>jdbc:postgresql_postGIS://localhost:5432/gndb4</url>
+					<provideDataStore>true</provideDataStore>
+        </config>
+      </resource>
+    </replaceXML>	
+		<!-- If using JNDIPool you need to add something like the following to
+		     your container context.xml (eg. tomcat this conf/context.xml)
+
+					<Resource name="jdbc/geonetwork"
+              auth="Container"
+              type="javax.sql.DataSource"
+              username="gis"
+              password="gis?"
+              driverClassName="org.postgis.DriverWrapper"             
+              url="jdbc:postgresql_postGIS://localhost:5432/gndb4"
+              maxActive="10"
+              maxIdle="10"
+              removeAbandoned="true"
+              removeAbandonedTimeout="3600"
+              logAbandoned="true"
+              testOnBorrow="true"
+              defaultAutoCommit="false"
+              validationQuery="select 1"
+              />
+			-->
+	</file>
+
+	<!-- set up name, siteId, organization and host in settings -->
+	<textFile name=".*WEB-INF/classes/setup/sql/data/data-db-default.sql">
+    <update linePattern="(INSERT INTO Settings VALUES \(11,10,'name',').+?('.*)">$1Australia/New Zealand ANZMEST GeoNetwork catalogue Modify Please$2</update>
+    <update linePattern="(INSERT INTO Settings VALUES \(13,10,'organization',').+?('.*)">$1ANZLIC - The Spatial Information Council Modify Please$2</update>
+    <update linePattern="(INSERT INTO Settings VALUES \(21,20,'host',').+?('.*)">$1localhost$2</update>
+		<update linePattern="INSERT INTO Settings VALUES \(22,20,'port','.+?('.*)">INSERT INTO Settings VALUES (22,20,'port','8080')\;</update>
+	</textFile>
+</overrides>

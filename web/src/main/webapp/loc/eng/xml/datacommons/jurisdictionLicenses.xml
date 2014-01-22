@@ -1,0 +1,13 @@
+<jurisdictions>
+	<jurisdiction name="generic">
+		<select name="f_choice">
+			<option value="http://bluenet.antcrc.utas.edu.au/datacommons/licenses/dc-ndp/1.0/generic/">No distribution or publishing 1.0 Generic</option>
+			<option value="http://bluenet.antcrc.utas.edu.au/datacommons/licenses/dc-ndp-by/1.0/generic/">No distribution or publishing-Attribution 1.0 Generic</option>
+			<option value="http://bluenet.antcrc.utas.edu.au/datacommons/licenses/dc-ndp-by-nc/1.0/generic/">No distribution or publishing-Attribution-Noncommercial 1.0 Generic</option>
+			<option value="http://bluenet.antcrc.utas.edu.au/datacommons/licenses/dc-ndp-by-nc-nd/1.0/generic/">No distribution or publishing-Attribution-Noncommercial-No Derivative Works 1.0 Generic</option>
+			<option value="http://bluenet.antcrc.utas.edu.au/datacommons/licenses/dc-ndp-by-nc-sa/1.0/generic/">No distribution or publishing-Attribution-Noncommercial-Share Alike 1.0 Generic</option>
+			<option value="http://bluenet.antcrc.utas.edu.au/datacommons/licenses/dc-ndp-by-sa/1.0/generic/">No distribution or publishing-Attribution-Share Alike 1.0 Generic</option>
+			<option value="http://bluenet.antcrc.utas.edu.au/datacommons/licenses/dc-ndp-sa/1.0/generic/">No distribution or publishing-Share Alike 1.0 Generic</option>
+		</select>
+	</jurisdiction>
+</jurisdictions>

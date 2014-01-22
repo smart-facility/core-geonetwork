@@ -1,0 +1,163 @@
+<overrides xmlns:sec="http://www.springframework.org/schema/security">
+	<file name=".*WEB-INF/config\.xml">
+		<!-- make iso19139.anzlic the preferred schema -->
+		<replaceAtt xpath="appHandler/param[@name='preferredSchema']" attName="value" value="iso19139.anzlic" />
+		<!-- add services for schemaplugins -->
+		<addXML xpath="">
+			<include>config-metadata-schemaplugins.xml</include>
+		</addXML>
+		<!-- commons license jurisdictions to /root/gui xpath for XSLTs -->
+		<addXML xpath="default/gui">
+			<xml name="ccjurisdictions" file="xml/creativecommons/jurisdictionSelectOptions" />
+			<xml name="dcjurisdictions" file="xml/datacommons/jurisdictionSelectOptions" />
+		</addXML>
+		<!-- replace threshold value on services/service[@name='main.search.suggest']/param[@name='threshold'] -->
+		<replaceAtt xpath="services/service[@name='main.search.suggest']/param[@name='threshold']" attName="value" value="1" />
+	</file>
+	<!-- add gmd:protocol choices to the strings file -->
+	<file name=".*geonetwork/loc/eng/xml/strings\.xml">
+		<addXML xpath="">
+			<protocolChoice show="y" value="WWW:LINK-1.0-http--metadata-URL">Metadata URL</protocolChoice>
+			<protocolChoice show="y" value="WWW:LINK-1.0-http--downloaddata">Data for download (URL)</protocolChoice>
+			<protocolChoice show="-" value="WWW:DOWNLOAD-1.0-http--downloaddata">Data File for download</protocolChoice>
+			<protocolChoice show="-" value="WWW:DOWNLOAD-1.0-http--downloadother">Other File for download</protocolChoice>
+			<protocolChoice show="-" value="WWW:DOWNLOAD-1.0-ftp--downloaddata">Data File for download through FTP</protocolChoice>
+			<protocolChoice show="-" value="WWW:DOWNLOAD-1.0-ftp--downloadother">Other File for download through FTP</protocolChoice>
+		</addXML>
+	</file>
+	<!-- all services in config-metadata-schemaplugins.xml need to be in added
+	     to the spring security config -->
+	<spring>
+			<!-- editors -->
+			<addInterceptUrl bean="overridefilterSecurityInterceptor" pattern="/srv/[a-z]{2,3}/metadata.creativecommons.form!?.*" access="hasRole('Editor')"/>
+			<addInterceptUrl bean="overridefilterSecurityInterceptor" pattern="/srv/[a-z]{2,3}/metadata.creativecommons.form!?.*" access="hasRole('Editor')"/>
+			<addInterceptUrl bean="overridefilterSecurityInterceptor" pattern="/srv/[a-z]{2,3}/metadata.creativecommons.set!?.*" access="hasRole('Editor')"/>
+			<addInterceptUrl bean="overridefilterSecurityInterceptor" pattern="/srv/[a-z]{2,3}/metadata.datacommons.form!?.*" access="hasRole('Editor')"/>
+			<addInterceptUrl bean="overridefilterSecurityInterceptor" pattern="/srv/[a-z]{2,3}/metadata.datacommons.set!?.*" access="hasRole('Editor')"/>
+
+			<!-- everyone -->
+			<addInterceptUrl bean="overridefilterSecurityInterceptor" pattern="/srv/[a-z]{2,3}/prepare.taxon.search!?.*" access="permitAll"/>
+			<addInterceptUrl bean="overridefilterSecurityInterceptor" pattern="/srv/[a-z]{2,3}/xml.forward.taxonsearch!?.*" access="permitAll"/>
+			<addInterceptUrl bean="overridefilterSecurityInterceptor" pattern="/srv/[a-z]{2,3}/portal.search.credits!?.*" access="permitAll"/>
+			<addInterceptUrl bean="overridefilterSecurityInterceptor" pattern="/srv/[a-z]{2,3}/portal.search.dataparams!?.*" access="permitAll"/>
+			<addInterceptUrl bean="overridefilterSecurityInterceptor" pattern="/srv/[a-z]{2,3}/portal.search.taxonNames!?.*" access="permitAll"/>
+			<addInterceptUrl bean="overridefilterSecurityInterceptor" pattern="/srv/[a-z]{2,3}/portal.summary.keywords!?.*" access="permitAll"/>
+			<addInterceptUrl bean="overridefilterSecurityInterceptor" pattern="/srv/[a-z]{2,3}/portal.summary.longParamNames!?.*" access="permitAll"/>
+			<addInterceptUrl bean="overridefilterSecurityInterceptor" pattern="/srv/[a-z]{2,3}/portal.summary.organisations!?.*" access="permitAll"/>
+			<addInterceptUrl bean="overridefilterSecurityInterceptor" pattern="/srv/[a-z]{2,3}/xml_anzmeta!?.*" access="permitAll"/>
+			<addInterceptUrl bean="overridefilterSecurityInterceptor" pattern="/srv/[a-z]{2,3}/xml_anzmetaTorifcs!?.*" access="permitAll"/>
+			<addInterceptUrl bean="overridefilterSecurityInterceptor" pattern="/srv/[a-z]{2,3}/xml_anzmetaToiso19139.anzlic!?.*" access="permitAll"/>
+			<addInterceptUrl bean="overridefilterSecurityInterceptor" pattern="/srv/[a-z]{2,3}/xml_anzmetaTooai_dc!?.*" access="permitAll"/>
+			<addInterceptUrl bean="overridefilterSecurityInterceptor" pattern="/srv/[a-z]{2,3}/xml_eml-gbif!?.*" access="permitAll"/>
+			<addInterceptUrl bean="overridefilterSecurityInterceptor" pattern="/srv/[a-z]{2,3}/xml_eml-gbifTorifcs!?.*" access="permitAll"/>
+			<addInterceptUrl bean="overridefilterSecurityInterceptor" pattern="/srv/[a-z]{2,3}/xml_iso19135!?.*" access="permitAll"/>
+			<addInterceptUrl bean="overridefilterSecurityInterceptor" pattern="/srv/[a-z]{2,3}/xml_iso19135ToSKOS!?.*" access="permitAll"/>
+			<addInterceptUrl bean="overridefilterSecurityInterceptor" pattern="/srv/[a-z]{2,3}/xml_iso19135Tooai_dc!?.*" access="permitAll"/>
+			<addInterceptUrl bean="overridefilterSecurityInterceptor" pattern="/srv/[a-z]{2,3}/xml_iso19139.anzlic!?.*" access="permitAll"/>
+			<addInterceptUrl bean="overridefilterSecurityInterceptor" pattern="/srv/[a-z]{2,3}/xml_iso19139.anzlicTorifcs!?.*" access="permitAll"/>
+			<addInterceptUrl bean="overridefilterSecurityInterceptor" pattern="/srv/[a-z]{2,3}/xml_iso19139.anzlicTooai_dc!?.*" access="permitAll"/>
+			<addInterceptUrl bean="overridefilterSecurityInterceptor" pattern="/srv/[a-z]{2,3}/xml_iso19139.mcp!?.*" access="permitAll"/>
+			<addInterceptUrl bean="overridefilterSecurityInterceptor" pattern="/srv/[a-z]{2,3}/xml_iso19139.mcpTorifcs!?.*" access="permitAll"/>
+			<addInterceptUrl bean="overridefilterSecurityInterceptor" pattern="/srv/[a-z]{2,3}/xml_iso19139.mcpTooai_dc!?.*" access="permitAll"/>
+			<addInterceptUrl bean="overridefilterSecurityInterceptor" pattern="/srv/[a-z]{2,3}/xml_iso19139.mcp-1.4!?.*" access="permitAll"/>
+			<addInterceptUrl bean="overridefilterSecurityInterceptor" pattern="/srv/[a-z]{2,3}/xml_iso19139.mcp-1.4Torifcs!?.*" access="permitAll"/>
+			<addInterceptUrl bean="overridefilterSecurityInterceptor" pattern="/srv/[a-z]{2,3}/xml_iso19139.mcp-1.4Tooai_dc!?.*" access="permitAll"/>
+			<addInterceptUrl bean="overridefilterSecurityInterceptor" pattern="/srv/[a-z]{2,3}/xml_iso19139Torifcs!?.*" access="permitAll"/>
+	</spring>
+	<!-- add rif-cs prefix to config-oai-prefixes.xml -->
+	<file name=".*WEB-INF/config-oai-prefixes\.xml">
+		<addXML xpath="">
+			<schema prefix="rif" nsUrl="http://ands.org.au/standards/rif-cs/registryObjects" schemaLocation="http://services.ands.org.au/documentation/rifcs/schema/registryObjects.xsd"/>
+		</addXML>
+	</file>
+	<file name=".*WEB-INF/config-gui\.xml">
+		<addXML xpath="search">
+			<!-- add remote search tab for Z3950 to config-gui.xml -->
+			<show-remote-search/>
+			<!-- listed here are protocols that will cause the download button to 
+			     display in search results - these are in addition to 
+					 WWW:DOWNLOAD-1.0-http- -download -->
+			<protocol-for-download-button>WWW:DOWNLOAD-1.0-ftp--download</protocol-for-download-button>
+			<protocol-for-download-button>WWW:DOWNLOAD-1.0-ftp--downloaddata</protocol-for-download-button>
+			<protocol-for-download-button>WWW:DOWNLOAD-1.0-ftp--downloadother</protocol-for-download-button>
+			<protocol-for-download-button>WWW:DOWNLOAD-1.0-http--downloaddata</protocol-for-download-button>
+			<protocol-for-download-button>WWW:DOWNLOAD-1.0-http--downloadother</protocol-for-download-button>
+			<protocol-for-download-button>WWW:LINK-1.0-http--downloaddata</protocol-for-download-button>
+			<protocol-for-download-button>WWW:LINK-1.0-http--link</protocol-for-download-button>
+		</addXML>
+		<!-- add extra subtemplates to show in mcp-1.5-experimental schema -->
+		<addXML xpath="editor-subtemplate/mapping">
+			<subtemplate type="mcp:CI_Organisation">
+				<parent id="mcp:party"/>
+			</subtemplate>
+			<subtemplate type="mcp:CI_Individual">
+				<!-- <parent id="mcp:party"/> - having two subtemplates with the same
+				                                parent causes problems at the moment -->
+				<parent id="mcp:individual"/>
+			</subtemplate>
+		</addXML>
+		<!-- set server to use geowebcache tiles -->
+		<replaceAtt xpath="mapViewer/layers/layer" attName="server" value="http://localhost:8080/geoserver/gwc/service/wms" />
+	</file>
+	<!-- add summary items to config-summary.xml -->
+	<file name=".*WEB-INF/config-summary\.xml">
+		<addXML xpath="def">
+			<dataparams>
+      	<item name="dataparam" plural="dataparams" indexKey="dataparam" order="freq" type="string" max="100"/>
+    	</dataparams>
+    	<taxon>
+      	<item name="taxon" plural="taxons" indexKey="taxon" order="freq" type="string" max="100"/>
+    	</taxon>
+    	<credits>
+      	<item name="credit" plural="credits" indexKey="credit" order="freq" type="string" max="100"/>
+    	</credits>	
+    	<keywords>
+      	<item name="keyword" plural="keywords" indexKey="keyword" order="freq" type="string" max="100"/>
+    	</keywords>
+    	<longParamNames>
+      	<item name="longParamName" plural="longParamNames" indexKey="longParamName" order="freq" type="string" max="100"/>
+    	</longParamNames>
+    	<organisations>
+      	<item name="organisation" plural="organisations" indexKey="orgName" order="freq" type="string" max="100"/>
+    	</organisations>
+		</addXML>
+	</file>
+	<!-- add lucene field configs for schema plugins to config-lucene.xml -->
+	<file name=".*WEB-INF/config-lucene\.xml">
+		<addXML xpath="fieldSpecificAnalyzer">
+			<Field name="taxon" analyzer="org.apache.lucene.analysis.core.KeywordAnalyzer"/>
+			<Field name="credit" analyzer="org.fao.geonet.kernel.search.GeoNetworkAnalyzer"/>
+			<Field name="dataparam" analyzer="org.fao.geonet.kernel.search.GeoNetworkAnalyzer"/>
+		</addXML>
+		<addXML xpath="tokenized">
+			<Field name="taxon"/>
+			<Field name="credit"/>
+			<Field name="dataparam"/>
+		</addXML>
+	</file>
+	<!-- add rif converter to iso19139 base metadata schema-conversions.xml -->
+	<file name=".*iso19139/schema-conversions\.xml">
+		<addXML xpath="">
+			<converter name="xml_iso19139Torifcs" nsUri="http://ands.org.au/standards/rif-cs/registryObjects" schemaLocation="http://services.ands.org.au/home/orca/schemata/registryObjects.xsd" xslt="rif.xsl"/>
+		</addXML>
+	</file>
+	<!-- config setup defaults in database load -->
+	<textFile name=".*WEB-INF/classes/setup/sql/data/data-db-default.sql">
+    <!-- https enabled -->
+		<!-- not yet
+    <update linePattern="(INSERT INTO Settings VALUES \(23,20,'protocol',').+?('.*)">$1https$2</update>
+		-->
+    <!-- z3950 enabled and on port 6668 -->
+    <update linePattern="(INSERT INTO Settings VALUES \(41,40,'enable',').+?('.*)">$1true$2</update>
+    <update linePattern="INSERT INTO Settings VALUES \(42,40,'port','.+?('.*)">INSERT INTO Settings VALUES (42,40,'port','6668')\;</update>
+    <!-- xlink resolver enabled -->
+    <update linePattern="(INSERT INTO Settings VALUES \(231,230,'enable',').+?('.*)">$1true$2</update>
+    <!-- search stats enabled -->
+    <update linePattern="(INSERT INTO Settings VALUES \(251,250,'enable',').+?('.*)">$1true$2</update>
+		<!-- maximum number of records in a batch operation to 100000 -->
+    <update linePattern="INSERT INTO Settings VALUES \(91,90,'maxrecords','.+?('.*)">INSERT INTO Settings VALUES (91,90,'maxrecords','100000')\;</update>
+    <!-- change download from simple to withdisclaimer -->
+    <update linePattern="(INSERT INTO Settings VALUES \(222,220,'simple',').+?('.*)">$1false$2</update>
+		<update linePattern="(INSERT INTO Settings VALUES \(223,220,'withdisclaimer',').+?('.*)">$1true$2</update>
+	</textFile>
+</overrides>
