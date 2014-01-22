@@ -96,8 +96,6 @@
 				<parent id="mcp:individual"/>
 			</subtemplate>
 		</addXML>
-		<!-- set server to use geowebcache tiles -->
-		<replaceAtt xpath="mapViewer/layers/layer" attName="server" value="http://localhost:8080/geoserver/gwc/service/wms" />
 	</file>
 	<!-- add summary items to config-summary.xml -->
 	<file name=".*WEB-INF/config-summary\.xml">
