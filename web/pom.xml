@@ -778,6 +778,34 @@
             <resource>
               <directory>${build.webapp.resources}</directory>
             </resource>
+
+						<!-- schema plugins for assembly -->
+            <resource>
+              <directory>../schemaPlugins</directory>
+              <targetPath>WEB-INF/data/config/schema_plugins</targetPath>
+              <excludes>
+                <exclude>schematrons/**</exclude>
+                <exclude>iso19139.fra/**</exclude>
+                <exclude>iso19139.mcp-2.0/**</exclude>
+                <exclude>iso19139.xyz/**</exclude>
+                <exclude>iso19139.geobru/**</exclude>
+                <exclude>iso19139.sdn-cdi/**</exclude>
+                <exclude>iso19139.sdn-csr/**</exclude>
+                <exclude>iso19139.rndt/**</exclude>
+                <exclude>dist/**</exclude>
+                <exclude>.build/**</exclude>
+                <exclude>build.xml</exclude>
+              </excludes>
+            </resource>
+
+						<!-- rif.xsl into iso19139/convert -->
+            <resource>
+              <directory>../schemaPlugins/iso19139.anzlic/convert</directory>
+              <targetPath>WEB-INF/data/config/schema_plugins/iso19139/convert</targetPath>
+              <includes>
+                <include>rif.xsl</include>
+              </includes>
+            </resource>
           
             <!-- Remove comment tag to include documentation in the build. 
             Python and Latex are required to build the documentation. -->
