@@ -1,3 +1,21 @@
+ANZMEST
+-------
+
+ANZMEST is GeoNetwork 2.10.x with Australian Metadata Profiles and support.
+
+When you clone ANZMEST select the 2.10.x branch eg:
+
+git clone https://github.com/anzmest/core-geonetwork.git -b 2.10.x --recursive
+
+With ANZMEST you get GeoNetwork (2.10.x) plus:
+
+* ISO19115/19139 ANZLIC Profile version 1.1
+* ISO19115/19139 Marine Community Profile versions 1.4 and 1.5-experimental
+* SensorML OGC Discovery Profile for sensor platform metadata
+* EML GBIF profile
+* ANZMETA (the old ANZLIC metadata profile) version 1.3 (view only - no editing)
+* ISO19115:1 2013 FDIS (for testing and exploration only)
+
 Features
 --------
 
