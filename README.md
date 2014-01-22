@@ -21,13 +21,13 @@ With ANZMEST you get GeoNetwork (2.10.x) plus:
 * ANZMETA (the old ANZLIC metadata profile) version 1.3 (view only - no editing)
 * ISO19115:1 2013 FDIS (for testing and exploration only)
 
-You can view the config overrides that ANZMEST applies to GeoNetwork through git at:
+You can view the config overrides that ANZMEST applies to GeoNetwork at:
 
 https://github.com/anzmest/core-geonetwork/blob/2.10.x/web/src/main/webapp/WEB-INF/anzmest-config-overrides.xml
 
 After you have cloned the repository, this file can be found at:
 
-<cloned_repo_name>/web/src/main/webapp/WEB-INF/anzmest-config-overrides.xml
+clone-directory-name/web/src/main/webapp/WEB-INF/anzmest-config-overrides.xml
 
 Features
 --------
