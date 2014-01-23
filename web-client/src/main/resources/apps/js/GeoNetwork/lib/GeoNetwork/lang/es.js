@@ -635,8 +635,7 @@ GeoNetwork.Lang.es = {
     'linklabel-image/png': 'Image link',
     'linklabel-image/jpeg': 'Image link',
     'linklabel-': 'Link',
-		'bigMap': 'Open Map and hide search results',
-    'createThesaurus': 'Create Thesaurus'
+		'bigMap': 'Open Map and hide search results'
 };
 
 OpenLayers.Util.extend(OpenLayers.Lang.es, GeoNetwork.Lang.es);

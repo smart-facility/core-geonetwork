@@ -643,8 +643,7 @@ GeoNetwork.Lang.de = {
 'linklabel-image/png': 'Image link',
 'linklabel-image/jpeg': 'Image link',
 'linklabel-': 'Link',
-		'bigMap': 'Open Map and hide search results',
-    'createThesaurus': 'Create Thesaurus'
+		'bigMap': 'Open Map and hide search results'
 };
 
 OpenLayers.Util.extend(OpenLayers.Lang.de, GeoNetwork.Lang.de);
