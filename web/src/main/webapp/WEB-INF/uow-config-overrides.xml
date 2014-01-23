@@ -39,5 +39,8 @@
 	<file name=".*WEB-INF/config-gui\.xml">
 		<!-- set server to use geoserver -->
 		<replaceAtt xpath="mapViewer/layers/layer" attName="server" value="http://smart-metadata.uow.edu.au:8080/geoserver/wms" />
+		<!-- switch off OSM in html5ui etc - we're using our own OSM server 
+		     and it uses EPSG:4326 thank god... -->
+		<replaceXML xpath="map/osm_map"/>
 	</file>
 </overrides>
