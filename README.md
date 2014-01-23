@@ -1,7 +1,7 @@
 ANZMEST
 -------
 
-ANZMEST is GeoNetwork 2.10.x with Australian Metadata Profiles and support.
+ANZMEST is GeoNetwork 2.10.x with Australian and New Zealand Metadata Profiles and support.
 
 When you clone ANZMEST select the 2.10.x branch eg:
 
