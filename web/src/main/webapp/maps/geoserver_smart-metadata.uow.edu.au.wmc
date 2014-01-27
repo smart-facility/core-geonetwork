@@ -16,7 +16,7 @@
 					xlink:href="http://gallo.ad.uow.edu.au/cgi-bin/mapserv.exe?map=C:/ms4w/apps/osm/basemaps/osm-google.map"/>
 			</Server>
 			<Name>default</Name>
-			<Title>World OSM</Title>
+			<Title>World Open Street Maps</Title>
 			<FormatList>
 				<Format current="1">image/png</Format>
 			</FormatList>
