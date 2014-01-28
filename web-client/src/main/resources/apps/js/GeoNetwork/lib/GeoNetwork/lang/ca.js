@@ -654,7 +654,8 @@ GeoNetwork.Lang.ca={
     'newWindow': "Nova finestra",
     'mdEditor': "Editor de metadades",
     'List': "Llista",
-		'bigMap': 'Open Map and hide search results'
+		'bigMap': 'Open Map and hide search results',
+    'createThesaurus': 'Create Thesaurus'
 };
 
 OpenLayers.Util.extend(OpenLayers.Lang.ca,GeoNetwork.Lang.ca);

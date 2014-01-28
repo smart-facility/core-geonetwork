@@ -1593,6 +1593,41 @@ public class DataManager {
     }
 
     /**
+     * Retrieves a metadata (in xml) given its id. Use this method when you must
+		 * retrieve a metadata in the same transaction and you dont't care about
+		 * permissions eg. for extracting a metadata record at startup for indexing
+		 *  
+     * @param dbms
+     * @param id
+     * @return
+     * @throws Exception
+		 */
+    public Element getMetadataIgnorePermissions(Dbms dbms, String id) throws Exception {
+				return getMetadata(dbms, id, true);
+		}
+
+    /**
+     * Retrieves a metadata (in xml) given its id. Use this method when you must
+		 * retrieve a metadata in the same transaction. Note you can ask to ignore
+		 * permissions eg. for extracting a metadata record at startup for indexing
+		 * Private access to avoid misuse by external classes.
+		 *  
+     * @param dbms
+     * @param id
+		 * @param ignorePermissions If true then extract metadata regardless of
+		 * permissions, false is the usual path
+     * @return
+     * @throws Exception
+		 */
+		private Element getMetadata(Dbms dbms, String id, boolean ignorePermissions) throws Exception {
+        boolean doXLinks = xmlSerializer.resolveXLinks();
+        Element md = xmlSerializer.selectNoXLinkResolver(dbms, "Metadata", id, ignorePermissions);
+        if (md == null) return null;
+        md.detach();
+        return md;
+    }
+
+    /**
      * Retrieves a metadata (in xml) given its id. Use this method when you must retrieve a metadata in the same
      * transaction.
      * @param dbms
@@ -1601,11 +1636,7 @@ public class DataManager {
      * @throws Exception
      */
     public Element getMetadata(Dbms dbms, String id) throws Exception {
-        boolean doXLinks = xmlSerializer.resolveXLinks();
-        Element md = xmlSerializer.selectNoXLinkResolver(dbms, "Metadata", id, false);
-        if (md == null) return null;
-        md.detach();
-        return md;
+				return getMetadata(dbms, id, false);
     }
 
     /**
