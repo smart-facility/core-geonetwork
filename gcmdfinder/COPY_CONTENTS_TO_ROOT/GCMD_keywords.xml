@@ -1,0 +1,1321 @@
+<?xml version="1.0" encoding="ISO-8859-1"?><GCMD_KEYWORDS>
+<TOPIC value='Agriculture'>
+<TERM value='Agricultural Aquatic Sciences'>
+<VARIABLE>Aquaculture</VARIABLE>
+<VARIABLE>Fisheries</VARIABLE>
+</TERM>
+<TERM value='Agricultural Chemicals'>
+<VARIABLE>Fertilizers</VARIABLE>
+<VARIABLE>Pesticides</VARIABLE>
+</TERM>
+<TERM value='Agricultural Engineering'>
+<VARIABLE>Agricultural Equipment</VARIABLE>
+<VARIABLE>Farm Structures</VARIABLE>
+</TERM>
+<TERM value='Agricultural Plant Science'>
+<VARIABLE>Crop/plant Yields</VARIABLE>
+<VARIABLE>Cropping Systems</VARIABLE>
+<VARIABLE>Irrigation</VARIABLE>
+<VARIABLE>Plant Breeding And Genetics</VARIABLE>
+<VARIABLE>Plant Diseases/disorders/pests</VARIABLE>
+<VARIABLE>Reclamation/revegetation/restoration</VARIABLE>
+<VARIABLE>Weeds, Noxious Plants Or Invasive Plants</VARIABLE>
+</TERM>
+<TERM value='Animal Commodities'>
+<VARIABLE>Dairy Products</VARIABLE>
+<VARIABLE>Livestock Products</VARIABLE>
+<VARIABLE>Poultry Products</VARIABLE>
+</TERM>
+<TERM value='Animal Science'>
+<VARIABLE>Animal Breeding And Genetics</VARIABLE>
+<VARIABLE>Animal Diseases/disorders/pests</VARIABLE>
+<VARIABLE>Animal Ecology And Behavior</VARIABLE>
+<VARIABLE>Animal Management Systems</VARIABLE>
+<VARIABLE>Animal Manure And Waste</VARIABLE>
+<VARIABLE>Animal Nutrition</VARIABLE>
+<VARIABLE>Animal Physiology And Biochemistry</VARIABLE>
+<VARIABLE>Animal Yields</VARIABLE>
+<VARIABLE>Apiculture</VARIABLE>
+<VARIABLE>Sericulture</VARIABLE>
+</TERM>
+<TERM value='Feed Products'>
+<VARIABLE>Feed Composition</VARIABLE>
+<VARIABLE>Feed Contamination And Toxicology</VARIABLE>
+<VARIABLE>Feed Processing</VARIABLE>
+<VARIABLE>Feed Storage</VARIABLE>
+</TERM>
+<TERM value='Food Science'>
+<VARIABLE>Food Additives</VARIABLE>
+<VARIABLE>Food Contamination And Toxicology</VARIABLE>
+<VARIABLE>Food Packaging</VARIABLE>
+<VARIABLE>Food Processing</VARIABLE>
+<VARIABLE>Food Quality</VARIABLE>
+<VARIABLE>Food Storage</VARIABLE>
+</TERM>
+<TERM value='Forest Science'>
+<VARIABLE>Forest Fire Science</VARIABLE>
+<VARIABLE>Forest Harvesting And Engineering</VARIABLE>
+<VARIABLE>Forest Management</VARIABLE>
+<VARIABLE>Forest Mensuration</VARIABLE>
+<VARIABLE>Forest Products/commodities</VARIABLE>
+<VARIABLE>Forest Protection</VARIABLE>
+<VARIABLE>Forest Yields</VARIABLE>
+<VARIABLE>Reforestation</VARIABLE>
+</TERM>
+<TERM value='Plant Commodities'>
+<VARIABLE>Field Crops Products</VARIABLE>
+<VARIABLE>Fruit Products</VARIABLE>
+<VARIABLE>Horticultural Products</VARIABLE>
+<VARIABLE>Vegetable Products</VARIABLE>
+</TERM>
+<TERM value='Soils'>
+<VARIABLE>Calcium</VARIABLE>
+<VARIABLE>Carbon</VARIABLE>
+<VARIABLE>Cation Exchange Capacity</VARIABLE>
+<VARIABLE>Denitrification Rate</VARIABLE>
+<VARIABLE>Electrical Conductivity</VARIABLE>
+<VARIABLE>Hydraulic Conductivity</VARIABLE>
+<VARIABLE>Magnesium</VARIABLE>
+<VARIABLE>Micronutrients</VARIABLE>
+<VARIABLE>Nitrogen</VARIABLE>
+<VARIABLE>Organic Matter</VARIABLE>
+<VARIABLE>Permafrost</VARIABLE>
+<VARIABLE>Phosphorus</VARIABLE>
+<VARIABLE>Potassium</VARIABLE>
+<VARIABLE>Reclamation/revegetation/restoration</VARIABLE>
+<VARIABLE>Sodium</VARIABLE>
+<VARIABLE>Soil Absorption</VARIABLE>
+<VARIABLE>Soil Bulk Density</VARIABLE>
+<VARIABLE>Soil Chemistry</VARIABLE>
+<VARIABLE>Soil Classification</VARIABLE>
+<VARIABLE>Soil Color</VARIABLE>
+<VARIABLE>Soil Compaction</VARIABLE>
+<VARIABLE>Soil Consistence</VARIABLE>
+<VARIABLE>Soil Depth</VARIABLE>
+<VARIABLE>Soil Fertility</VARIABLE>
+<VARIABLE>Soil Gas/air</VARIABLE>
+<VARIABLE>Soil Heat Budget</VARIABLE>
+<VARIABLE>Soil Horizons/profile</VARIABLE>
+<VARIABLE>Soil Impedance</VARIABLE>
+<VARIABLE>Soil Mechanics</VARIABLE>
+<VARIABLE>Soil Moisture/water Content</VARIABLE>
+<VARIABLE>Soil Ph</VARIABLE>
+<VARIABLE>Soil Plasticity</VARIABLE>
+<VARIABLE>Soil Porosity</VARIABLE>
+<VARIABLE>Soil Productivity</VARIABLE>
+<VARIABLE>Soil Respiration</VARIABLE>
+<VARIABLE>Soil Salinity</VARIABLE>
+<VARIABLE>Soil Structure</VARIABLE>
+<VARIABLE>Soil Temperature</VARIABLE>
+<VARIABLE>Soil Texture</VARIABLE>
+<VARIABLE>Soil Water Holding Capacity</VARIABLE>
+<VARIABLE>Sulfur</VARIABLE>
+<VARIABLE>Thermal Conductivity</VARIABLE>
+</TERM>
+</TOPIC>
+<TOPIC value='Atmosphere'>
+<TERM value='Aerosols'>
+<VARIABLE>Aerosol Backscatter</VARIABLE>
+<VARIABLE>Aerosol Extinction</VARIABLE>
+<VARIABLE>Aerosol Optical Depth/thickness</VARIABLE>
+<VARIABLE>Aerosol Particle Properties</VARIABLE>
+<VARIABLE>Aerosol Radiance</VARIABLE>
+<VARIABLE>Carbonaceous Aerosols</VARIABLE>
+<VARIABLE>Cloud Condensation Nuclei</VARIABLE>
+<VARIABLE>Dust/ash</VARIABLE>
+<VARIABLE>Nitrate Particles</VARIABLE>
+<VARIABLE>Organic Particles</VARIABLE>
+<VARIABLE>Particulate Matter</VARIABLE>
+<VARIABLE>Sulfate Particles</VARIABLE>
+</TERM>
+<TERM value='Air Quality'>
+<VARIABLE>Carbon Monoxide</VARIABLE>
+<VARIABLE>Emissions</VARIABLE>
+<VARIABLE>Lead</VARIABLE>
+<VARIABLE>Nitrogen Oxides</VARIABLE>
+<VARIABLE>Particulates</VARIABLE>
+<VARIABLE>Smog</VARIABLE>
+<VARIABLE>Sulfur Oxides</VARIABLE>
+<VARIABLE>Tropospheric Ozone</VARIABLE>
+<VARIABLE>Turbidity</VARIABLE>
+<VARIABLE>Visibility</VARIABLE>
+<VARIABLE>Volatile Organic Compounds</VARIABLE>
+</TERM>
+<TERM value='Altitude'>
+<VARIABLE>Barometric Altitude</VARIABLE>
+<VARIABLE>Geopotential Height</VARIABLE>
+<VARIABLE>Planetary Boundary Layer Height</VARIABLE>
+<VARIABLE>Station Height</VARIABLE>
+<VARIABLE>Stratopause</VARIABLE>
+<VARIABLE>Tropopause</VARIABLE>
+</TERM>
+<TERM value='Atmospheric Chemistry'>
+<VARIABLE>Carbon Dioxide</VARIABLE>
+<VARIABLE>Carbon Monoxide</VARIABLE>
+<VARIABLE>Carbonyl Sulfide</VARIABLE>
+<VARIABLE>Chlorine Dioxide</VARIABLE>
+<VARIABLE>Chlorine Monoxide</VARIABLE>
+<VARIABLE>Chlorine Nitrate</VARIABLE>
+<VARIABLE>Chlorofluorocarbons</VARIABLE>
+<VARIABLE>Dimethyl Sulfide</VARIABLE>
+<VARIABLE>Halocarbons</VARIABLE>
+<VARIABLE>Hydrochlorofluorocarbons</VARIABLE>
+<VARIABLE>Hydrofluorocarbons</VARIABLE>
+<VARIABLE>Hydroxyl</VARIABLE>
+<VARIABLE>Methane</VARIABLE>
+<VARIABLE>Nitric Acid</VARIABLE>
+<VARIABLE>Nitrogen</VARIABLE>
+<VARIABLE>Nitrogen Dioxide</VARIABLE>
+<VARIABLE>Nitrogen Oxides</VARIABLE>
+<VARIABLE>Nitrous Oxide</VARIABLE>
+<VARIABLE>Non-methane Hydrocarbons</VARIABLE>
+<VARIABLE>Oxygen</VARIABLE>
+<VARIABLE>Ozone</VARIABLE>
+<VARIABLE>Pesticides/pcbs</VARIABLE>
+<VARIABLE>Photolysis Rates</VARIABLE>
+<VARIABLE>Sulfur Dioxide</VARIABLE>
+<VARIABLE>Sulfur Oxides</VARIABLE>
+<VARIABLE>Trace Elements</VARIABLE>
+<VARIABLE>Trace Gases</VARIABLE>
+<VARIABLE>Volatile Organic Compounds</VARIABLE>
+</TERM>
+<TERM value='Atmospheric Electricity'>
+<VARIABLE>Atmospheric Conductivity</VARIABLE>
+<VARIABLE>Electric Field</VARIABLE>
+<VARIABLE>Lightning</VARIABLE>
+<VARIABLE>Total Electron Content</VARIABLE>
+</TERM>
+<TERM value='Atmospheric Phenomena'>
+<VARIABLE>Cyclones</VARIABLE>
+<VARIABLE>Drought</VARIABLE>
+<VARIABLE>Fog</VARIABLE>
+<VARIABLE>Freeze</VARIABLE>
+<VARIABLE>Frost</VARIABLE>
+<VARIABLE>Hurricanes</VARIABLE>
+<VARIABLE>Lightning</VARIABLE>
+<VARIABLE>Monsoons</VARIABLE>
+<VARIABLE>Storms</VARIABLE>
+<VARIABLE>Tornados</VARIABLE>
+<VARIABLE>Typhoons</VARIABLE>
+</TERM>
+<TERM value='Atmospheric Pressure'>
+<VARIABLE>Anticyclones/cyclones</VARIABLE>
+<VARIABLE>Atmospheric Pressure</VARIABLE>
+<VARIABLE>Differential Pressure</VARIABLE>
+<VARIABLE>Gravity Wave</VARIABLE>
+<VARIABLE>Hydrostatic Pressure</VARIABLE>
+<VARIABLE>Oscillations</VARIABLE>
+<VARIABLE>Planetary Boundary Layer Height</VARIABLE>
+<VARIABLE>Pressure Anomalies</VARIABLE>
+<VARIABLE>Pressure Tendency</VARIABLE>
+<VARIABLE>Pressure Thickness</VARIABLE>
+<VARIABLE>Sea Level Pressure</VARIABLE>
+<VARIABLE>Static Pressure</VARIABLE>
+<VARIABLE>Surface Pressure</VARIABLE>
+</TERM>
+<TERM value='Atmospheric Temperature'>
+<VARIABLE>Air Temperature</VARIABLE>
+<VARIABLE>Atmospheric Stability</VARIABLE>
+<VARIABLE>Boundary Layer Temperature</VARIABLE>
+<VARIABLE>Degree Days</VARIABLE>
+<VARIABLE>Deiced Temperature</VARIABLE>
+<VARIABLE>Inversion Height</VARIABLE>
+<VARIABLE>Maximum/minimum Temperature</VARIABLE>
+<VARIABLE>Potential Temperature</VARIABLE>
+<VARIABLE>Skin Temperature</VARIABLE>
+<VARIABLE>Static Temperature</VARIABLE>
+<VARIABLE>Surface Air Temperature</VARIABLE>
+<VARIABLE>Temperature Anomalies</VARIABLE>
+<VARIABLE>Temperature Profiles</VARIABLE>
+<VARIABLE>Temperature Tendency</VARIABLE>
+<VARIABLE>Virtual Temperature</VARIABLE>
+</TERM>
+<TERM value='Atmospheric Water Vapor'>
+<VARIABLE>Condensation</VARIABLE>
+<VARIABLE>Dew Point</VARIABLE>
+<VARIABLE>Evaporation</VARIABLE>
+<VARIABLE>Evapotranspiration</VARIABLE>
+<VARIABLE>Humidity</VARIABLE>
+<VARIABLE>Precipitable Water</VARIABLE>
+<VARIABLE>Sublimation</VARIABLE>
+<VARIABLE>Water Vapor</VARIABLE>
+<VARIABLE>Water Vapor Profiles</VARIABLE>
+</TERM>
+<TERM value='Atmospheric Winds'>
+<VARIABLE>Convection</VARIABLE>
+<VARIABLE>Convergence/divergence</VARIABLE>
+<VARIABLE>Streamfunctions</VARIABLE>
+<VARIABLE>Surface Winds</VARIABLE>
+<VARIABLE>Turbulence</VARIABLE>
+<VARIABLE>Upper Level Winds</VARIABLE>
+<VARIABLE>Vertical Wind Motion</VARIABLE>
+<VARIABLE>Vorticity</VARIABLE>
+<VARIABLE>Wind Chill</VARIABLE>
+<VARIABLE>Wind Shear</VARIABLE>
+<VARIABLE>Wind Stress</VARIABLE>
+</TERM>
+<TERM value='Clouds'>
+<VARIABLE>Cloud Amount/frequency</VARIABLE>
+<VARIABLE>Cloud Asymmetry</VARIABLE>
+<VARIABLE>Cloud Ceiling</VARIABLE>
+<VARIABLE>Cloud Condensation Nuclei</VARIABLE>
+<VARIABLE>Cloud Emissivity</VARIABLE>
+<VARIABLE>Cloud Forcing</VARIABLE>
+<VARIABLE>Cloud Height</VARIABLE>
+<VARIABLE>Cloud Liquid Water/ice</VARIABLE>
+<VARIABLE>Cloud Optical Depth/thickness</VARIABLE>
+<VARIABLE>Cloud Optical Thickness</VARIABLE>
+<VARIABLE>Cloud Precipitable Water</VARIABLE>
+<VARIABLE>Cloud Reflectance</VARIABLE>
+<VARIABLE>Cloud Top Pressure</VARIABLE>
+<VARIABLE>Cloud Top Temperature</VARIABLE>
+<VARIABLE>Cloud Types</VARIABLE>
+<VARIABLE>Cloud Vertical Distribution</VARIABLE>
+<VARIABLE>Droplet Concentration/size</VARIABLE>
+</TERM>
+<TERM value='Precipitation'>
+<VARIABLE>Acid Rain</VARIABLE>
+<VARIABLE>Droplet Size</VARIABLE>
+<VARIABLE>Freezing Rain</VARIABLE>
+<VARIABLE>Hail</VARIABLE>
+<VARIABLE>Hydrometeors</VARIABLE>
+<VARIABLE>Liquid Water Equivalent</VARIABLE>
+<VARIABLE>Precipitation Amount</VARIABLE>
+<VARIABLE>Precipitation Anomalies</VARIABLE>
+<VARIABLE>Precipitation Rate</VARIABLE>
+<VARIABLE>Rain</VARIABLE>
+<VARIABLE>Sleet</VARIABLE>
+<VARIABLE>Snow</VARIABLE>
+</TERM>
+<TERM value='Radiation Budget'>
+<VARIABLE>Absorption</VARIABLE>
+<VARIABLE>Albedo</VARIABLE>
+<VARIABLE>Anisotropy</VARIABLE>
+<VARIABLE>Atmospheric Emitted Radiation</VARIABLE>
+<VARIABLE>Atmospheric Heating</VARIABLE>
+<VARIABLE>Emissivity</VARIABLE>
+<VARIABLE>Heat Flux</VARIABLE>
+<VARIABLE>Incoming Shortwave Radiation</VARIABLE>
+<VARIABLE>Longwave Radiation</VARIABLE>
+<VARIABLE>Net Radiation</VARIABLE>
+<VARIABLE>Optical Depth/thickness</VARIABLE>
+<VARIABLE>Outgoing Longwave Radiation</VARIABLE>
+<VARIABLE>Radiative Flux</VARIABLE>
+<VARIABLE>Radiative Forcing</VARIABLE>
+<VARIABLE>Reflectance</VARIABLE>
+<VARIABLE>Scattering</VARIABLE>
+<VARIABLE>Shortwave Radiation</VARIABLE>
+<VARIABLE>Solar Irradiance</VARIABLE>
+<VARIABLE>Solar Radiation</VARIABLE>
+<VARIABLE>Sunshine</VARIABLE>
+<VARIABLE>Transmittance</VARIABLE>
+<VARIABLE>Ultraviolet Radiation</VARIABLE>
+</TERM>
+</TOPIC>
+<TOPIC value='Biosphere'>
+<TERM value='Aquatic Habitat'>
+<VARIABLE>Benthic Habitat</VARIABLE>
+<VARIABLE>Coastal Habitat</VARIABLE>
+<VARIABLE>Estuarine Habitat</VARIABLE>
+<VARIABLE>Lakes</VARIABLE>
+<VARIABLE>Pelagic Habitat</VARIABLE>
+<VARIABLE>Reef Habitat</VARIABLE>
+<VARIABLE>Rivers/stream Habitat</VARIABLE>
+<VARIABLE>Saline Lakes</VARIABLE>
+</TERM>
+<TERM value='Ecological Dynamics'>
+<VARIABLE>Adaptation</VARIABLE>
+<VARIABLE>Bioaccumulation</VARIABLE>
+<VARIABLE>Bioavailability</VARIABLE>
+<VARIABLE>Biogeochemical Cycles</VARIABLE>
+<VARIABLE>Bioluminescence</VARIABLE>
+<VARIABLE>Biomass</VARIABLE>
+<VARIABLE>Chemosynthesis</VARIABLE>
+<VARIABLE>Community Structure</VARIABLE>
+<VARIABLE>Competition</VARIABLE>
+<VARIABLE>Consumption</VARIABLE>
+<VARIABLE>Decomposition</VARIABLE>
+<VARIABLE>Diurnal Movements</VARIABLE>
+<VARIABLE>Dominance</VARIABLE>
+<VARIABLE>Endangered Species</VARIABLE>
+<VARIABLE>Excretion</VARIABLE>
+<VARIABLE>Extinction</VARIABLE>
+<VARIABLE>Feeding Habitat</VARIABLE>
+<VARIABLE>Fire Characteristics</VARIABLE>
+<VARIABLE>Fire Occurrence</VARIABLE>
+<VARIABLE>Food-web Dynamics</VARIABLE>
+<VARIABLE>Herbivory</VARIABLE>
+<VARIABLE>Life History</VARIABLE>
+<VARIABLE>Migratory Rates/routes</VARIABLE>
+<VARIABLE>Mutation</VARIABLE>
+<VARIABLE>Mutualism</VARIABLE>
+<VARIABLE>Nutrient Cycling</VARIABLE>
+<VARIABLE>Oxygen Demand</VARIABLE>
+<VARIABLE>Parasitism</VARIABLE>
+<VARIABLE>Photosynthesis</VARIABLE>
+<VARIABLE>Population Dynamics</VARIABLE>
+<VARIABLE>Post-breeding</VARIABLE>
+<VARIABLE>Predation</VARIABLE>
+<VARIABLE>Primary Production</VARIABLE>
+<VARIABLE>Range Changes</VARIABLE>
+<VARIABLE>Respiration</VARIABLE>
+<VARIABLE>Scavenging</VARIABLE>
+<VARIABLE>Secondary Production</VARIABLE>
+<VARIABLE>Selection</VARIABLE>
+<VARIABLE>Species Recruitment</VARIABLE>
+<VARIABLE>Succession</VARIABLE>
+<VARIABLE>Survival</VARIABLE>
+<VARIABLE>Symbiosis</VARIABLE>
+<VARIABLE>Toxicity</VARIABLE>
+<VARIABLE>Trophic Dynamics</VARIABLE>
+</TERM>
+<TERM value='Fungi'>
+<VARIABLE>Biomass</VARIABLE>
+<VARIABLE>Molds</VARIABLE>
+<VARIABLE>Mushrooms</VARIABLE>
+<VARIABLE>Slime Molds</VARIABLE>
+<VARIABLE>Sporozoans</VARIABLE>
+<VARIABLE>Yeast</VARIABLE>
+</TERM>
+<TERM value='Microbiota'>
+<VARIABLE>Amoebae</VARIABLE>
+<VARIABLE>Bacteria</VARIABLE>
+<VARIABLE>Biomass</VARIABLE>
+<VARIABLE>Blue-green Algae</VARIABLE>
+<VARIABLE>Chlorophyll</VARIABLE>
+<VARIABLE>Ciliates</VARIABLE>
+<VARIABLE>Coccolithophore</VARIABLE>
+<VARIABLE>Diatoms</VARIABLE>
+<VARIABLE>Flagellates</VARIABLE>
+<VARIABLE>Foraminifers</VARIABLE>
+<VARIABLE>Microalgae</VARIABLE>
+<VARIABLE>Microphyte</VARIABLE>
+<VARIABLE>Phytoplankton</VARIABLE>
+<VARIABLE>Pigments</VARIABLE>
+<VARIABLE>Plankton</VARIABLE>
+<VARIABLE>Protist</VARIABLE>
+<VARIABLE>Radiolarians</VARIABLE>
+<VARIABLE>Zooplankton</VARIABLE>
+</TERM>
+<TERM value='Terrestrial Ecosystems'>
+<VARIABLE>Agricultural Lands</VARIABLE>
+<VARIABLE>Alpine/tundra</VARIABLE>
+<VARIABLE>Beaches</VARIABLE>
+<VARIABLE>Deserts</VARIABLE>
+<VARIABLE>Dunes</VARIABLE>
+<VARIABLE>Forests</VARIABLE>
+<VARIABLE>Grasslands</VARIABLE>
+<VARIABLE>Islands</VARIABLE>
+<VARIABLE>Karst Landscape</VARIABLE>
+<VARIABLE>Montane Habitats</VARIABLE>
+<VARIABLE>Savannas</VARIABLE>
+<VARIABLE>Shrubland/scrub</VARIABLE>
+<VARIABLE>Urban Lands</VARIABLE>
+<VARIABLE>Wetlands</VARIABLE>
+</TERM>
+<TERM value='Vegetation'>
+<VARIABLE>Algae</VARIABLE>
+<VARIABLE>Biomass</VARIABLE>
+<VARIABLE>Canopy Characteristics</VARIABLE>
+<VARIABLE>Carbon</VARIABLE>
+<VARIABLE>Chlorophyll</VARIABLE>
+<VARIABLE>Conifers</VARIABLE>
+<VARIABLE>Crown</VARIABLE>
+<VARIABLE>Deciduous Vegetation</VARIABLE>
+<VARIABLE>Dominant Species</VARIABLE>
+<VARIABLE>Exotic Vegetation</VARIABLE>
+<VARIABLE>Ferns</VARIABLE>
+<VARIABLE>Flowering Plants</VARIABLE>
+<VARIABLE>Forest Composition/structure</VARIABLE>
+<VARIABLE>Herbivory</VARIABLE>
+<VARIABLE>Importance Value</VARIABLE>
+<VARIABLE>Indigenous Vegetation</VARIABLE>
+<VARIABLE>Leaf Characteristics</VARIABLE>
+<VARIABLE>Lichens</VARIABLE>
+<VARIABLE>Litter Characteristics</VARIABLE>
+<VARIABLE>Macroalgae</VARIABLE>
+<VARIABLE>Macrophyte</VARIABLE>
+<VARIABLE>Mosses And Liverworts</VARIABLE>
+<VARIABLE>Nitrogen</VARIABLE>
+<VARIABLE>Nutrients</VARIABLE>
+<VARIABLE>Phosphorus</VARIABLE>
+<VARIABLE>Photosynthetically Active Radiation</VARIABLE>
+<VARIABLE>Phytoplankton</VARIABLE>
+<VARIABLE>Pigments</VARIABLE>
+<VARIABLE>Plant Characteristics</VARIABLE>
+<VARIABLE>Pollen</VARIABLE>
+<VARIABLE>Reclamation/revegetation/restoration</VARIABLE>
+<VARIABLE>Reforestation</VARIABLE>
+<VARIABLE>Tree Rings</VARIABLE>
+<VARIABLE>Vegetation Cover</VARIABLE>
+<VARIABLE>Vegetation Index</VARIABLE>
+<VARIABLE>Vegetation Species</VARIABLE>
+</TERM>
+<TERM value='Wetlands'>
+<VARIABLE>Estuarine Wetlands</VARIABLE>
+<VARIABLE>Lacustrine Wetlands</VARIABLE>
+<VARIABLE>Marine</VARIABLE>
+<VARIABLE>Marshes</VARIABLE>
+<VARIABLE>Palustrine Wetlands</VARIABLE>
+<VARIABLE>Peatlands</VARIABLE>
+<VARIABLE>Riparian Wetlands</VARIABLE>
+<VARIABLE>Swamps</VARIABLE>
+</TERM>
+<TERM value='Zoology'>
+<VARIABLE>Amphibians</VARIABLE>
+<VARIABLE>Anemones</VARIABLE>
+<VARIABLE>Arachnids</VARIABLE>
+<VARIABLE>Arthropods</VARIABLE>
+<VARIABLE>Biomass</VARIABLE>
+<VARIABLE>Birds</VARIABLE>
+<VARIABLE>Centipedes</VARIABLE>
+<VARIABLE>Corals</VARIABLE>
+<VARIABLE>Crustaceans</VARIABLE>
+<VARIABLE>Echinoderms</VARIABLE>
+<VARIABLE>Exotic Species</VARIABLE>
+<VARIABLE>Fish</VARIABLE>
+<VARIABLE>Flatworms</VARIABLE>
+<VARIABLE>Indigenous Species</VARIABLE>
+<VARIABLE>Insects</VARIABLE>
+<VARIABLE>Invertebrates</VARIABLE>
+<VARIABLE>Jellyfish</VARIABLE>
+<VARIABLE>Mammals</VARIABLE>
+<VARIABLE>Millipedes</VARIABLE>
+<VARIABLE>Mollusks</VARIABLE>
+<VARIABLE>Reptiles</VARIABLE>
+<VARIABLE>Roundworms</VARIABLE>
+<VARIABLE>Segmented Worms</VARIABLE>
+<VARIABLE>Sponges</VARIABLE>
+<VARIABLE>Vertebrates</VARIABLE>
+<VARIABLE>Zooplankton</VARIABLE>
+</TERM>
+</TOPIC>
+<TOPIC value='Cryosphere'>
+<TERM value='Sea Ice'>
+<VARIABLE>Heat Flux</VARIABLE>
+<VARIABLE>Ice Deformation</VARIABLE>
+<VARIABLE>Ice Depth/thickness</VARIABLE>
+<VARIABLE>Ice Edges</VARIABLE>
+<VARIABLE>Ice Extent</VARIABLE>
+<VARIABLE>Ice Floes</VARIABLE>
+<VARIABLE>Ice Growth/melt</VARIABLE>
+<VARIABLE>Ice Roughness</VARIABLE>
+<VARIABLE>Ice Temperature</VARIABLE>
+<VARIABLE>Ice Types</VARIABLE>
+<VARIABLE>Icebergs</VARIABLE>
+<VARIABLE>Leads</VARIABLE>
+<VARIABLE>Pack Ice</VARIABLE>
+<VARIABLE>Polynyas</VARIABLE>
+<VARIABLE>Reflectance</VARIABLE>
+<VARIABLE>Sea Ice Age</VARIABLE>
+<VARIABLE>Sea Ice Concentration</VARIABLE>
+<VARIABLE>Sea Ice Motion</VARIABLE>
+</TERM>
+<TERM value='Snow/ice'>
+<VARIABLE>Ablation</VARIABLE>
+<VARIABLE>Albedo</VARIABLE>
+<VARIABLE>Avalanche</VARIABLE>
+<VARIABLE>Depth Hoar</VARIABLE>
+<VARIABLE>Freeze/thaw</VARIABLE>
+<VARIABLE>Frost</VARIABLE>
+<VARIABLE>Glaciers</VARIABLE>
+<VARIABLE>Ice Depth/thickness</VARIABLE>
+<VARIABLE>Ice Extent</VARIABLE>
+<VARIABLE>Ice Growth/melt</VARIABLE>
+<VARIABLE>Ice Motion</VARIABLE>
+<VARIABLE>Ice Sheet Elevation</VARIABLE>
+<VARIABLE>Ice Sheets</VARIABLE>
+<VARIABLE>Ice Velocity</VARIABLE>
+<VARIABLE>Lake Ice</VARIABLE>
+<VARIABLE>Permafrost</VARIABLE>
+<VARIABLE>River Ice</VARIABLE>
+<VARIABLE>Snow Cover</VARIABLE>
+<VARIABLE>Snow Density</VARIABLE>
+<VARIABLE>Snow Depth</VARIABLE>
+<VARIABLE>Snow Energy Balance</VARIABLE>
+<VARIABLE>Snow Facies</VARIABLE>
+<VARIABLE>Snow Melt</VARIABLE>
+<VARIABLE>Snow Water Equivalent</VARIABLE>
+<VARIABLE>Snow/ice Temperature</VARIABLE>
+<VARIABLE>Whiteout</VARIABLE>
+</TERM>
+</TOPIC>
+<TOPIC value='Human Dimensions'>
+<TERM value='Attitudes,preferences,behavior'>
+<VARIABLE>Consumer Behavior</VARIABLE>
+<VARIABLE>Social Behavior</VARIABLE>
+</TERM>
+<TERM value='Boundaries'>
+<VARIABLE>Administrative Divisions</VARIABLE>
+<VARIABLE>Political Divisions</VARIABLE>
+<VARIABLE>Surveys</VARIABLE>
+</TERM>
+<TERM value='Economic Resources'>
+<VARIABLE>Agricultural Economics</VARIABLE>
+<VARIABLE>null</VARIABLE>
+</TERM>
+<TERM value='Environmental Impacts'>
+<VARIABLE>Acid Deposition</VARIABLE>
+<VARIABLE>Biochemical Release</VARIABLE>
+<VARIABLE>Biomass Burning</VARIABLE>
+<VARIABLE>Chemical Spills</VARIABLE>
+<VARIABLE>Civil Disturbance</VARIABLE>
+<VARIABLE>Contaminants</VARIABLE>
+<VARIABLE>Deforestation</VARIABLE>
+<VARIABLE>Desertification</VARIABLE>
+<VARIABLE>Eutrophication</VARIABLE>
+<VARIABLE>Fossil Fuel Burning</VARIABLE>
+<VARIABLE>Gas Explosions/leaks</VARIABLE>
+<VARIABLE>Gas Flaring</VARIABLE>
+<VARIABLE>Heavy Metals</VARIABLE>
+<VARIABLE>Industrial Emissions</VARIABLE>
+<VARIABLE>Industrialization</VARIABLE>
+<VARIABLE>Irrigation</VARIABLE>
+<VARIABLE>Mine Drainage</VARIABLE>
+<VARIABLE>Nuclear Radiation</VARIABLE>
+<VARIABLE>Oil Spill</VARIABLE>
+<VARIABLE>Reclamation/revegetation/restoration</VARIABLE>
+<VARIABLE>Reforestation</VARIABLE>
+<VARIABLE>Sewage</VARIABLE>
+<VARIABLE>Urbanization</VARIABLE>
+<VARIABLE>Water Management</VARIABLE>
+</TERM>
+<TERM value='Human Health'>
+<VARIABLE>Anatomical Parameters</VARIABLE>
+<VARIABLE>Diseases/epidemics</VARIABLE>
+<VARIABLE>Physiological Parameters</VARIABLE>
+<VARIABLE>Public Health</VARIABLE>
+<VARIABLE>Vital Statistics</VARIABLE>
+</TERM>
+<TERM value='Infrastructure'>
+<VARIABLE>Buildings</VARIABLE>
+<VARIABLE>Communications</VARIABLE>
+<VARIABLE>Cultural Features</VARIABLE>
+<VARIABLE>Electricity</VARIABLE>
+<VARIABLE>Pipelines</VARIABLE>
+<VARIABLE>Transportation</VARIABLE>
+</TERM>
+<TERM value='Land Use/land Cover'>
+<VARIABLE>Land Management</VARIABLE>
+<VARIABLE>Land Tenure</VARIABLE>
+<VARIABLE>Land Use Classes</VARIABLE>
+</TERM>
+<TERM value='Natural Hazards'>
+<VARIABLE>Biological Hazards</VARIABLE>
+<VARIABLE>Fires</VARIABLE>
+<VARIABLE>Geological Hazards</VARIABLE>
+<VARIABLE>Hydrological Hazards</VARIABLE>
+<VARIABLE>Meteorological Hazards</VARIABLE>
+</TERM>
+<TERM value='Population'>
+<VARIABLE>Population Distribution</VARIABLE>
+<VARIABLE>Population Size</VARIABLE>
+<VARIABLE>null</VARIABLE>
+</TERM>
+</TOPIC>
+<TOPIC value='Hydrosphere'>
+<TERM value='Ground Water'>
+<VARIABLE>Aquifers</VARIABLE>
+<VARIABLE>Discharge/flow</VARIABLE>
+<VARIABLE>Dispersion</VARIABLE>
+<VARIABLE>Drainage</VARIABLE>
+<VARIABLE>Groundwater Chemistry</VARIABLE>
+<VARIABLE>Infiltration</VARIABLE>
+<VARIABLE>Land Subsidence</VARIABLE>
+<VARIABLE>Percolation</VARIABLE>
+<VARIABLE>Saltwater Intrusion</VARIABLE>
+<VARIABLE>Springs</VARIABLE>
+<VARIABLE>Water Table</VARIABLE>
+</TERM>
+<TERM value='Snow/ice'>
+<VARIABLE>Ablation</VARIABLE>
+<VARIABLE>Albedo</VARIABLE>
+<VARIABLE>Avalanche</VARIABLE>
+<VARIABLE>Depth Hoar</VARIABLE>
+<VARIABLE>Freeze/thaw</VARIABLE>
+<VARIABLE>Frost</VARIABLE>
+<VARIABLE>Glaciers</VARIABLE>
+<VARIABLE>Ice Depth/thickness</VARIABLE>
+<VARIABLE>Ice Extent</VARIABLE>
+<VARIABLE>Ice Growth/melt</VARIABLE>
+<VARIABLE>Ice Motion</VARIABLE>
+<VARIABLE>Ice Sheet Elevation</VARIABLE>
+<VARIABLE>Ice Sheets</VARIABLE>
+<VARIABLE>Ice Velocity</VARIABLE>
+<VARIABLE>Lake Ice</VARIABLE>
+<VARIABLE>Permafrost</VARIABLE>
+<VARIABLE>River Ice</VARIABLE>
+<VARIABLE>Snow Cover</VARIABLE>
+<VARIABLE>Snow Density</VARIABLE>
+<VARIABLE>Snow Depth</VARIABLE>
+<VARIABLE>Snow Energy Balance</VARIABLE>
+<VARIABLE>Snow Facies</VARIABLE>
+<VARIABLE>Snow Melt</VARIABLE>
+<VARIABLE>Snow Water Equivalent</VARIABLE>
+<VARIABLE>Snow/ice Temperature</VARIABLE>
+<VARIABLE>Whiteout</VARIABLE>
+</TERM>
+<TERM value='Surface Water'>
+<VARIABLE>Aquifer Recharge</VARIABLE>
+<VARIABLE>Discharge/flow</VARIABLE>
+<VARIABLE>Drainage</VARIABLE>
+<VARIABLE>Floods</VARIABLE>
+<VARIABLE>Hydropattern</VARIABLE>
+<VARIABLE>Hydroperiod</VARIABLE>
+<VARIABLE>Inundation</VARIABLE>
+<VARIABLE>Lakes</VARIABLE>
+<VARIABLE>Rivers/streams</VARIABLE>
+<VARIABLE>Runoff</VARIABLE>
+<VARIABLE>Stage Height</VARIABLE>
+<VARIABLE>Stream Chemistry</VARIABLE>
+<VARIABLE>Total Surface Water</VARIABLE>
+<VARIABLE>Water Channels</VARIABLE>
+<VARIABLE>Water Depth</VARIABLE>
+<VARIABLE>Water Pressure</VARIABLE>
+<VARIABLE>Water Yield</VARIABLE>
+<VARIABLE>Watershed Characteristics</VARIABLE>
+<VARIABLE>Wetlands</VARIABLE>
+</TERM>
+<TERM value='Water Quality'>
+<VARIABLE>Acid Deposition</VARIABLE>
+<VARIABLE>Alkalinity</VARIABLE>
+<VARIABLE>Benthic Index</VARIABLE>
+<VARIABLE>Carbon Dioxide</VARIABLE>
+<VARIABLE>Carcinogens</VARIABLE>
+<VARIABLE>Chlorophyll</VARIABLE>
+<VARIABLE>Conductivity</VARIABLE>
+<VARIABLE>Contaminants</VARIABLE>
+<VARIABLE>Dissolved Gases</VARIABLE>
+<VARIABLE>Dissolved Solids</VARIABLE>
+<VARIABLE>Hydrocarbons</VARIABLE>
+<VARIABLE>Inorganic Matter</VARIABLE>
+<VARIABLE>Light Transmission</VARIABLE>
+<VARIABLE>Nitrogen Compounds</VARIABLE>
+<VARIABLE>Nutrients</VARIABLE>
+<VARIABLE>Organic Matter</VARIABLE>
+<VARIABLE>Oxygen</VARIABLE>
+<VARIABLE>Ph</VARIABLE>
+<VARIABLE>Phosphorous Compounds</VARIABLE>
+<VARIABLE>Radioisotopes</VARIABLE>
+<VARIABLE>Stable Isotopes</VARIABLE>
+<VARIABLE>Suspended Solids</VARIABLE>
+<VARIABLE>Toxic Chemicals</VARIABLE>
+<VARIABLE>Trace Metals</VARIABLE>
+<VARIABLE>Turbidity</VARIABLE>
+<VARIABLE>Water Temperature</VARIABLE>
+</TERM>
+</TOPIC>
+<TOPIC value='Land Surface'>
+<TERM value='Erosion/sedimentation'>
+<VARIABLE>Degradation</VARIABLE>
+<VARIABLE>Entrainment</VARIABLE>
+<VARIABLE>Erosion</VARIABLE>
+<VARIABLE>Landslides</VARIABLE>
+<VARIABLE>Sediment Chemistry</VARIABLE>
+<VARIABLE>Sediment Composition</VARIABLE>
+<VARIABLE>Sediment Transport</VARIABLE>
+<VARIABLE>Sedimentation</VARIABLE>
+<VARIABLE>Sediments</VARIABLE>
+<VARIABLE>Stratigraphic Sequence</VARIABLE>
+<VARIABLE>Suspended Solids</VARIABLE>
+<VARIABLE>Weathering</VARIABLE>
+</TERM>
+<TERM value='Geomorphology'>
+<VARIABLE>Coastal Landforms/processes</VARIABLE>
+<VARIABLE>Eolian Landforms/processes</VARIABLE>
+<VARIABLE>Fluvial Landforms/processes</VARIABLE>
+<VARIABLE>Glacial Landforms/processes</VARIABLE>
+<VARIABLE>Karst Landforms/processes</VARIABLE>
+<VARIABLE>Tectonic Landforms/processes</VARIABLE>
+</TERM>
+<TERM value='Land Temperature'>
+<VARIABLE>Land Heat Capacity</VARIABLE>
+<VARIABLE>Land Surface Temperature</VARIABLE>
+<VARIABLE>Skin Temperature</VARIABLE>
+</TERM>
+<TERM value='Land Use/land Cover'>
+<VARIABLE>Land Cover</VARIABLE>
+<VARIABLE>Land Productivity</VARIABLE>
+<VARIABLE>Land Resources</VARIABLE>
+<VARIABLE>Land Use Classes</VARIABLE>
+</TERM>
+<TERM value='Landscape'>
+<VARIABLE>Landscape Ecology</VARIABLE>
+<VARIABLE>Landscape Management</VARIABLE>
+<VARIABLE>Landscape Pattern</VARIABLE>
+<VARIABLE>Reclamation/revegetation/restoration</VARIABLE>
+<VARIABLE>Reforestation</VARIABLE>
+</TERM>
+<TERM value='Soils'>
+<VARIABLE>Calcium</VARIABLE>
+<VARIABLE>Carbon</VARIABLE>
+<VARIABLE>Cation Exchange Capacity</VARIABLE>
+<VARIABLE>Denitrification Rate</VARIABLE>
+<VARIABLE>Electrical Conductivity</VARIABLE>
+<VARIABLE>Hydraulic Conductivity</VARIABLE>
+<VARIABLE>Magnesium</VARIABLE>
+<VARIABLE>Micronutrients</VARIABLE>
+<VARIABLE>Nitrogen</VARIABLE>
+<VARIABLE>Organic Matter</VARIABLE>
+<VARIABLE>Permafrost</VARIABLE>
+<VARIABLE>Phosphorus</VARIABLE>
+<VARIABLE>Potassium</VARIABLE>
+<VARIABLE>Reclamation/revegetation/restoration</VARIABLE>
+<VARIABLE>Sodium</VARIABLE>
+<VARIABLE>Soil Absorption</VARIABLE>
+<VARIABLE>Soil Bulk Density</VARIABLE>
+<VARIABLE>Soil Chemistry</VARIABLE>
+<VARIABLE>Soil Classification</VARIABLE>
+<VARIABLE>Soil Color</VARIABLE>
+<VARIABLE>Soil Compaction</VARIABLE>
+<VARIABLE>Soil Consistence</VARIABLE>
+<VARIABLE>Soil Depth</VARIABLE>
+<VARIABLE>Soil Fertility</VARIABLE>
+<VARIABLE>Soil Gas/air</VARIABLE>
+<VARIABLE>Soil Heat Budget</VARIABLE>
+<VARIABLE>Soil Horizons/profile</VARIABLE>
+<VARIABLE>Soil Impedance</VARIABLE>
+<VARIABLE>Soil Mechanics</VARIABLE>
+<VARIABLE>Soil Moisture/water Content</VARIABLE>
+<VARIABLE>Soil Ph</VARIABLE>
+<VARIABLE>Soil Plasticity</VARIABLE>
+<VARIABLE>Soil Porosity</VARIABLE>
+<VARIABLE>Soil Productivity</VARIABLE>
+<VARIABLE>Soil Respiration</VARIABLE>
+<VARIABLE>Soil Salinity</VARIABLE>
+<VARIABLE>Soil Structure</VARIABLE>
+<VARIABLE>Soil Temperature</VARIABLE>
+<VARIABLE>Soil Texture</VARIABLE>
+<VARIABLE>Soil Water Holding Capacity</VARIABLE>
+<VARIABLE>Sulfur</VARIABLE>
+<VARIABLE>Thermal Conductivity</VARIABLE>
+</TERM>
+<TERM value='Surface Radiative Properties'>
+<VARIABLE>Albedo</VARIABLE>
+<VARIABLE>Anisotropy</VARIABLE>
+<VARIABLE>Emissivity</VARIABLE>
+<VARIABLE>Reflectance</VARIABLE>
+<VARIABLE>Thermal Properties</VARIABLE>
+</TERM>
+<TERM value='Topography'>
+<VARIABLE>Contours</VARIABLE>
+<VARIABLE>Landforms</VARIABLE>
+<VARIABLE>Relief</VARIABLE>
+<VARIABLE>Surface Roughness</VARIABLE>
+<VARIABLE>Terrain Elevation</VARIABLE>
+<VARIABLE>Topographic Effects</VARIABLE>
+</TERM>
+</TOPIC>
+<TOPIC value='Oceans'>
+<TERM value='Bathymetry'>
+<VARIABLE>Seafloor Topography</VARIABLE>
+<VARIABLE>Water Depth</VARIABLE>
+</TERM>
+<TERM value='Coastal Processes'>
+<VARIABLE>Barrier Islands</VARIABLE>
+<VARIABLE>Beaches</VARIABLE>
+<VARIABLE>Coastal Elevation</VARIABLE>
+<VARIABLE>Coral Reefs</VARIABLE>
+<VARIABLE>Deltas</VARIABLE>
+<VARIABLE>Dunes</VARIABLE>
+<VARIABLE>Erosion</VARIABLE>
+<VARIABLE>Estuaries</VARIABLE>
+<VARIABLE>Fjords</VARIABLE>
+<VARIABLE>Inlets</VARIABLE>
+<VARIABLE>Intertidal Zone</VARIABLE>
+<VARIABLE>Lagoons</VARIABLE>
+<VARIABLE>Local Subsidence Trends</VARIABLE>
+<VARIABLE>Longshore Currents</VARIABLE>
+<VARIABLE>Mangroves</VARIABLE>
+<VARIABLE>Marshes</VARIABLE>
+<VARIABLE>Rocky Coasts</VARIABLE>
+<VARIABLE>Saltwater Intrusion</VARIABLE>
+<VARIABLE>Sea Level Rise</VARIABLE>
+<VARIABLE>Sea Surface Height</VARIABLE>
+<VARIABLE>Sediment Transport</VARIABLE>
+<VARIABLE>Sedimentation</VARIABLE>
+<VARIABLE>Shoals</VARIABLE>
+<VARIABLE>Shoreline Displacement</VARIABLE>
+<VARIABLE>Shorelines</VARIABLE>
+<VARIABLE>Storm Surge</VARIABLE>
+<VARIABLE>Tidal Height</VARIABLE>
+</TERM>
+<TERM value='Marine Biology'>
+<VARIABLE>Fish</VARIABLE>
+<VARIABLE>Marine Birds</VARIABLE>
+<VARIABLE>Marine Habitat</VARIABLE>
+<VARIABLE>Marine Invertebrates</VARIABLE>
+<VARIABLE>Marine Mammals</VARIABLE>
+<VARIABLE>Marine Microbiota</VARIABLE>
+<VARIABLE>Marine Plants</VARIABLE>
+<VARIABLE>Marine Reptiles</VARIABLE>
+</TERM>
+<TERM value='Marine Environment Monitoring'>
+<VARIABLE>Marine Obstructions</VARIABLE>
+</TERM>
+<TERM value='Marine Geophysics'>
+<VARIABLE>Abyssal Hills/plains</VARIABLE>
+<VARIABLE>Benthic Heat Flow</VARIABLE>
+<VARIABLE>Continental Drift</VARIABLE>
+<VARIABLE>Continental Rises/slopes</VARIABLE>
+<VARIABLE>Continental Shelves</VARIABLE>
+<VARIABLE>Fracture Zones</VARIABLE>
+<VARIABLE>Guyots</VARIABLE>
+<VARIABLE>Hydrothermal Vents</VARIABLE>
+<VARIABLE>Island Arcs</VARIABLE>
+<VARIABLE>Magnetic Anomalies</VARIABLE>
+<VARIABLE>Marine Gravity Field</VARIABLE>
+<VARIABLE>Marine Magnetics</VARIABLE>
+<VARIABLE>Mid-ocean Ridges</VARIABLE>
+<VARIABLE>Ocean Plateaus/ridges</VARIABLE>
+<VARIABLE>Rift Valleys</VARIABLE>
+<VARIABLE>Seafloor Spreading</VARIABLE>
+<VARIABLE>Seamounts</VARIABLE>
+<VARIABLE>Subduction</VARIABLE>
+<VARIABLE>Submarine Canyons</VARIABLE>
+<VARIABLE>Trenches</VARIABLE>
+</TERM>
+<TERM value='Marine Sediments'>
+<VARIABLE>Bioturbation</VARIABLE>
+<VARIABLE>Carbonate Sediments</VARIABLE>
+<VARIABLE>Diagenesis</VARIABLE>
+<VARIABLE>Evaporites</VARIABLE>
+<VARIABLE>Hydrogenous Sediments</VARIABLE>
+<VARIABLE>Particle Flux</VARIABLE>
+<VARIABLE>Sediment Characteristics</VARIABLE>
+<VARIABLE>Sediment Composition</VARIABLE>
+<VARIABLE>Sediment Grain Size</VARIABLE>
+<VARIABLE>Sediment Transport</VARIABLE>
+<VARIABLE>Sedimentation</VARIABLE>
+<VARIABLE>Siliceous Sediments</VARIABLE>
+<VARIABLE>Stratigraphic Sequence</VARIABLE>
+<VARIABLE>Suspended Solids</VARIABLE>
+<VARIABLE>Terrigenous Sediments</VARIABLE>
+<VARIABLE>Turbidity</VARIABLE>
+</TERM>
+<TERM value='Ocean Acoustics'>
+<VARIABLE>Acoustic Attenuation/transmission</VARIABLE>
+<VARIABLE>Acoustic Frequency</VARIABLE>
+<VARIABLE>Acoustic Reflectivity</VARIABLE>
+<VARIABLE>Acoustic Scattering</VARIABLE>
+<VARIABLE>Acoustic Tomography</VARIABLE>
+<VARIABLE>Acoustic Velocity</VARIABLE>
+<VARIABLE>Ambient Noise</VARIABLE>
+</TERM>
+<TERM value='Ocean Chemistry'>
+<VARIABLE>Alkalinity</VARIABLE>
+<VARIABLE>Ammonia</VARIABLE>
+<VARIABLE>Biogeochemical Cycles</VARIABLE>
+<VARIABLE>Biomedical Chemicals</VARIABLE>
+<VARIABLE>Carbon</VARIABLE>
+<VARIABLE>Carbon Dioxide</VARIABLE>
+<VARIABLE>Carbonate</VARIABLE>
+<VARIABLE>Chlorophyll</VARIABLE>
+<VARIABLE>Dissolved Gases</VARIABLE>
+<VARIABLE>Dissolved Solids</VARIABLE>
+<VARIABLE>Hydrocarbons</VARIABLE>
+<VARIABLE>Inorganic Carbon</VARIABLE>
+<VARIABLE>Inorganic Matter</VARIABLE>
+<VARIABLE>Nitrate</VARIABLE>
+<VARIABLE>Nitric Acid</VARIABLE>
+<VARIABLE>Nitrite</VARIABLE>
+<VARIABLE>Nitrogen</VARIABLE>
+<VARIABLE>Nitrogen Dioxide</VARIABLE>
+<VARIABLE>Nitrous Oxide</VARIABLE>
+<VARIABLE>Nutrients</VARIABLE>
+<VARIABLE>Ocean Tracers</VARIABLE>
+<VARIABLE>Organic Carbon</VARIABLE>
+<VARIABLE>Organic Matter</VARIABLE>
+<VARIABLE>Oxygen</VARIABLE>
+<VARIABLE>Ph</VARIABLE>
+<VARIABLE>Phosphate</VARIABLE>
+<VARIABLE>Pigments</VARIABLE>
+<VARIABLE>Radiocarbon</VARIABLE>
+<VARIABLE>Radionuclides</VARIABLE>
+<VARIABLE>Silicate</VARIABLE>
+<VARIABLE>Stable Isotopes</VARIABLE>
+<VARIABLE>Suspended Solids</VARIABLE>
+<VARIABLE>Trace Elements</VARIABLE>
+</TERM>
+<TERM value='Ocean Circulation'>
+<VARIABLE>Advection</VARIABLE>
+<VARIABLE>Buoy Position</VARIABLE>
+<VARIABLE>Convection</VARIABLE>
+<VARIABLE>Diffusion</VARIABLE>
+<VARIABLE>Eddies</VARIABLE>
+<VARIABLE>Fresh Water Flux</VARIABLE>
+<VARIABLE>Fronts</VARIABLE>
+<VARIABLE>Gyres</VARIABLE>
+<VARIABLE>Ocean Currents</VARIABLE>
+<VARIABLE>Ocean Mixed Layer</VARIABLE>
+<VARIABLE>Thermohaline Circulation</VARIABLE>
+<VARIABLE>Turbulence</VARIABLE>
+<VARIABLE>Upwelling</VARIABLE>
+<VARIABLE>Vorticity</VARIABLE>
+<VARIABLE>Water Masses</VARIABLE>
+<VARIABLE>Wind-driven Circulation</VARIABLE>
+</TERM>
+<TERM value='Ocean Heat Budget'>
+<VARIABLE>Advection</VARIABLE>
+<VARIABLE>Bowen Ratio</VARIABLE>
+<VARIABLE>Condensation</VARIABLE>
+<VARIABLE>Conduction</VARIABLE>
+<VARIABLE>Convection</VARIABLE>
+<VARIABLE>Diffusion</VARIABLE>
+<VARIABLE>Evaporation</VARIABLE>
+<VARIABLE>Heat Flux</VARIABLE>
+<VARIABLE>Heating Rate</VARIABLE>
+<VARIABLE>Longwave Radiation</VARIABLE>
+<VARIABLE>Reflectance</VARIABLE>
+<VARIABLE>Shortwave Radiation</VARIABLE>
+</TERM>
+<TERM value='Ocean Optics'>
+<VARIABLE>Absorption</VARIABLE>
+<VARIABLE>Aphotic/photic Zone</VARIABLE>
+<VARIABLE>Attenuation/transmission</VARIABLE>
+<VARIABLE>Bioluminescence</VARIABLE>
+<VARIABLE>Extinction Coefficients</VARIABLE>
+<VARIABLE>Fluorescence</VARIABLE>
+<VARIABLE>Gelbstoff</VARIABLE>
+<VARIABLE>Irradiance</VARIABLE>
+<VARIABLE>Ocean Color</VARIABLE>
+<VARIABLE>Optical Depth</VARIABLE>
+<VARIABLE>Photosynthetically Active Radiation</VARIABLE>
+<VARIABLE>Radiance</VARIABLE>
+<VARIABLE>Reflectance</VARIABLE>
+<VARIABLE>Scattering</VARIABLE>
+<VARIABLE>Secchi Depth</VARIABLE>
+<VARIABLE>Turbidity</VARIABLE>
+<VARIABLE>Water-leaving Radiance</VARIABLE>
+</TERM>
+<TERM value='Ocean Pressure'>
+<VARIABLE>Sea Level Pressure</VARIABLE>
+<VARIABLE>Water Pressure</VARIABLE>
+</TERM>
+<TERM value='Ocean Temperature'>
+<VARIABLE>Ocean Mixed Layer</VARIABLE>
+<VARIABLE>Potential Temperature</VARIABLE>
+<VARIABLE>Sea Surface Temperature</VARIABLE>
+<VARIABLE>Thermocline</VARIABLE>
+<VARIABLE>Water Temperature</VARIABLE>
+</TERM>
+<TERM value='Ocean Waves'>
+<VARIABLE>Fetch</VARIABLE>
+<VARIABLE>Internal Waves</VARIABLE>
+<VARIABLE>Sea State</VARIABLE>
+<VARIABLE>Seiches</VARIABLE>
+<VARIABLE>Significant Wave Height</VARIABLE>
+<VARIABLE>Storm Surge</VARIABLE>
+<VARIABLE>Surf Beat</VARIABLE>
+<VARIABLE>Swells</VARIABLE>
+<VARIABLE>Tsunamis</VARIABLE>
+<VARIABLE>Wave Frequency</VARIABLE>
+<VARIABLE>Wave Height</VARIABLE>
+<VARIABLE>Wave Length</VARIABLE>
+<VARIABLE>Wave Period</VARIABLE>
+<VARIABLE>Wave Spectra</VARIABLE>
+<VARIABLE>Wave Speed/direction</VARIABLE>
+<VARIABLE>Wave Types</VARIABLE>
+<VARIABLE>Wind Waves</VARIABLE>
+</TERM>
+<TERM value='Ocean Winds'>
+<VARIABLE>Convergence/divergence</VARIABLE>
+<VARIABLE>Surface Winds</VARIABLE>
+<VARIABLE>Turbulence</VARIABLE>
+<VARIABLE>Vertical Wind Motion</VARIABLE>
+<VARIABLE>Vorticity</VARIABLE>
+<VARIABLE>Wind Chill</VARIABLE>
+<VARIABLE>Wind Shear</VARIABLE>
+<VARIABLE>Wind Stress</VARIABLE>
+</TERM>
+<TERM value='Salinity/density'>
+<VARIABLE>Conductivity</VARIABLE>
+<VARIABLE>Density</VARIABLE>
+<VARIABLE>Desalinization</VARIABLE>
+<VARIABLE>Halocline</VARIABLE>
+<VARIABLE>Potential Density</VARIABLE>
+<VARIABLE>Pycnocline</VARIABLE>
+<VARIABLE>Salinity</VARIABLE>
+<VARIABLE>Salt Transport</VARIABLE>
+</TERM>
+<TERM value='Sea Ice'>
+<VARIABLE>Heat Flux</VARIABLE>
+<VARIABLE>Ice Deformation</VARIABLE>
+<VARIABLE>Ice Depth/thickness</VARIABLE>
+<VARIABLE>Ice Edges</VARIABLE>
+<VARIABLE>Ice Extent</VARIABLE>
+<VARIABLE>Ice Floes</VARIABLE>
+<VARIABLE>Ice Growth/melt</VARIABLE>
+<VARIABLE>Ice Roughness</VARIABLE>
+<VARIABLE>Ice Temperature</VARIABLE>
+<VARIABLE>Ice Types</VARIABLE>
+<VARIABLE>Icebergs</VARIABLE>
+<VARIABLE>Leads</VARIABLE>
+<VARIABLE>Pack Ice</VARIABLE>
+<VARIABLE>Polynyas</VARIABLE>
+<VARIABLE>Reflectance</VARIABLE>
+<VARIABLE>Sea Ice Age</VARIABLE>
+<VARIABLE>Sea Ice Concentration</VARIABLE>
+<VARIABLE>Sea Ice Motion</VARIABLE>
+</TERM>
+<TERM value='Sea Surface Height'>
+<VARIABLE>Sea Surface Height</VARIABLE>
+<VARIABLE>Sea Surface Slope</VARIABLE>
+</TERM>
+<TERM value='Tides'>
+<VARIABLE>Storm Surge</VARIABLE>
+<VARIABLE>Tidal Components</VARIABLE>
+<VARIABLE>Tidal Currents</VARIABLE>
+<VARIABLE>Tidal Height</VARIABLE>
+<VARIABLE>Tidal Range</VARIABLE>
+</TERM>
+<TERM value='Water Quality'>
+<VARIABLE>Ocean Contaminants</VARIABLE>
+</TERM>
+</TOPIC>
+<TOPIC value='Paleoclimate'>
+<TERM value='Ice Core Records'>
+<VARIABLE>Carbon Dioxide</VARIABLE>
+<VARIABLE>Ice Core Air Bubbles</VARIABLE>
+<VARIABLE>Ions</VARIABLE>
+<VARIABLE>Isotopes</VARIABLE>
+<VARIABLE>Methane</VARIABLE>
+<VARIABLE>Nitrous Oxide</VARIABLE>
+<VARIABLE>Particulate Matter</VARIABLE>
+<VARIABLE>Volcanic Deposits</VARIABLE>
+</TERM>
+<TERM value='Land Records'>
+<VARIABLE>Cave Deposits</VARIABLE>
+<VARIABLE>Glaciation</VARIABLE>
+<VARIABLE>Isotopes</VARIABLE>
+<VARIABLE>Loess</VARIABLE>
+<VARIABLE>Macrofossils</VARIABLE>
+<VARIABLE>Microfossils</VARIABLE>
+<VARIABLE>Paleomagnetic Data</VARIABLE>
+<VARIABLE>Paleosols</VARIABLE>
+<VARIABLE>Paleovegetation</VARIABLE>
+<VARIABLE>Pollen</VARIABLE>
+<VARIABLE>Radiocarbon</VARIABLE>
+<VARIABLE>Sediments</VARIABLE>
+<VARIABLE>Stratigraphic Sequence</VARIABLE>
+<VARIABLE>Tree Rings</VARIABLE>
+<VARIABLE>Volcanic Deposits</VARIABLE>
+</TERM>
+<TERM value='Ocean/lake Records'>
+<VARIABLE>Coral Deposits</VARIABLE>
+<VARIABLE>Isotopes</VARIABLE>
+<VARIABLE>Lake Levels</VARIABLE>
+<VARIABLE>Macrofossils</VARIABLE>
+<VARIABLE>Microfossils</VARIABLE>
+<VARIABLE>Oxygen Isotopes</VARIABLE>
+<VARIABLE>Paleomagnetic Data</VARIABLE>
+<VARIABLE>Radiocarbon</VARIABLE>
+<VARIABLE>Sediments</VARIABLE>
+<VARIABLE>Stratigraphic Sequence</VARIABLE>
+<VARIABLE>Varve Deposits</VARIABLE>
+</TERM>
+</TOPIC>
+<TOPIC value='Radiance Or Imagery'>
+<TERM value='Gamma Ray'>
+<VARIABLE>Gamma Ray</VARIABLE>
+</TERM>
+<TERM value='Infrared Wavelengths'>
+<VARIABLE>Brightness Temperature</VARIABLE>
+<VARIABLE>Infrared Flux</VARIABLE>
+<VARIABLE>Infrared Imagery</VARIABLE>
+<VARIABLE>Infrared Radiance</VARIABLE>
+<VARIABLE>Reflected Infrared</VARIABLE>
+<VARIABLE>Sensor Counts</VARIABLE>
+<VARIABLE>Thermal Infrared</VARIABLE>
+</TERM>
+<TERM value='Microwave'>
+<VARIABLE>Antenna Temperature</VARIABLE>
+<VARIABLE>Brightness Temperature</VARIABLE>
+<VARIABLE>Microwave Imagery</VARIABLE>
+<VARIABLE>Microwave Radiance</VARIABLE>
+<VARIABLE>Sensor Counts</VARIABLE>
+</TERM>
+<TERM value='Platform Characteristics'>
+<VARIABLE>Airspeed/ground Speed</VARIABLE>
+<VARIABLE>Attitude Characteristics</VARIABLE>
+<VARIABLE>Line Of Sight Velocity</VARIABLE>
+<VARIABLE>Orbital Characteristics</VARIABLE>
+<VARIABLE>Viewing Geometry</VARIABLE>
+</TERM>
+<TERM value='Radar'>
+<VARIABLE>Doppler Speed</VARIABLE>
+<VARIABLE>Radar Backscatter</VARIABLE>
+<VARIABLE>Radar Cross-section</VARIABLE>
+<VARIABLE>Radar Imagery</VARIABLE>
+<VARIABLE>Radar Reflectivity</VARIABLE>
+<VARIABLE>Return Power</VARIABLE>
+<VARIABLE>Sensor Counts</VARIABLE>
+<VARIABLE>Sigma Naught</VARIABLE>
+</TERM>
+<TERM value='Radio Wave'>
+<VARIABLE>Radio Wave</VARIABLE>
+</TERM>
+<TERM value='Sensor Characteristics'>
+<VARIABLE>Dome Temperature</VARIABLE>
+<VARIABLE>Phase And Amplitude</VARIABLE>
+<VARIABLE>Sink Temperature</VARIABLE>
+<VARIABLE>Total Pressure</VARIABLE>
+<VARIABLE>Total Temperature</VARIABLE>
+<VARIABLE>Ultraviolet Sensor Temperature</VARIABLE>
+<VARIABLE>Viewing Geometry</VARIABLE>
+</TERM>
+<TERM value='Ultraviolet Wavelengths'>
+<VARIABLE>Sensor Counts</VARIABLE>
+<VARIABLE>Ultraviolet Flux</VARIABLE>
+<VARIABLE>Ultraviolet Radiance</VARIABLE>
+</TERM>
+<TERM value='Visible Wavelengths'>
+<VARIABLE>Sensor Counts</VARIABLE>
+<VARIABLE>Visible Flux</VARIABLE>
+<VARIABLE>Visible Imagery</VARIABLE>
+<VARIABLE>Visible Radiance</VARIABLE>
+</TERM>
+<TERM value='X-ray'>
+<VARIABLE>X-ray</VARIABLE>
+</TERM>
+</TOPIC>
+<TOPIC value='Solar-terrestrial Interactions'>
+<TERM value='Ionosphere/magnetosphere Particles'>
+<VARIABLE>Alpha Particles</VARIABLE>
+<VARIABLE>Aurorae</VARIABLE>
+<VARIABLE>Differential Flux</VARIABLE>
+<VARIABLE>Electron Flux</VARIABLE>
+<VARIABLE>Energetic Particles</VARIABLE>
+<VARIABLE>Energy Deposition</VARIABLE>
+<VARIABLE>Heavy Ions</VARIABLE>
+<VARIABLE>Particle Composition</VARIABLE>
+<VARIABLE>Particle Density</VARIABLE>
+<VARIABLE>Particle Distribution Functions</VARIABLE>
+<VARIABLE>Particle Flux</VARIABLE>
+<VARIABLE>Particle Speed</VARIABLE>
+<VARIABLE>Particle Temperature</VARIABLE>
+<VARIABLE>Proton Flux</VARIABLE>
+<VARIABLE>Total Electron Content</VARIABLE>
+</TERM>
+<TERM value='Solar Activity'>
+<VARIABLE>Corona Holes</VARIABLE>
+<VARIABLE>Coronal Properties</VARIABLE>
+<VARIABLE>Cosmic Rays</VARIABLE>
+<VARIABLE>Filaments</VARIABLE>
+<VARIABLE>Solar Active Regions</VARIABLE>
+<VARIABLE>Solar Events</VARIABLE>
+<VARIABLE>Solar Flares</VARIABLE>
+<VARIABLE>Solar Imagery</VARIABLE>
+<VARIABLE>Solar Irradiance</VARIABLE>
+<VARIABLE>Solar Oscillations</VARIABLE>
+<VARIABLE>Solar Prominences</VARIABLE>
+<VARIABLE>Solar Radio Waves</VARIABLE>
+<VARIABLE>Solar Ultraviolet</VARIABLE>
+<VARIABLE>Solar X-rays</VARIABLE>
+<VARIABLE>Sunspots</VARIABLE>
+<VARIABLE>Synoptic Maps</VARIABLE>
+<VARIABLE>Velocity Fields</VARIABLE>
+</TERM>
+</TOPIC>
+<TOPIC value='Solid Earth'>
+<TERM value='Geochemistry'>
+<VARIABLE>Biogeochemistry</VARIABLE>
+<VARIABLE>Chemical Weathering</VARIABLE>
+<VARIABLE>Fixation</VARIABLE>
+<VARIABLE>Hydration</VARIABLE>
+<VARIABLE>Ion Exchange</VARIABLE>
+<VARIABLE>Isotopes</VARIABLE>
+<VARIABLE>Major Elements</VARIABLE>
+<VARIABLE>Minor Elements</VARIABLE>
+<VARIABLE>Oxidation/reduction</VARIABLE>
+<VARIABLE>Trace Elements</VARIABLE>
+</TERM>
+<TERM value='Geodetics/gravity'>
+<VARIABLE>Control Surveys</VARIABLE>
+<VARIABLE>Crustal Motion</VARIABLE>
+<VARIABLE>Geoid Properties</VARIABLE>
+<VARIABLE>Gravitational Field</VARIABLE>
+<VARIABLE>Gravity</VARIABLE>
+<VARIABLE>Ocean Crust Deformation</VARIABLE>
+<VARIABLE>Polar Motion</VARIABLE>
+<VARIABLE>Reference Systems</VARIABLE>
+<VARIABLE>Rotational Variations</VARIABLE>
+<VARIABLE>Satellite Orbits</VARIABLE>
+</TERM>
+<TERM value='Geomagnetism'>
+<VARIABLE>Electrical Field</VARIABLE>
+<VARIABLE>Geomagnetic Forecasts</VARIABLE>
+<VARIABLE>Geomagnetic Indices</VARIABLE>
+<VARIABLE>Geomagnetic Induction</VARIABLE>
+<VARIABLE>Magnetic Anomalies</VARIABLE>
+<VARIABLE>Magnetic Declination</VARIABLE>
+<VARIABLE>Magnetic Field</VARIABLE>
+<VARIABLE>Magnetic Inclination</VARIABLE>
+<VARIABLE>Magnetic Intensity</VARIABLE>
+<VARIABLE>Paleomagnetism</VARIABLE>
+<VARIABLE>Reference Fields</VARIABLE>
+</TERM>
+<TERM value='Geomorphology'>
+<VARIABLE>Coastal Landforms/processes</VARIABLE>
+<VARIABLE>Eolian Landforms/processes</VARIABLE>
+<VARIABLE>Fluvial Landforms/processes</VARIABLE>
+<VARIABLE>Glacial Landforms/processes</VARIABLE>
+<VARIABLE>Karst Landforms/processes</VARIABLE>
+<VARIABLE>Tectonic Landforms/processes</VARIABLE>
+</TERM>
+<TERM value='Geothermal'>
+<VARIABLE>Geothermal Energy</VARIABLE>
+<VARIABLE>Geothermal Temperature</VARIABLE>
+</TERM>
+<TERM value='Natural Resources'>
+<VARIABLE>Coal</VARIABLE>
+<VARIABLE>Gas Hydrates</VARIABLE>
+<VARIABLE>Metals</VARIABLE>
+<VARIABLE>Natural Gas</VARIABLE>
+<VARIABLE>Non-metallic Minerals</VARIABLE>
+<VARIABLE>Petroleum</VARIABLE>
+<VARIABLE>Radioactive Elements</VARIABLE>
+<VARIABLE>Reclamation/revegetation/restoration</VARIABLE>
+</TERM>
+<TERM value='Rocks/minerals'>
+<VARIABLE>Age Determinations</VARIABLE>
+<VARIABLE>Bedrock Lithology</VARIABLE>
+<VARIABLE>Igneous Rocks</VARIABLE>
+<VARIABLE>Metamorphic Rocks</VARIABLE>
+<VARIABLE>Meteorites</VARIABLE>
+<VARIABLE>Mineraloids</VARIABLE>
+<VARIABLE>Minerals/crystals</VARIABLE>
+<VARIABLE>Sedimentary Rocks</VARIABLE>
+<VARIABLE>Sediments</VARIABLE>
+</TERM>
+<TERM value='Seismology'>
+<VARIABLE>Earthquake Dynamics</VARIABLE>
+<VARIABLE>Earthquake Occurrences</VARIABLE>
+<VARIABLE>Earthquake Predictions</VARIABLE>
+<VARIABLE>Seismic Body Waves</VARIABLE>
+<VARIABLE>Seismic Profile</VARIABLE>
+<VARIABLE>Seismic Surface Waves</VARIABLE>
+</TERM>
+<TERM value='Tectonics'>
+<VARIABLE>Continental Tectonics</VARIABLE>
+<VARIABLE>Convergence/divergence</VARIABLE>
+<VARIABLE>Core Processes</VARIABLE>
+<VARIABLE>Crustal Motion</VARIABLE>
+<VARIABLE>Faults</VARIABLE>
+<VARIABLE>Folds</VARIABLE>
+<VARIABLE>Isostatic Rebound</VARIABLE>
+<VARIABLE>Neotectonics</VARIABLE>
+<VARIABLE>Strain</VARIABLE>
+<VARIABLE>Stratigraphic Sequence</VARIABLE>
+<VARIABLE>Stress</VARIABLE>
+</TERM>
+<TERM value='Volcanoes'>
+<VARIABLE>Eruption Dynamics</VARIABLE>
+<VARIABLE>Lava</VARIABLE>
+<VARIABLE>Magma</VARIABLE>
+<VARIABLE>Pyroclastics</VARIABLE>
+<VARIABLE>Volcanic Ash/dust</VARIABLE>
+<VARIABLE>Volcanic Gases</VARIABLE>
+</TERM>
+</TOPIC>
+</GCMD_KEYWORDS>

@@ -140,6 +140,9 @@
         <singlefile target="$INSTALL_PATH/web/geoserver.war" src="../geoserver/target/geoserver.war"
         override="true"/>
       -->
+
+       <singlefile target="$INSTALL_PATH/web/GCMDFinder.war" src="../gcmdfinder/GCMDFinder.war" override="true"/>
+			 <fileset dir="../gcmdfinder/COPY_CONTENTS_TO_ROOT" targetdir="$INSTALL_PATH/COPY_CONTENTS_TO_ROOT"/>
     </pack>
 
 
