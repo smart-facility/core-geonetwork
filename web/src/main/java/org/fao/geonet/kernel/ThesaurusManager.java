@@ -239,7 +239,7 @@ public class ThesaurusManager implements ThesaurusFinder {
 							String uuid = StringUtils.substringBefore(aRdfDataFile,".rdf");
 							try {
 								FileOutputStream outputRdfStream = new FileOutputStream(outputRdf);
-								getRegisterMetadataAsRdf(uuid, outputRdfStream);					
+								getRegisterMetadataAsRdf(uuid, outputRdfStream, true);					
 								outputRdfStream.close();
 							} catch (Exception e) {
 								Log.error(Geonet.THESAURUS_MAN, "Register thesaurus "+aRdfDataFile+" could not be read/converted from ISO19135 record in catalog - skipping");
@@ -268,8 +268,10 @@ public class ThesaurusManager implements ThesaurusFinder {
 	 * 
 	 * @param uuid Uuid of register (ISO19135) metadata record describing thesaurus
 	 * @param os OutputStream to write rdf to from XSLT conversion
+	 * @param startUp if true then extract metadata without permissions - used
+	 * on startup of catalogue
 	 */
-	private void getRegisterMetadataAsRdf(String uuid, OutputStream os) throws Exception {
+	private void getRegisterMetadataAsRdf(String uuid, OutputStream os, boolean startUp) throws Exception {
 
 
 		Dbms dbms = null;
@@ -278,7 +280,13 @@ public class ThesaurusManager implements ThesaurusFinder {
 			dbms = (Dbms) rm.openDirect(Geonet.Res.MAIN_DB);
 
 			String id = dm.getMetadataId(dbms, uuid);
-			Element md = dm.getMetadata(dbms, id);
+			Element md;
+			if (startUp) {
+				// if startup then don't worry about permissions
+				md = dm.getMetadataIgnorePermissions(dbms, id);
+			} else {
+				md = dm.getMetadata(dbms, id);
+			}
 			Processor.detachXLink(md);
 			MdInfo mdInfo = dm.getMetadataInfo(dbms, id);
 			Element env = Lib.prepareTransformEnv(mdInfo.uuid, mdInfo.changeDate, "", dm.getSiteURL(), "");
@@ -421,7 +429,7 @@ public class ThesaurusManager implements ThesaurusFinder {
 
 		try {
 			FileOutputStream outputRdfStream = new FileOutputStream(outputRdf);
-			getRegisterMetadataAsRdf(uuid, outputRdfStream);
+			getRegisterMetadataAsRdf(uuid, outputRdfStream, false);
 			outputRdfStream.close();
 		} catch (Exception e) {
 			Log.error(Geonet.THESAURUS_MAN, "Register thesaurus "+aRdfDataFile+" could not be read/converted from ISO19135 record in catalog - skipping");

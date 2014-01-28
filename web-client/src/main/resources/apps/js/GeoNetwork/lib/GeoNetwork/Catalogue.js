@@ -273,6 +273,7 @@ GeoNetwork.Catalogue = Ext.extend(Ext.util.Observable, {
             mdMEF: serviceUrl + 'mef.export',
             mdXMLGet: serviceUrl + 'xml.metadata.get',
             mdRDFGet: serviceUrl + 'rdf.metadata.get',
+            mdCreateThesaurus: serviceUrl + 'metadata.create.thesaurus.form',
             mdXMLGet19139: serviceUrl + 'xml_iso19139',
             mdXMLGetDC: serviceUrl + 'xml_dublin-core',
             mdXMLGetFGDC: serviceUrl + 'xml_fgdc-std',
@@ -1364,6 +1365,13 @@ GeoNetwork.Catalogue = Ext.extend(Ext.util.Observable, {
     metadataCategory: function(id){
         var url = this.services.mdCategory + "?id=" + id;
         this.modalAction(OpenLayers.i18n('setCategories'), url);
+    },
+    /** api: method[createThesaurus]
+     *  Metadata admin form for categories
+     */
+    metadataCreateThesaurus: function(uuid){
+        var url = this.services.mdCreateThesaurus + "?uuid=" + uuid;
+        this.modalAction(OpenLayers.i18n('createThesaurus'), url);
     },
     /** api: method[metadataPrepareDownload]
      *  Prepare download metadata popup

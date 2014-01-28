@@ -30,7 +30,7 @@ After you have cloned the repository, this file can be found at:
 clone-directory-name/web/src/main/webapp/WEB-INF/anzmest-config-overrides.xml
 
 You can review the differences between ANZMEST-2.10.x and GeoNetwork 2.10.x 
-in the github interface at https://github.com/anzmest/core-geonetwork.git
+in the github interface at https://github.com/anzmest/core-geonetwork/compare/geonetwork:2.10.x...2.10.x
 
 Features
 --------

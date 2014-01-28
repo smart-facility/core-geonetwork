@@ -66,6 +66,7 @@ GeoNetwork.MetadataMenu = Ext.extend(Ext.menu.Menu, {
     versioningAction: undefined,
     adminAction: undefined,
     categoryAction: undefined,
+    createThesaurusAction: undefined,
     viewAction: undefined,
     printAction: undefined,
     viewXMLAction: undefined,
@@ -166,6 +167,14 @@ GeoNetwork.MetadataMenu = Ext.extend(Ext.menu.Menu, {
              },
              scope: this
          });
+         this.createThesaurusAction = new Ext.Action({
+            text: OpenLayers.i18n('createThesaurus'),
+            handler: function() {
+                var id = this.record.get('uuid');
+                this.catalogue.metadataCreateThesaurus(id);
+            },
+            scope: this
+         });
 
         this.adminMenuSeparator = new Ext.menu.Separator();
         
@@ -265,7 +274,7 @@ GeoNetwork.MetadataMenu = Ext.extend(Ext.menu.Menu, {
             this.otherActions = new Ext.menu.Item({
                 text: OpenLayers.i18n('otherActions'),
                 menu: {
-                    items: [this.duplicateAction, this.createChildAction, this.adminAction, this.statusAction, this.versioningAction, this.categoryAction]
+                    items: [this.duplicateAction, this.createChildAction, this.adminAction, this.statusAction, this.versioningAction, this.categoryAction, this.createThesaurusAction]
                 }
             });
         }
@@ -339,6 +348,15 @@ GeoNetwork.MetadataMenu = Ext.extend(Ext.menu.Menu, {
         this.statusAction.setDisabled(!isEditable && !isHarvested);
         this.versioningAction.setDisabled((!isEditable && !isHarvested) || isReadOnly);
         this.categoryAction.setDisabled((!isEditable && !isHarvested) || isReadOnly);
+
+				// action for iso19135 records and Administrator and not read only cat 
+				var isAdmin = this.catalogue.identifiedUser && this.catalogue.identifiedUser.role === 'Administrator';
+				if (this.record.get('schema') == 'iso19135' && isAdmin && !isReadOnly) {
+					this.createThesaurusAction.show();
+			  } else {
+					this.createThesaurusAction.hide();
+				}
+
         this.deleteAction.setDisabled((!isEditable && !isHarvested) || isReadOnly);
         this.duplicateAction.setDisabled(!isEditable || isReadOnly);
         this.createChildAction.setDisabled(!isEditable || isReadOnly);
