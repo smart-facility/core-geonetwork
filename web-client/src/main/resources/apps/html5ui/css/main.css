@@ -1721,10 +1721,6 @@ ul li.tag-cloud a {
 	display: none;
 }
 
-#popular-metadata {
-	padding-left: 25px;
-}
-
 #latest-metadata .md-thumbnail, #popular-metadata .md-thumbnail {
 	width: 30%;
 }
@@ -1751,6 +1747,7 @@ ul li.tag-cloud a {
 
 #latest-metadata, #popular-metadata {
 	min-height: 100px;
+	padding-left: 25px;
 }
 
 #latest-metadata input {
