@@ -1413,4 +1413,5 @@
 	<welcome.text></welcome.text>
 	<tag_label>Tags</tag_label>
 	<map_label>Carte</map_label>
+  <about.text>About this site</about.text>
 </strings>
