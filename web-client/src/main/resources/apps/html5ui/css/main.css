@@ -174,7 +174,7 @@ body {
   width:18%;
 }
 
-#welcome-text {
+#welcome-text,#about-text {
   margin:13px;
   margin-left:30px;
   color:#393939;
