@@ -90,6 +90,11 @@
 					<xsl:attribute name="href"><xsl:value-of
 						select="$baseUrl" />/apps/html5ui/css/gnmetadataview.css</xsl:attribute>
 				</link>
+				<link rel="stylesheet">
+					<xsl:attribute name="href"><xsl:value-of
+						select="$baseUrl" />/apps/html5ui/font-awesome/css/font-awesome.css</xsl:attribute>
+				</link>
+
 
 
 				<!--[if lt IE 7]> <link rel="stylesheet"> <xsl:attribute name="href"><xsl:value-of 
@@ -131,16 +136,41 @@
 
 			<div class="grey">
 					<a href="javascript:window.print();" id="printer-button">Print</a>
-					<!--
-					<a id="feedback-site-button" target="_blank" href="https://www.pdok.nl/nl/over-pdok/contact-met-pdok/contactformulier">Feedback</a>
-					-->
 					<a id="rss-button" href="/geonetwork/srv/eng/rss.latest">RSS</a>
 					<span class="user-button">
-						<a id="user-button" href="javascript:toggleLogin();">Log In</a>
-						<label id="username_label"></label>
-						<label id="name_label"></label>
-						<label id="profile_label"></label>
-						<a href="javascript:catalogue.admin();" id="administration_button" style="display:none">Administration</a>
+						<a id="user-button">
+							<xsl:choose>
+								<xsl:when test="string(/root/gui/session/userId)=''">
+								  <xsl:attribute name="href">javascript:toggleLogin();</xsl:attribute>
+									<xsl:value-of select="/root/gui/strings/signIn"/>
+							  </xsl:when>
+								<xsl:otherwise>
+								  <xsl:attribute name="href">javascript:app.loginApp.logout();</xsl:attribute>
+									<xsl:value-of select="/root/gui/strings/signOut"/>
+							  </xsl:otherwise>
+						  </xsl:choose>
+						</a>
+						<label id="username_label">
+							<xsl:if test="string(/root/gui/session/userId)!=''">
+								<xsl:value-of select="concat(/root/gui/session/name,' ')"/>
+							</xsl:if>
+						</label>
+						<label id="name_label">
+							<xsl:if test="string(/root/gui/session/userId)!=''">
+								<xsl:value-of select="concat(/root/gui/session/surname,' ')"/>
+							</xsl:if>
+						</label>
+						<label id="profile_label">
+							<xsl:if test="string(/root/gui/session/userId)!=''">
+								<xsl:value-of select="concat('(',/root/gui/session/profile,')')"/>	
+							</xsl:if>
+						</label>
+						<a href="javascript:catalogue.admin();" id="administration_button">
+							<xsl:if test="string(/root/gui/session/userId)=''">
+								<xsl:attribute name="style">display:none;</xsl:attribute>
+							</xsl:if>
+							<xsl:value-of select="/root/gui/strings/admin"/>
+						</a>
 						<script>function false_(){ return false; }</script>
 						<form id="login-form" style="display: none;" onsubmit="return false_();">
 							<div id="login_div">
@@ -153,15 +183,21 @@
 						</form>
 				  </span>
 					<a id="help-tab" target="_blank" href="/geonetwork/docs/eng/users">Help</a>
-					<!--
-					<a id="contact-tab" target="_blank" href="https://www.pdok.nl/nl/over-pdok/contact-met-pdok">Contact</a>
-					-->
-					<div style="display:none;" id="lang-form"></div>
+					<a id="lang-button" href="javascript:toggle('lang-form');">
+            <xsl:for-each select="/root/gui/config/languages/*">
+              <xsl:variable name="lang" select="name(.)"/>
+              <xsl:if test="/root/gui/language=$lang">
+                <span id="current-lang"><xsl:value-of select="/root/gui/strings/*[name(.)=$lang]"/></span>&#160;<i class="fa fa-angle-double-down"></i>
+              </xsl:if>
+            </xsl:for-each>
+          </a>
+					<div id="lang-form" style="display:none;"></div>
 			</div>
 				
       <div id="page-container">  
 				<div id="container">
 					<div id="header">
+					  <div id="logo"></div>
 						<header class="wrapper clearfix">
 							<div style="width: 100%; margin: 0 auto;">
 								<nav id="nav">
@@ -182,7 +218,7 @@
 											</a>
 										</li>
 										<li>
-											<a id="about-tab" href="http://geonetwork-opensource.org/" target="about">
+											<a id="about-tab" href="javascript:showAbout();">
 												<xsl:value-of select="/root/gui/strings/about" />
 											</a>
 										</li>
@@ -213,7 +249,7 @@
                                     onclick="Ext.getCmp('advanced-search-options-content-form').fireEvent('search');"
                                     onmouseover="Ext.get(this).addClass('hover');"
                                     onmouseout="Ext.get(this).removeClass('hover');"
-                                    id="search-submit" class="form-submit">
+                                    id="search-submit" class="form-submit" value="&#xf002;">
                                 </input>
                                 <div class="form-dummy">
                                     <span><xsl:value-of select="/root/gui/strings/dummySearch" /></span>
@@ -223,12 +259,10 @@
                                 </div>
                                 
                                 <div id="show-advanced" onclick="showAdvancedSearch()">
-                                    <span class="button">&#160;</span>
-                                    <span><xsl:value-of select="/root/gui/strings/advancedOptions.show" /></span>
+                                    <span class="button"><xsl:value-of select="/root/gui/strings/advancedOptions.show" />&#160;<i class="fa fa-angle-double-down fa-2x show-advanced-icon"></i></span>
                                 </div>
                                 <div id="hide-advanced" onclick="hideAdvancedSearch(true)" style="display: none;">
-                                    <span class="button">&#160;</span>
-                                    <span><xsl:value-of select="/root/gui/strings/advancedOptions.hide" /></span>
+                                    <span class="button"><xsl:value-of select="/root/gui/strings/advancedOptions.hide" />&#160;<i class="fa fa-angle-double-up fa-2x hide-advanced-icon"></i></span>
                                 </div>
                                 <div id="advanced-search-options" >
                                     <div id="advanced-search-options-content"></div>
@@ -238,20 +272,34 @@
 					
 
 	                    <div id="browser">
-	                    	<div id="welcome-text">
-	                      	<xsl:copy-of select="/root/gui/strings/welcome.text"/>
-												</div>
-												<div style="display:none;">
-	                        <a href="javascript:toggle('cloud-tag')" id="tag-cloud-button"> <xsl:value-of select="/root/gui/strings/tag_label" /></a>
-	                        <div id="cloud-tag" style="display:none;"></div>
-	                        <section>
-	                            <div id="latest-metadata"><header>
-                                        <h1><span><xsl:value-of select="/root/gui/strings/latestDatasets" /></span></h1></header></div>
-	                            <div id="popular-metadata"><header>
-                                        <h1><span><xsl:value-of select="/root/gui/strings/popularDatasets" /></span></h1></header></div>
-	                        </section>
-												</div>
-	                    </div>
+                        <aside class="tag-aside">
+	                    	  <div id="welcome-text">
+	                      	  <xsl:copy-of select="/root/gui/strings/welcome.text"/>
+												  </div>
+                          <div id="tags">
+                            <header><h1><span><xsl:value-of select="/root/gui/strings/tag_label" /></span></h1></header>
+                            <div id="cloud-tag"></div>
+                          </div>
+                        </aside>
+                        <article>
+                          <div>
+                            <section>
+                              <div id="latest-metadata">
+                                <header><h1><span><xsl:value-of select="/root/gui/strings/latestDatasets" /></span></h1></header>
+                              </div>
+                              <div id="popular-metadata">
+                                <header><h1><span><xsl:value-of select="/root/gui/strings/popularDatasets" /></span></h1></header>
+                              </div>
+                            </section>
+                          </div>
+                        </article>
+                      </div>
+
+	                    <div id="about" style="display:none;">
+	                    	<div id="about-text">
+	                      	<xsl:copy-of select="/root/gui/strings/about.text"/>
+                        </div>
+                      </div>
 	                    
 						<div id="big-map-container" style="display:none;"/>
                        <div id="metadata-info" style="display:none;"/>
@@ -263,9 +311,10 @@
 								<div id="facets-panel-div"></div>
 							</aside>
 							<article>
-								<aside id="secondary-aside" style="display:none;">
-                                    <div id="mini-map"></div>
-                                    <div id="recent-viewed-div"><h1><xsl:value-of select="/root/gui/strings/recentViewed" /></h1></div>
+								<aside id="secondary-aside" class="secondary-aside" style="display:none;">
+									<header><xsl:value-of select="/root/gui/strings/recentlyViewed" /></header>
+                  <div id="recent-viewed-div"></div>
+                  <div id="mini-map"></div>
 								</aside>
 								<header>
 								</header>
@@ -297,6 +346,9 @@
 					<!-- #main -->
 
 					<div id="footer">
+            <xsl:if test="/root/gui/config/html5ui-footer!='true'">
+              <xsl:attribute name="style">display:none;</xsl:attribute>
+            </xsl:if>
 						<footer class="wrapper">
 							<ul>
 								<li style="float:left">

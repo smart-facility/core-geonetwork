@@ -53,6 +53,7 @@ function showBrowse() {
     show("main");
     hide("search-form");
 
+    hideAbout();
     hideSearch();
     hideBigMap();
     hideMetadata();
@@ -69,8 +70,6 @@ function showBrowse() {
     });
 
     Ext.get("browse-tab").addClass("selected");
-
-    //hideAdvancedSearch();
 }
 
 function hideBrowse() {
@@ -79,16 +78,35 @@ function hideBrowse() {
     //hide("popular-metadata");
 }
 
+function showAbout() {
+
+    show("about");
+    hide("search-form");
+
+    hideBrowse();
+    hideSearch();
+    hideBigMap();
+    hideMetadata();
+
+    app.breadcrumb.setCurrent(app.breadcrumb.defaultSteps[2]);
+
+    Ext.each(Ext.query('a', Ext.get("main-navigation").dom), function(a) {
+        Ext.get(a).removeClass("selected");
+    });
+
+    Ext.get("about-tab").addClass("selected");
+}
+
+function hideAbout() {
+    hide("about");
+}
+
 function showBigMap() {
     hideBrowse();
     hideSearch();
-    hideAdvancedSearch();
+    hideAbout();
     hideMetadata();
-    show("search-form");
-
-    // Hide advanced search
-    hide('advanced-search-options');
-    show('show-advanced');
+    hide("search-form");
 
     // show map
     show("big-map-container");
@@ -120,6 +138,7 @@ function hideBigMap() {
 
 function showSearch() {
     hideBrowse();
+    hideAbout();
     hideMetadata();
     hideBigMap();
     show("search-form");
@@ -157,11 +176,11 @@ function hideSearch() {
 
 function showMetadata() {
 
-    show("search-form");
+    hide("search-form");
     hideBrowse();
+    hideAbout();
     hideSearch();
     hideBigMap();
-    hideAdvancedSearch();
 
     show("metadata-info");
 
@@ -299,8 +318,10 @@ function hideAdvancedSearch(updateSearch) {
 
         Ext.getCmp('E_nodynamicdownload').suspendEvents(false);
         Ext.getCmp('E_nodynamicdownload').checked = (
-                Ext.getCmp("o_nodynamicdownload").getValue());
+        Ext.getCmp("o_nodynamicdownload").getValue());
         Ext.getCmp('E_nodynamicdownload').resumeEvents();
+
+				Ext.getCmp('sortByToolBar').setValue("relevance");
 
         GeoNetwork.state.History.resumeEvents();
 
@@ -363,34 +384,6 @@ function copyToClipboard(text) {
 function metadataViewURL(uuid) {
     return window.location.href.match(/(http.*\/.*)\/srv\.*/, '')[1] + '?uuid='
             + uuid;
-}
-
-// the following function is for bookmarking uuids:
-// Chrome doesn't support it, then show permalink
-function bookmarkMetadata(title, uuid) {
-    var url = document.location.href;
-    if (url.indexOf("#") > 0) {
-        url = url.substring(0, url.indexOf("#"));
-    }
-    if (url.indexOf("?") > 0) {
-        url = url.substring(0, url.indexOf("?"));
-    }
-
-    url = url + "|#" + uuid;
-
-    if (window.sidebar) { // firefox
-        window.sidebar.addPanel(title, url, "");
-    } else if (window.opera && window.print) { // opera
-        var elem = document.createElement('a');
-        elem.setAttribute('href', url);
-        elem.setAttribute('title', title);
-        elem.setAttribute('rel', 'sidebar');
-        elem.click();
-    } else if (Ext.isIE || window.external.addFavorite) {
-        window.external.AddFavorite(url, title);
-    } else {
-        // TODO show permalink
-    }
 }
 
 // Validate a WMS or WFS against the Geonovum service
