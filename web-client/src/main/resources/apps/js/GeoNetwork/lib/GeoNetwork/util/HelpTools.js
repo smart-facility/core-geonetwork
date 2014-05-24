@@ -178,13 +178,13 @@ GeoNetwork.util.HelpTools = {
     	var  msgId = "message-container-" + data.id,
 			     mHolder = Ext.get(msgId);
 			if (mHolder) {
-				mHolder.remove(); // click again means remove
+				mHolder.remove(); // click when msg container displayed means remove it
 			} else {
     		var  msgCt = Ext.DomHelper.insertFirst(container, {id: msgId}, true);
     		msgCt.alignTo(document, 't-t');
-        	var m = Ext.DomHelper.append(msgCt, {html:msg}, true);
-        	m.slideIn('t').pause(20).ghost("t", {remove:true});
-        	m.on("click", function(){m.remove();});
+        var m = Ext.DomHelper.append(msgCt, {html:msg}, true);
+        m.slideIn('t').pause(20).ghost("t", {remove: function() {msgCt.remove();}});
+        m.on("click", function(){msgCt.remove();});
     	}
 		}
 };
