@@ -173,13 +173,18 @@ GeoNetwork.util.HelpTools = {
     	
     	if(container == null) {
         	container = Ext.DomHelper.insertFirst(document.body, {id: "msg-div", "class": "msg"}, true);
+    	} 
+
+    	var  msgId = "message-container-" + data.id,
+			     mHolder = Ext.get(msgId);
+			if (mHolder) {
+				mHolder.remove(); // click again means remove
+			} else {
+    		var  msgCt = Ext.DomHelper.insertFirst(container, {id: msgId}, true);
+    		msgCt.alignTo(document, 't-t');
+        	var m = Ext.DomHelper.append(msgCt, {html:msg}, true);
+        	m.slideIn('t').pause(20).ghost("t", {remove:true});
+        	m.on("click", function(){m.remove();});
     	}
-    	
-    	
-    	var  msgCt = Ext.DomHelper.insertFirst(container, {id: "message-container-" + data.id}, true);
-    	msgCt.alignTo(document, 't-t');
-        var m = Ext.DomHelper.append(msgCt, {html:msg}, true);
-        m.slideIn('t').pause(20).ghost("t", {remove:true});
-        m.on("click", function(){m.remove();});
-    }
+		}
 };
