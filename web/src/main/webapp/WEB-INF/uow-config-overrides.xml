@@ -29,9 +29,9 @@
 	<!-- add smart description to the strings file -->
 	<file name=".*geonetwork/loc/eng/xml/strings\.xml">
 		<replaceXML xpath="welcome.text">
-			<b>SMART - An International Leader in Integrated Infrastructure Research</b>
-			<p>The SMART Infrastructure facility is forging new science to address the Infrastructure challenges of Australia and the Asia Pacific though Integrated Infrastructure Research and Planning. SMART aims to be a compelling intellectual partner in the development and reform of industry in Australia and abroad.</p>
-			<p>The purpose of this catalogue is to enhance the accessibility, use and re-use of infrastructure data and metadata built on relevant industry standards. Containing a combination of text based and location based searches and a web mapping interface, the user experience takes place in a visually rich, intuitive, interactive environment.</p>
+			<p>The SMART Infrastructure Facility is one of the largest research institutions in the world dedicated to helping governments and business plan for the future.</p>
+			<p>The key difference that SMART is making is to help governments, business and the community be more front footed in the long term planning and management of infrastructure. For example, that means ensuring land is zoned and available so cities and regions can grow and be connected in the future. Without proper planning, new roads, water and waste pipelines, schools and hospitals cannot be built where they are needed to provide cost effective services.</p>
+			<p>SMART is working for the community to address these issues by gathering data and developing large-scale computer models of cities and regions. This allows decision-makers to better understand how different infrastructure networks can be improved and made to operate more efficiently so prices can be as low as possible. These data sets and models help ensure Australia has the right investment plans to renovate old infrastructure and to build new infrastructure to meet the future needs of a growing population and build a more competitive economy.</p>
 		</replaceXML>
 	</file>
 	<!-- Add smart-metadata.uow.edu.au as geoserver layers for maps in
