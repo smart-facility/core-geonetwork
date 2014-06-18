@@ -316,6 +316,15 @@ GeoNetwork.app = function() {
 						viewPanelButtonCSS: GeoNetwork.Settings.viewPanelButtonCSS
         });
 
+				aResTab.on({
+					'beforedestroy': function() {
+						hide("permalink-div");
+					},
+					'beforehide': function() {
+						hide("permalink-div");
+					}
+				});
+
         // aResTab.on("afterrender", function() {
         // // Initialize map and links
         // loadMetadataMap({
