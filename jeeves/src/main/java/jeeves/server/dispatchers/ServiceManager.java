@@ -966,9 +966,9 @@ public class ServiceManager
 		List<Element> paramsList = params.getChildren();
 
 		if (paramsList.size() == 0)
-            if(isDebug()) debug(" -> no input parameters");
+            error(" -> no input parameters");
 		else
-            if(isDebug()) debug(" -> parameters are : \n"+ Xml.getString(params));
+            error(" -> parameters are : \n"+ Xml.getString(params));
 	}
 
 	//---------------------------------------------------------------------------
