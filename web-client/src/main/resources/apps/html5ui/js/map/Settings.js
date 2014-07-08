@@ -37,7 +37,6 @@ GeoNetwork.map.printCapabilities = "../../pdf";
 
 // Config for OSM based maps
 if (useOSMLayers) {
-		console.log("BSBS");
     GeoNetwork.map.PROJECTION = "EPSG:900913";
     //GeoNetwork.map.EXTENT = new OpenLayers.Bounds(-550000, 5000000, 1200000, 7000000);
     GeoNetwork.map.EXTENT = new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34);
@@ -48,7 +47,6 @@ if (useOSMLayers) {
         //new OpenLayers.Layer.Google("Google Streets");
     ];
 } else {
-		console.log("ASAS");
 		// Config for WGS84 based maps
 		GeoNetwork.map.PROJECTION = "EPSG:4326";
 		GeoNetwork.map.EXTENT = new OpenLayers.Bounds(-180,-90,180,90);
