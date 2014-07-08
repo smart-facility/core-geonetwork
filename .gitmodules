@@ -12,4 +12,4 @@
 	url = https://github.com/geonetwork/core-geoserver.git
 [submodule "schemaPlugins"]
 	path = schemaPlugins
-	url = https://github.com/smart-facility/core-geonetwork.git
+	url = https://github.com/smart-facility/schema-plugins.git
