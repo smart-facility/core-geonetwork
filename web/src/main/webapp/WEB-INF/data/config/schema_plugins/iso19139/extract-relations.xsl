@@ -16,8 +16,8 @@
   <!-- Relation contained in the metadata record has to be returned 
   It could be document or thumbnails
   -->
-  <xsl:template mode="relation" match="metadata[gmd:MD_Metadata]" priority="99">
-
+  <xsl:template mode="relation" match="metadata[gmd:MD_Metadata or */@gco:isoType='gmd:MD_Metadata']" priority="99">
+    
     <xsl:for-each select="*/descendant::*[name(.) = 'gmd:graphicOverview']/*">
       <relation type="thumbnail">
         <id><xsl:value-of select="gmd:fileName/gco:CharacterString"/></id>
