@@ -18,7 +18,6 @@
   -->
   <xsl:template mode="relation" match="metadata[gmd:MD_Metadata]" priority="99">
 
-		<xsl:message>MMMMMMMMMMMMMMMMMMMMM</xsl:message>
     <xsl:for-each select="*/descendant::*[name(.) = 'gmd:graphicOverview']/*">
       <relation type="thumbnail">
         <id><xsl:value-of select="gmd:fileName/gco:CharacterString"/></id>
