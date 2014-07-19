@@ -629,22 +629,31 @@ GeoNetwork.app = function() {
                     });
 
             // Make sure we are still logged in:
-            var response = OpenLayers.Request.GET({
+            var response;
+						// use a try/catch block as sometimes we simply don't get an
+						// answer eg after server startup
+						try {
+							response = OpenLayers.Request.GET({
                 url : geonetworkUrl + '/srv/' + lang + '/admin',
                 async : false
-            }), exception;
+							});
+            } catch (err) {
+							// swallow it....
+						}
 
-            // Check status and also check than an Exception is not described in
-            // the
-            // HTML response
-            // in case of bad startup
-            exception = response.responseText.indexOf('Exception') !== -1;
+            // Check status and also check that an Exception is not described 
+						// in the HTML response in case of bad startup
+            if (response) {
+							exception = response.responseText.indexOf('Exception') !== -1;
 
-            if (response.status !== 200 || exception) {
+            	if (response.status !== 200 || exception) {
                 delete cookie.state.user;
-            } else {
+            	} else {
                 catalogue.identifiedUser = cookie.get('user');
-            }
+            	}
+						} else { // failed so delete the user info anyway
+              delete cookie.state.user;
+						}
 
             // set a permalink provider which will be the main state provider.
             Ext.state.Manager

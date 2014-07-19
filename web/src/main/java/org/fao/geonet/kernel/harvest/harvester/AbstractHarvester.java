@@ -45,6 +45,7 @@ import org.fao.geonet.kernel.harvest.Common.Status;
 import org.fao.geonet.kernel.harvest.harvester.arcsde.ArcSDEHarvester;
 import org.fao.geonet.kernel.harvest.harvester.csw.CswHarvester;
 import org.fao.geonet.kernel.harvest.harvester.geoPREST.GeoPRESTHarvester;
+import org.fao.geonet.kernel.harvest.harvester.yellowfin.YellowfinHarvester;
 import org.fao.geonet.kernel.harvest.harvester.geonet.GeonetHarvester;
 import org.fao.geonet.kernel.harvest.harvester.geonet20.Geonet20Harvester;
 import org.fao.geonet.kernel.harvest.harvester.localfilesystem.LocalFilesystemHarvester;
@@ -90,6 +91,7 @@ public abstract class AbstractHarvester extends BaseAligner
 		register(context, GeonetHarvester  .class);
 		register(context, Geonet20Harvester.class);
 		register(context, GeoPRESTHarvester.class);
+		register(context, YellowfinHarvester.class);
 		register(context, WebDavHarvester  .class);
 		register(context, CswHarvester     .class);
 		register(context, Z3950Harvester   .class);

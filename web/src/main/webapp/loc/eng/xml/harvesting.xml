@@ -28,6 +28,11 @@
 		<long>GeoPortal 9.3.x via REST interface</long>
 	</info>
 
+	<info type="yellowfin">
+		<short>Yellowfin BI Harvester</short>
+		<long>Yellowfin BI via 6.1 webservices nterface</long>
+	</info>
+
 	<info type="webdav">
 		<short>Web DAV</short>
 		<long>Web Access Folder/Web DAV server</long>
@@ -271,6 +276,11 @@
 	<threddsCollectionDataset>Create metadata for Collection Datasets</threddsCollectionDataset>
 	<threddsAtomicDataset>Create metadata for Atomic Datasets</threddsAtomicDataset>
 	<threddsTemplate>Select template to combine with fragments</threddsTemplate>
+
+	<yellowfinHostname>Yellowfin host</yellowfinHostname>
+	<yellowfinStylesheet>Stylesheet to handle reports</yellowfinStylesheet>
+	<yellowfinOutputSchema>Schema for output metadata records</yellowfinOutputSchema>
+	<yellowfinTemplate>Select template to combine with fragments</yellowfinTemplate>
 
 	<wfsFeaturesLang>Metadata language</wfsFeaturesLang>
 	<wfsFeaturesQuery>OGC WFS GetFeature Query</wfsFeaturesQuery>

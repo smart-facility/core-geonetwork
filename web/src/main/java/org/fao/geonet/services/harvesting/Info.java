@@ -107,6 +107,9 @@ public class Info implements Service
 				else if (type.equals("wfsFragmentStylesheets"))
 					result.addContent(getSchemaFragmentStylesheets(el, context, Geonet.Path.WFS_STYLESHEETS, schema));
 
+				else if (type.equals("yellowfinStylesheets"))
+					result.addContent(getSchemaFragmentStylesheets(el, context, Geonet.Path.YELLOWFIN_STYLESHEETS, schema));
+
 				else if (type.equals("threddsFragmentStylesheets"))
 					result.addContent(getSchemaFragmentStylesheets(el, context, Geonet.Path.TDS_STYLESHEETS, schema));
 
@@ -118,6 +121,9 @@ public class Info implements Service
 
 				else if (type.equals("wfsFragmentSchemas"))
 					result.addContent(getSchemas(el, context, Geonet.Path.WFS_STYLESHEETS));
+
+				else if (type.equals("yellowfinSchemas"))
+					result.addContent(getSchemas(el, context, Geonet.Path.YELLOWFIN_STYLESHEETS));
 
 				else if (type.equals("threddsDIFSchemas"))
 					result.addContent(getSchemas(el, context, Geonet.Path.DIF_STYLESHEETS));
