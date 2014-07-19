@@ -96,6 +96,7 @@ function setData(node)
 
 	var site     = node.getElementsByTagName('site')    [0];
 	var searches = node.getElementsByTagName('searches')[0];
+	var options  = node.getElementsByTagName('options') [0];
 
 	hvutil.setOption(site, 'hostname', 'yellowfin.hostname');
 	hvutil.setOption(site, 'port',     'yellowfin.port');
