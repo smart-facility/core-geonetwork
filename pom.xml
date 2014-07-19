@@ -937,6 +937,19 @@
       <url>http://developer.k-int.com/maven2/</url>
     </repository>
 
+    <!-- UOW Local repository for local UOW dependencies -->
+    <repository>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <id>localUOW</id>
+      <name>UOW local repository</name>
+      <url>file://uow_maven_repo</url>
+    </repository>
+
     <!-- Local repository which allow to handle temporarly local dependencies
      // FIXME : Should be a remote repository -->
     <repository>
