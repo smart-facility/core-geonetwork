@@ -23,14 +23,21 @@
 
 package org.fao.geonet.kernel.harvest.harvester.yellowfin;
 
+import org.fao.geonet.constants.Geonet;
 import org.fao.geonet.kernel.harvest.harvester.RecordInfo;
 import org.fao.geonet.util.ISODate;
 
 import jeeves.interfaces.Logger;
+import jeeves.utils.Log;
 
 import com.hof.mi.web.service.AdministrationPerson;
 import com.hof.mi.web.service.AdministrationReport;
 import com.hof.mi.web.service.AdministrationServiceClient;
+import com.hof.mi.web.service.AdministrationServiceResponse;
+import com.hof.mi.web.service.AdministrationServiceRequest;
+import com.hof.mi.web.service.AdministrationServiceService;
+import com.hof.mi.web.service.AdministrationServiceServiceLocator;
+import com.hof.mi.web.service.AdministrationServiceSoapBindingStub;
 import com.hof.mi.web.service.ReportServiceClient;
 import com.hof.mi.web.service.WebserviceException;
 import com.hof.mi.web.service.i4Report;
@@ -60,7 +67,8 @@ class YwfsRequest
 
 		// Initiate session with yellowfin
 		try {
-			this.asc = new AdministrationServiceClient(params.hostname, params.port, params.username, params.password, baseUrl+"AdministrationService");
+			Log.error(Geonet.HARVESTER,"Calling "+params.hostname);
+			this.asc = new AdministrationServiceClient(params.hostname, params.port, params.username, params.password, baseUrl+"AdministrationService", false, false);
 			this.rsc = new ReportServiceClient(params.hostname, params.port, params.username, params.password, baseUrl+"ReportService");
 		} catch (WebserviceException we) {
 			we.printStackTrace();
@@ -70,6 +78,54 @@ class YwfsRequest
 		this.person = asc.getUser(params.username);
 		this.currentReports = new HashMap<String, i4Report>();
 	}
+
+	/*
+	public YwfsRequest(YellowfinParams params, Logger log) throws Exception {
+		AdministrationServiceService ts = new AdministrationServiceServiceLocator(params.hostname, params.port, baseUrl+"AdministrationService", false);
+    AdministrationServiceSoapBindingStub rssbs = (AdministrationServiceSoapBindingStub) ts.getAdministrationService();
+     
+    AdministrationServiceResponse rs = null;
+   
+    
+    AdministrationServiceRequest rsr = new AdministrationServiceRequest();
+     
+    // Authenticate Webservice
+
+    rsr.setLoginId(params.username);
+    rsr.setPassword(params.password);
+    rsr.setOrgId(new Integer(1));
+    rsr.setOrgRef("");
+     
+   	// Function to perform
+
+    rsr.setFunction("GETUSER");
+
+    rs = rssbs.remoteAdministrationCall(rsr);
+	}
+
+	public YwfsRequest(YellowfinParams params, Logger log) throws Exception {
+		AdministrationServiceService ts = new AdministrationServiceServiceLocator(params.hostname, params.port, baseUrl+"AdministrationService", false);
+    AdministrationServiceSoapBindingStub rssbs = (AdministrationServiceSoapBindingStub) ts.getAdministrationService();
+
+		AdministrationServiceRequest rsr = new AdministrationServiceRequest();
+		AdministrationServiceResponse rs = null;
+		AdministrationPerson person = new AdministrationPerson();
+		person.setUserId("simon.pigot@csiro.au");
+		rsr.setLoginId(params.username);
+		rsr.setPassword(params.password);
+		rsr.setOrgId(new Integer(1));
+		rsr.setFunction("GETUSER");
+		rsr.setPerson(person);
+
+		rs = rssbs.remoteAdministrationCall(rsr);
+		if ("SUCCESS".equals(rs.getStatusCode()) ) {
+			System.out.println("Success");
+		} else {
+			System.out.println("Failure");
+			System.out.println(" Code: " + rs.getErrorCode());
+		}	
+	}
+	*/
 
 	//---------------------------------------------------------------------------
 	//---
