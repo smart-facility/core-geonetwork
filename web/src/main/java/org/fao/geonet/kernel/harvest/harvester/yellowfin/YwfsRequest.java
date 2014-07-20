@@ -60,7 +60,7 @@ class YwfsRequest
 
 		// Initiate session with yellowfin
 		try {
-			this.asc = new AdministrationServiceClient(params.hostname, params.port, params.username, params.password, baseUrl+"AdminstrationService");
+			this.asc = new AdministrationServiceClient(params.hostname, params.port, params.username, params.password, baseUrl+"AdministrationService");
 			this.rsc = new ReportServiceClient(params.hostname, params.port, params.username, params.password, baseUrl+"ReportService");
 		} catch (WebserviceException we) {
 			we.printStackTrace();
@@ -135,7 +135,7 @@ class YwfsRequest
 	private ReportServiceClient rsc;
 	private AdministrationPerson person;
 	private Map<String, i4Report> currentReports;
-	private String baseUrl = "/yellowfin/services/";
+	private String baseUrl = "/services/";
 }
 
 //=============================================================================
