@@ -23,12 +23,17 @@
 
 package org.fao.geonet.kernel.harvest.harvester.yellowfin;
 
+import com.thoughtworks.xstream.XStream;
+import com.thoughtworks.xstream.io.xml.JDomWriter;
+
 import org.fao.geonet.constants.Geonet;
 import org.fao.geonet.kernel.harvest.harvester.RecordInfo;
+import org.fao.geonet.kernel.search.spatial.Pair;
 import org.fao.geonet.util.ISODate;
 
 import jeeves.interfaces.Logger;
 import jeeves.utils.Log;
+import jeeves.utils.Xml;
 
 import com.hof.mi.web.service.AdministrationPerson;
 import com.hof.mi.web.service.AdministrationReport;
@@ -38,6 +43,9 @@ import com.hof.mi.web.service.AdministrationServiceRequest;
 import com.hof.mi.web.service.AdministrationServiceService;
 import com.hof.mi.web.service.AdministrationServiceServiceLocator;
 import com.hof.mi.web.service.AdministrationServiceSoapBindingStub;
+import com.hof.mi.web.service.ReportSchema;
+import com.hof.mi.web.service.ReportServiceServiceLocator;
+import com.hof.mi.web.service.ReportServiceSoapBindingStub;
 import com.hof.mi.web.service.ReportServiceClient;
 import com.hof.mi.web.service.WebserviceException;
 import com.hof.mi.web.service.i4Report;
@@ -63,69 +71,29 @@ class YwfsRequest
 
 	public YwfsRequest(YellowfinParams params, Logger log) throws Exception {
 		this.params = params;
-		this.log = log;
+		this.as = new AdministrationServiceServiceLocator(params.hostname, params.port, baseUrl+"AdministrationService", false);
+    this.assbs = (AdministrationServiceSoapBindingStub) this.as.getAdministrationService();
 
-		// Initiate session with yellowfin
-		try {
-			Log.error(Geonet.HARVESTER,"Calling "+params.hostname);
-			this.asc = new AdministrationServiceClient(params.hostname, params.port, params.username, params.password, baseUrl+"AdministrationService", false, false);
-			this.rsc = new ReportServiceClient(params.hostname, params.port, params.username, params.password, baseUrl+"ReportService");
-		} catch (WebserviceException we) {
-			we.printStackTrace();
-			throw new Exception(we.getMessage());
-		}
+		AdministrationServiceRequest asr = setupAdminServRequest();
 
-		this.person = asc.getUser(params.username);
-		this.currentReports = new HashMap<String, i4Report>();
-	}
-
-	/*
-	public YwfsRequest(YellowfinParams params, Logger log) throws Exception {
-		AdministrationServiceService ts = new AdministrationServiceServiceLocator(params.hostname, params.port, baseUrl+"AdministrationService", false);
-    AdministrationServiceSoapBindingStub rssbs = (AdministrationServiceSoapBindingStub) ts.getAdministrationService();
-     
-    AdministrationServiceResponse rs = null;
-   
-    
-    AdministrationServiceRequest rsr = new AdministrationServiceRequest();
-     
-    // Authenticate Webservice
-
-    rsr.setLoginId(params.username);
-    rsr.setPassword(params.password);
-    rsr.setOrgId(new Integer(1));
-    rsr.setOrgRef("");
-     
-   	// Function to perform
-
-    rsr.setFunction("GETUSER");
-
-    rs = rssbs.remoteAdministrationCall(rsr);
-	}
-
-	public YwfsRequest(YellowfinParams params, Logger log) throws Exception {
-		AdministrationServiceService ts = new AdministrationServiceServiceLocator(params.hostname, params.port, baseUrl+"AdministrationService", false);
-    AdministrationServiceSoapBindingStub rssbs = (AdministrationServiceSoapBindingStub) ts.getAdministrationService();
-
-		AdministrationServiceRequest rsr = new AdministrationServiceRequest();
-		AdministrationServiceResponse rs = null;
+		AdministrationServiceResponse as = null;
 		AdministrationPerson person = new AdministrationPerson();
 		person.setUserId("simon.pigot@csiro.au");
-		rsr.setLoginId(params.username);
-		rsr.setPassword(params.password);
-		rsr.setOrgId(new Integer(1));
-		rsr.setFunction("GETUSER");
-		rsr.setPerson(person);
+		asr.setFunction("GETALLUSERREPORTS");
+		asr.setPerson(person);
 
-		rs = rssbs.remoteAdministrationCall(rsr);
-		if ("SUCCESS".equals(rs.getStatusCode()) ) {
-			System.out.println("Success");
+		as = this.assbs.remoteAdministrationCall(asr);
+		if ("SUCCESS".equals(as.getStatusCode()) ) {
+			Log.debug(Geonet.HARVESTER, "Success");
 		} else {
-			System.out.println("Failure");
-			System.out.println(" Code: " + rs.getErrorCode());
+			Log.debug(Geonet.HARVESTER, "Failure Code: " + as.getErrorCode());
+			throw new Exception("Failed to connect to yellowfin: "+as.getErrorCode());
 		}	
+
+		// get reports - filter with search expression?
+		reports = as.getReports();
+		Log.error(Geonet.HARVESTER, "Found "+reports.length+" yellowfin reports accessible by user "+params.username);
 	}
-	*/
 
 	//---------------------------------------------------------------------------
 	//---
@@ -145,25 +113,29 @@ class YwfsRequest
 
 	//---------------------------------------------------------------------------
 
-	public Set<RecordInfo> execute() {
+	public Set<RecordInfo> execute() throws Exception {
+
+		ReportServiceClient rsc = new ReportServiceClient(params.hostname, params.port, params.username, params.password, baseUrl+"ReportService");
+
 		Set<RecordInfo> results = new HashSet<RecordInfo>();
 
-		// execute a get reports with search expression
-		AdministrationReport[] reports = asc.listAllReportsFromRegex(searchExpression,	person);
-
-		this.currentReports = new HashMap<String, i4Report>();
+		this.currentReports = new HashMap<String, Pair<AdministrationReport,i4Report>>();
+		this.personCache = new HashMap<Integer, AdministrationPerson>();
 
 		// process each report, extracting report id and modification date to
-		// create a RecordInfo object to pass back to GeoNetwork
+		// create a RecordInfo object to pass back to GeoNetwork and load
+		// the report from yellowfin, storing the i4Report object mapped by
+		// report UUID
 		for (int i = 0;i < reports.length;i++) {
 			AdministrationReport ar = reports[i];
 
-			i4Report report = rsc.loadReportForUser(ar.getExecutionObject(), person.getUserId(), person.getPassword(), null);
-
-			String urn = "urn:smart-uow:yellowfin:"+report.getReportId();
-			RecordInfo ri = new RecordInfo(urn, new ISODate(report.getLastModifiedDate()).toString());	
+			Log.error(Geonet.HARVESTER,"Adding report "+ar.getReportUUID());
+			RecordInfo ri = new RecordInfo(ar.getReportUUID(), new ISODate(ar.getLastModifiedDate().getTime()).toString());	
 			results.add(ri);
-			currentReports.put(urn, report);
+
+			// get report from the report service client
+			i4Report rep = rsc.loadReportForUser(ar.getExecutionObject(), params.username, params.password, null);
+			this.currentReports.put(ar.getReportUUID(), Pair.read(ar,rep));
 		}
 
 		return results;
@@ -172,12 +144,110 @@ class YwfsRequest
 	//---------------------------------------------------------------------------
 
 	public Element getRecord(String uuid) {
-		i4Report report = currentReports.get(uuid);
+		i4Report rep = this.currentReports.get(uuid).two();
+		AdministrationReport report = this.currentReports.get(uuid).one();
 		if (report == null) return null;
 
-		Element result = new Element("result");
+		// Get the administration report into XML format (again)
+		Element reportXml = streamObject(report);
+		System.out.println(Xml.getString(reportXml));
+
+		// Get the i4report into XML format (again)
+		Element bigReportXml = streamObject(new SmallReport(rep));
+		addColumnsToReportXml(rep, bigReportXml);
+		System.out.println(Xml.getString(bigReportXml));
+		
+		// Get last modifier id and then use that to get the user details of
+		// the user that modified it
+		AdministrationPerson person = getPersonById(report.getLastModifierId());
+		if (person != null) {
+			Element personXml = streamObject(person);
+			System.out.println(Xml.getString(personXml));
+		} else {
+			Log.error(Geonet.HARVESTER, "Yellowfin modifier by ip "+report.getLastModifierId()+" doesn't exist");
+		}
+
+		// just create a simple metadata record - more to be done here
+		Element result = new Element("MD_Metadata", Geonet.Namespaces.GMD);
 		return result;
 	}
+
+	//---------------------------------------------------------------------------
+	//---
+	//--- Private methods
+	//---
+	//---------------------------------------------------------------------------
+
+	private AdministrationServiceRequest setupAdminServRequest() {
+		AdministrationServiceRequest asr = new AdministrationServiceRequest();
+		asr.setLoginId(params.username);
+		asr.setPassword(params.password);
+		asr.setOrgId(new Integer(1));
+		return asr;
+	}
+
+	//---------------------------------------------------------------------------
+
+	private AdministrationPerson getPersonById(Integer id) {
+		if (personCache.get(id) != null) return personCache.get(id);
+
+		AdministrationServiceRequest asr = setupAdminServRequest();
+
+		AdministrationPerson person = new AdministrationPerson();
+		person.setIpId(id);
+		asr.setPerson(person);
+		asr.setFunction("GETUSERBYIP");
+
+		AdministrationServiceResponse as = null;
+		try {
+			as = this.assbs.remoteAdministrationCall(asr);
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			if ("SUCCESS".equals(as.getStatusCode()) ) {
+				Log.debug(Geonet.HARVESTER, "Success");
+				AdministrationPerson ap = as.getPerson();
+				if (ap != null) personCache.put(id, ap);
+				return ap;
+			} else {
+				Log.debug(Geonet.HARVESTER, "Failure Code: " + as.getErrorCode());
+				return null;
+			}	
+		}
+
+	}
+
+	//---------------------------------------------------------------------------
+
+	private Element streamObject(Object obj) {
+		XStream xStream = new XStream();
+		//create an alias for class to give it the simple name 
+		String alias = obj.getClass().getSimpleName();
+		//add the alias for the User class
+		xStream.alias(alias, obj.getClass());
+
+		//create the container element which the serialized object will go into
+		Element container = new Element("container");
+		//marshall the onject into the container
+		xStream.marshal(obj, new JDomWriter(container));
+		return (Element) container.getChild(alias).detach();
+	}
+
+	//---------------------------------------------------------------------------
+
+	private Element addColumnsToReportXml(i4Report rep, Element repXml) {
+		ReportSchema[] cols = rep.getColumns();
+		Element columns = new Element("columns");
+		for (int i = 0;i < cols.length;i++) {
+			columns
+		.addContent(new Element("name").setText(cols[i].getColumnName()))
+		.addContent(new Element("datatype").setText(cols[i].getDataType()))
+		.addContent(new Element("displayName").setText(cols[i].getDisplayName()));
+		}
+		repXml.addContent(columns);
+		return repXml;
+	}
+
 
 	//---------------------------------------------------------------------------
 	//---
@@ -190,8 +260,12 @@ class YwfsRequest
 	private AdministrationServiceClient asc;
 	private ReportServiceClient rsc;
 	private AdministrationPerson person;
-	private Map<String, i4Report> currentReports;
+	private Map<String, Pair<AdministrationReport, i4Report>> currentReports;
 	private String baseUrl = "/services/";
+	private AdministrationReport[] reports;
+	private AdministrationServiceService as; 
+  private AdministrationServiceSoapBindingStub assbs;
+	private Map<Integer,AdministrationPerson> personCache;
 }
 
 //=============================================================================

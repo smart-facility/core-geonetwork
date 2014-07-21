@@ -821,18 +821,6 @@
         <artifactId>axis</artifactId>
         <version>1.4</version>
       </dependency>
-			<!--
-			<dependency>
-				<groupId>javax.xml</groupId>
-				<artifactId>jaxrpc-api</artifactId>
-				<version>1.1</version>
-			</dependency>
-			<dependency>
-				<groupId>wsdl4j</groupId>
-				<artifactId>wsdl4j</artifactId>
-				<version>1.6.2</version>
-			</dependency>
-			-->
 			<dependency>
 				<groupId>commons-discovery</groupId>
 				<artifactId>commons-discovery</artifactId>
@@ -848,7 +836,11 @@
 				<artifactId>axis-jaxrpc</artifactId>
 				<version>1.4</version>
 			</dependency>
-
+			<dependency>
+				<groupId>com.thoughtworks.xstream</groupId>
+				<artifactId>xstream</artifactId>
+				<version>1.4.7</version>
+			</dependency>
 
       <!-- Spring dependencies -->
       <dependency>
@@ -938,6 +930,7 @@
       <name>Geotools repository</name>
       <url>http://download.osgeo.org/webdav/geotools/</url>
     </repository>
+
     <repository>
       <snapshots>
         <enabled>false</enabled>
@@ -978,6 +971,12 @@
       <id>mvnrepository.com</id>
       <name>Repository that has juniversalchardet</name>
       <url>http://mvnrepository.com/artifact</url>
+    </repository>
+
+    <repository>
+      <id>mapfish-dev</id>
+      <name>Repository that has marc4j</name>
+      <url>http://dev.mapfish.org/maven/repository</url>
     </repository>
 
     <!-- seasar repo, has jsonic - used by langdetect -->

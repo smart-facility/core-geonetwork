@@ -94,7 +94,7 @@ class Harvester
 
 		//--- align local node
 
-		Aligner aligner = new Aligner(log, context, dbms, params);
+		Aligner aligner = new Aligner(log, context, dbms, params, request);
 
 		return aligner.align(records);
 	}

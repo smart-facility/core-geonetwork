@@ -50,19 +50,16 @@ public class Aligner extends BaseAligner {
 	//---
 	//--------------------------------------------------------------------------
 
-	public Aligner(Logger log, ServiceContext sc, Dbms dbms, YellowfinParams params) throws Exception {
+	public Aligner(Logger log, ServiceContext sc, Dbms dbms, YellowfinParams params, YwfsRequest request) throws Exception {
 		this.log        = log;
 		this.context    = sc;
 		this.dbms       = dbms;
 		this.params     = params;
+		this.request    = request;
 
 		GeonetContext gc = (GeonetContext) context.getHandlerContext(Geonet.CONTEXT_NAME);
 		dataMan = gc.getDataManager();
 		result  = new YellowfinResult();
-
-		//--- setup yellowfin request 
-
-		request = new YwfsRequest(params, log);
 
 	}
 
@@ -260,9 +257,9 @@ public class Aligner extends BaseAligner {
 	//--------------------------------------------------------------------------
 
 	/**
-	 * Does yellowfin request. If validation is requested and the metadata
-   * does not validate, null is returned. If transformation is requested then
-	 * metadata is transformed.
+	 * Gets a metadata record from the YwfsRequest. If validation is requested 
+	 * and the metadata does not validate, null is returned. 
+	 * Transformation cannot be requested here. 
    *
    * @param uuid uuid of metadata to request
    * @return metadata the metadata
