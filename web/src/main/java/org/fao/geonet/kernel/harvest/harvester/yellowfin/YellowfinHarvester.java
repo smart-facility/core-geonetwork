@@ -251,6 +251,18 @@ class YellowfinResult
 	public int unretrievable;
 	public int badFormat;
   public int doesNotValidate;	    
+
+	// fragment stuff
+	public int fragmentsReturned;
+	public int fragmentsUnknownSchema;
+	public int subtemplatesAdded;
+	public int fragmentsMatched;
+	public int recordsBuilt;
+	public int recordsRemoved;
+	public int recordsUpdated;
+	public int subtemplatesUpdated;
+	public int subtemplatesRemoved;
+	public int total;
 }
 
 //=============================================================================

@@ -43,12 +43,17 @@ import com.hof.mi.web.service.AdministrationServiceRequest;
 import com.hof.mi.web.service.AdministrationServiceService;
 import com.hof.mi.web.service.AdministrationServiceServiceLocator;
 import com.hof.mi.web.service.AdministrationServiceSoapBindingStub;
+import com.hof.mi.web.service.GISLayer;
+import com.hof.mi.web.service.GISMap;
+import com.hof.mi.web.service.GISShape;
 import com.hof.mi.web.service.ReportSchema;
 import com.hof.mi.web.service.ReportServiceServiceLocator;
 import com.hof.mi.web.service.ReportServiceSoapBindingStub;
 import com.hof.mi.web.service.ReportServiceClient;
 import com.hof.mi.web.service.WebserviceException;
 import com.hof.mi.web.service.i4Report;
+
+import com.vividsolutions.jts.geom.Envelope;
 
 import org.jdom.Element;
 
@@ -121,6 +126,7 @@ class YwfsRequest
 
 		this.currentReports = new HashMap<String, Pair<AdministrationReport,i4Report>>();
 		this.personCache = new HashMap<Integer, AdministrationPerson>();
+		this.personNameCache = new HashMap<String, AdministrationPerson>();
 
 		// process each report, extracting report id and modification date to
 		// create a RecordInfo object to pass back to GeoNetwork and load
@@ -148,28 +154,44 @@ class YwfsRequest
 		AdministrationReport report = this.currentReports.get(uuid).one();
 		if (report == null) return null;
 
+		Element root = new Element("root");
+
 		// Get the administration report into XML format (again)
 		Element reportXml = streamObject(report);
-		System.out.println(Xml.getString(reportXml));
+		reportXml.addContent(
+			new Element("reportURL").setText("http://"+params.hostname+":"+params.port+"/RunReport.i4?reportUUID="+uuid+"&primaryOrg=1&clientOrg=1"));
+		root.addContent(reportXml);
 
 		// Get the i4report into XML format (again)
 		Element bigReportXml = streamObject(new SmallReport(rep));
 		addColumnsToReportXml(rep, bigReportXml);
-		System.out.println(Xml.getString(bigReportXml));
+		addShapesToReportXml(rep, bigReportXml);
+		root.addContent(bigReportXml);
 		
 		// Get last modifier id and then use that to get the user details of
 		// the user that modified it
 		AdministrationPerson person = getPersonById(report.getLastModifierId());
 		if (person != null) {
 			Element personXml = streamObject(person);
-			System.out.println(Xml.getString(personXml));
+			personXml.setAttribute("role","processor");
+			root.addContent(personXml);
 		} else {
-			Log.error(Geonet.HARVESTER, "Yellowfin modifier by ip "+report.getLastModifierId()+" doesn't exist");
+			Log.error(Geonet.HARVESTER, "Yellowfin report modifier by ip "+report.getLastModifierId()+" doesn't exist");
 		}
 
-		// just create a simple metadata record - more to be done here
-		Element result = new Element("MD_Metadata", Geonet.Namespaces.GMD);
-		return result;
+		// Get author name and then use that to get the user details of
+		// the user that authored the report 
+		person = getPersonByName(rep.getAuthor());
+		if (person != null) {
+			Element personXml = streamObject(person);
+			personXml.setAttribute("role","author");
+			root.addContent(personXml);
+		} else {
+			Log.error(Geonet.HARVESTER, "Yellowfin report author "+rep.getAuthor()+" doesn't exist");
+		}
+		System.out.println(Xml.getString(root));
+
+		return root;
 	}
 
 	//---------------------------------------------------------------------------
@@ -184,6 +206,52 @@ class YwfsRequest
 		asr.setPassword(params.password);
 		asr.setOrgId(new Integer(1));
 		return asr;
+	}
+
+	//---------------------------------------------------------------------------
+
+	private AdministrationPerson getPersonByName(String userFirstNameLastName) {
+		// persons who appear as authors don't necessarily appear as modifiers
+		// so we need to do our own cache
+		if (personNameCache.get(userFirstNameLastName) != null) return personNameCache.get(userFirstNameLastName);
+
+		AdministrationPerson person = new AdministrationPerson();
+
+		// split the userFirstNameLastName into two parts by space
+		String[] names = userFirstNameLastName.split(" ");
+		if (names.length != 2) {
+			Log.warning(Geonet.HARVESTER, "Metadata author field ("+userFirstNameLastName+") didn't have expected format 'firstname lastname'");
+			person.setUserId(userFirstNameLastName);
+		 	return person;	
+		}
+		
+		// now search using search strings
+		AdministrationServiceRequest asr = setupAdminServRequest();
+		asr.setParameters(names);
+		asr.setFunction("GETUSERSFROMSEARCH");
+
+		AdministrationServiceResponse as = null;
+		try {
+			as = this.assbs.remoteAdministrationCall(asr);
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			if ("SUCCESS".equals(as.getStatusCode()) ) {
+				Log.debug(Geonet.HARVESTER, "Success");
+				AdministrationPerson[] ap = as.getPeople();
+				if (ap != null && ap.length > 0) {
+					personNameCache.put(userFirstNameLastName, ap[0]);
+					return ap[0];
+				} else {
+					Log.error(Geonet.HARVESTER, "Couldn't find " +userFirstNameLastName);
+					return null;
+				}
+			} else {
+				Log.error(Geonet.HARVESTER, "Failure Code: " + as.getErrorCode());
+				return null;
+			}	
+		}
+
 	}
 
 	//---------------------------------------------------------------------------
@@ -235,16 +303,72 @@ class YwfsRequest
 
 	//---------------------------------------------------------------------------
 
+	private Element addShapesToReportXml(i4Report rep, Element repXml) {
+		GISMap[] maps = rep.getGisMap();
+		Element bnd = new Element("bounds");
+		Element lay = new Element("layers");
+		Envelope boundsEnv = new Envelope();
+		if (maps != null) {
+			for (int i = 0;i < maps.length;i++) {
+				GISMap map = maps[i];
+				GISLayer[] layers = map.getLayers();
+				if (layers != null) {
+					for (int j = 0;j < layers.length;j++) {
+						lay.addContent(new Element("layer").setText(layers[j].displayName));
+					}
+				}
+				GISShape[] shapes = map.getShapes();
+				if (shapes != null) {
+					for (int k = 0;k < shapes.length;k++) {
+						GISShape s = shapes[k];
+						Envelope shapeEnv = new Envelope(
+													s.getBoundsLeft(),
+													s.getBoundsLeft()+s.getBoundsWidth(),
+													s.getBoundsTop()-s.getBoundsHeight(),
+													s.getBoundsTop());
+						boundsEnv.expandToInclude(shapeEnv);
+					}
+					if (!boundsEnv.isNull()) {
+						bnd
+						.addContent(new Element("minX").setText(boundsEnv.getMinX()+""))
+						.addContent(new Element("minY").setText(boundsEnv.getMinY()+""))
+						.addContent(new Element("maxX").setText(boundsEnv.getMaxX()+""))
+						.addContent(new Element("maxY").setText(boundsEnv.getMaxY()+""));
+					}
+				}
+			}
+		}
+		repXml.addContent(bnd);
+		repXml.addContent(lay);
+		return repXml;
+	}
+
+	//---------------------------------------------------------------------------
+
 	private Element addColumnsToReportXml(i4Report rep, Element repXml) {
 		ReportSchema[] cols = rep.getColumns();
 		Element columns = new Element("columns");
 		for (int i = 0;i < cols.length;i++) {
-			columns
+			Element column = new Element("column");
+			column
 		.addContent(new Element("name").setText(cols[i].getColumnName()))
 		.addContent(new Element("datatype").setText(cols[i].getDataType()))
 		.addContent(new Element("displayName").setText(cols[i].getDisplayName()));
+			columns.addContent(column);
 		}
 		repXml.addContent(columns);
+
+		cols = rep.getFilterSchema();
+		Element filterColumns = new Element("filterColumns");
+		for (int i = 0;i < cols.length;i++) {
+			Element column = new Element("column");
+			column
+		.addContent(new Element("name").setText(cols[i].getColumnName()))
+		.addContent(new Element("datatype").setText(cols[i].getDataType()))
+		.addContent(new Element("displayName").setText(cols[i].getDisplayName()));
+			filterColumns.addContent(column);
+		}
+		repXml.addContent(filterColumns);
 		return repXml;
 	}
 
@@ -266,6 +390,7 @@ class YwfsRequest
 	private AdministrationServiceService as; 
   private AdministrationServiceSoapBindingStub assbs;
 	private Map<Integer,AdministrationPerson> personCache;
+	private Map<String,AdministrationPerson> personNameCache;
 }
 
 //=============================================================================
