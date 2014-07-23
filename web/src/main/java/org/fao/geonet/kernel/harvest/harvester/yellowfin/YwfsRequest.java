@@ -83,7 +83,7 @@ class YwfsRequest
 
 		AdministrationServiceResponse as = null;
 		AdministrationPerson person = new AdministrationPerson();
-		person.setUserId("simon.pigot@csiro.au");
+		person.setUserId(params.username);
 		asr.setFunction("GETALLUSERREPORTS");
 		asr.setPerson(person);
 
