@@ -140,7 +140,7 @@ class YwfsRequest
 			results.add(ri);
 
 			// get report from the report service client
-			i4Report rep = rsc.loadReportForUser(ar.getExecutionObject(), params.username, params.password, null);
+			i4Report rep = rsc.LoadReport(ar.getReportId());
 			this.currentReports.put(ar.getReportUUID(), Pair.read(ar,rep));
 		}
 
