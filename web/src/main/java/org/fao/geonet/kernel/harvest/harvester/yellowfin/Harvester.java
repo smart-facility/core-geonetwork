@@ -238,7 +238,7 @@ class Harvester
     fragmentParams.categories = params.getCategories();
     fragmentParams.createSubtemplates = false; // disabled for this harvester
     fragmentParams.outputSchema = params.outputSchema;
-    fragmentParams.isoCategory = ""; // disabled for this harvester
+    fragmentParams.isoCategory = null; // disabled for this harvester
     fragmentParams.privileges = params.getPrivileges();
     fragmentParams.templateId = params.templateId;
     fragmentParams.url = ""; 

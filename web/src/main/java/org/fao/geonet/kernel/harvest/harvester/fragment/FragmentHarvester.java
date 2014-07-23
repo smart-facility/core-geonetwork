@@ -594,7 +594,11 @@ public class FragmentHarvester extends BaseAligner{
         if(log.isDebugEnabled())
             log.debug("	- Set privileges, category, template and harvested");
         addPrivileges(id, params.privileges, localGroups, dataMan, context, dbms, log);
-		dataMan.setCategory (context, dbms, id, params.isoCategory);
+		if (params.isoCategory != null) {
+			dataMan.setCategory (context, dbms, id, params.isoCategory);
+		} else {
+			addCategories(id);
+		}
 		
 		dataMan.setTemplateExt(dbms, iId, "n", null); 
 		dataMan.setHarvestedExt(dbms, iId, params.uuid, harvestUri);
