@@ -155,6 +155,7 @@ class YwfsRequest
 		if (report == null) return null;
 
 		Element root = new Element("root");
+		root.setAttribute("uuid", uuid);
 
 		// Get the administration report into XML format (again)
 		Element reportXml = streamObject(report);
