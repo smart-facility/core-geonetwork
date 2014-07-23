@@ -2109,7 +2109,7 @@ public class DataManager {
         xmlSerializer.delete(dbms, "Metadata", id, context);
 
         // Notifies the metadata change to metatada notifier service
-        if (isTemplate.equals("n")) {
+        if (isTemplate != null && isTemplate.equals("n")) {
             notifyMetadataDelete(dbms, id, uuid);
         }
 

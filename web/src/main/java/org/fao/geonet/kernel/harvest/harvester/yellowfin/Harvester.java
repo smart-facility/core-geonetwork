@@ -210,6 +210,7 @@ class Harvester
 
       if (!updatedMetadata.contains(uuid)) {
         String id = localUuids.getID(uuid);
+				if (id == null) id = dataMan.getMetadataId(dbms, uuid);
         dataMan.deleteMetadata(context, dbms, id);
 
         if (isTemplate.equals("s")) {

@@ -315,6 +315,8 @@ class YwfsRequest
 				GISLayer[] layers = map.getLayers();
 				if (layers != null) {
 					for (int j = 0;j < layers.length;j++) {
+						// displayName property is protected in yfws-6.3
+						//lay.addContent(new Element("layer").setText(layers[j].getDisplayName()));
 						lay.addContent(new Element("layer").setText(layers[j].displayName));
 					}
 				}
