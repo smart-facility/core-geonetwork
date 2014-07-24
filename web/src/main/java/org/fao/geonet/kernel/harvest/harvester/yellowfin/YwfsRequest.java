@@ -46,6 +46,8 @@ import com.hof.mi.web.service.AdministrationServiceSoapBindingStub;
 import com.hof.mi.web.service.GISLayer;
 import com.hof.mi.web.service.GISMap;
 import com.hof.mi.web.service.GISShape;
+import com.hof.mi.web.service.RelatedReport;
+import com.hof.mi.web.service.RelatedReports;
 import com.hof.mi.web.service.ReportSchema;
 import com.hof.mi.web.service.ReportServiceServiceLocator;
 import com.hof.mi.web.service.ReportServiceSoapBindingStub;
@@ -126,6 +128,7 @@ class YwfsRequest
 		Set<RecordInfo> results = new HashSet<RecordInfo>();
 
 		this.currentReports = new HashMap<String, Pair<AdministrationReport,i4Report>>();
+		this.reportsById = new HashMap<Integer, String>();
 		this.personCache = new HashMap<Integer, AdministrationPerson>();
 		this.personNameCache = new HashMap<String, AdministrationPerson>();
 
@@ -143,6 +146,7 @@ class YwfsRequest
 			// get report from the report service client
 			i4Report rep = rsc.LoadReport(ar.getReportId());
 			this.currentReports.put(ar.getReportUUID(), Pair.read(ar,rep));
+			this.reportsById.put(ar.getReportId(), ar.getReportUUID());
 		}
 
 		return results;
@@ -170,6 +174,7 @@ class YwfsRequest
 		Element bigReportXml = streamObject(new SmallReport(rep));
 		addColumnsToReportXml(rep, bigReportXml);
 		addShapesToReportXml(rep, bigReportXml);
+		addRelatedReportsToReportXml(rep, bigReportXml);
 		root.addContent(bigReportXml);
 		
 		// Get last modifier id and then use that to get the user details of
@@ -329,6 +334,28 @@ class YwfsRequest
 
 	//---------------------------------------------------------------------------
 
+	private Element addRelatedReportsToReportXml(i4Report rep, Element repXml) {
+		Element relatedElem = new Element("relatedReports");
+		RelatedReports relReports = rep.getRelatedReports();
+		if (relReports != null) {
+			RelatedReport[] relatedReports = relReports.getRelatedReports();
+			for (int i = 0;i < relatedReports.length;i++) {
+				RelatedReport report = relatedReports[i];
+				String relRepUUID = reportsById.get(report.getReportId());
+				if (relRepUUID != null) { // skip any that aren't available to us
+					relatedElem.addContent(
+						new Element("report").setText(relRepUUID));
+				} else {
+					log.error("Skipping report "+report.getReportId());
+				}
+			}
+		}
+		repXml.addContent(relatedElem);
+		return repXml;
+	}
+
+	//---------------------------------------------------------------------------
+
 	private Element addShapesToReportXml(i4Report rep, Element repXml) {
 		GISMap[] maps = rep.getGisMap();
 		Element bnd = new Element("bounds");
@@ -413,6 +440,7 @@ class YwfsRequest
 	private ReportServiceClient rsc;
 	private AdministrationPerson person;
 	private Map<String, Pair<AdministrationReport, i4Report>> currentReports;
+	private Map<Integer, String> reportsById;
 	private String baseUrl = "/services/";
 	private AdministrationReport[] reports;
 	private AdministrationServiceService as; 

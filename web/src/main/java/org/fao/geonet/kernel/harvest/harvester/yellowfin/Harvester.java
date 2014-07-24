@@ -193,7 +193,11 @@ class Harvester
     result.recordsUpdated += fragmentResult.recordsUpdated;
     result.subtemplatesUpdated += fragmentResult.fragmentsUpdated;
 
-    result.total = result.subtemplatesAdded + result.recordsBuilt;
+		// translate to simplified result in YellowfinResult - ignore subtemplate
+		// stats
+    result.totalMetadata = result.recordsBuilt + result.recordsUpdated;
+		result.addedMetadata = result.recordsBuilt;
+		result.updatedMetadata = result.recordsUpdated;
   }
 
 	//---------------------------------------------------------------------------
@@ -220,7 +224,7 @@ class Harvester
         if (isTemplate.equals("s")) {
           result.subtemplatesRemoved ++;
         } else {
-          result.recordsRemoved ++;
+          result.locallyRemoved ++;
         }
       }
     }
