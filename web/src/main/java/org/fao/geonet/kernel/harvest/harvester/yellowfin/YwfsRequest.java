@@ -25,6 +25,7 @@ package org.fao.geonet.kernel.harvest.harvester.yellowfin;
 
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.io.xml.JDomWriter;
+import com.thoughtworks.xstream.converters.basic.AbstractSingleValueConverter;
 
 import org.fao.geonet.constants.Geonet;
 import org.fao.geonet.kernel.harvest.harvester.RecordInfo;
@@ -32,7 +33,6 @@ import org.fao.geonet.kernel.search.spatial.Pair;
 import org.fao.geonet.util.ISODate;
 
 import jeeves.interfaces.Logger;
-import jeeves.utils.Log;
 import jeeves.utils.Xml;
 
 import com.hof.mi.web.service.AdministrationPerson;
@@ -76,6 +76,7 @@ class YwfsRequest
 
 	public YwfsRequest(YellowfinParams params, Logger log) throws Exception {
 		this.params = params;
+		this.log = log;
 		this.as = new AdministrationServiceServiceLocator(params.hostname, params.port, baseUrl+"AdministrationService", false);
     this.assbs = (AdministrationServiceSoapBindingStub) this.as.getAdministrationService();
 
@@ -89,15 +90,15 @@ class YwfsRequest
 
 		as = this.assbs.remoteAdministrationCall(asr);
 		if ("SUCCESS".equals(as.getStatusCode()) ) {
-			Log.debug(Geonet.HARVESTER, "Success");
+			log.debug( "Success");
 		} else {
-			Log.debug(Geonet.HARVESTER, "Failure Code: " + as.getErrorCode());
+			log.debug( "Failure Code: " + as.getErrorCode());
 			throw new Exception("Failed to connect to yellowfin: "+as.getErrorCode());
 		}	
 
 		// get reports - filter with search expression?
 		reports = as.getReports();
-		Log.error(Geonet.HARVESTER, "Found "+reports.length+" yellowfin reports accessible by user "+params.username);
+		log.info( "Found "+reports.length+" yellowfin reports accessible by user "+params.username);
 	}
 
 	//---------------------------------------------------------------------------
@@ -135,7 +136,7 @@ class YwfsRequest
 		for (int i = 0;i < reports.length;i++) {
 			AdministrationReport ar = reports[i];
 
-			Log.error(Geonet.HARVESTER,"Adding report "+ar.getReportUUID());
+			log.info("Adding report "+ar.getReportUUID());
 			RecordInfo ri = new RecordInfo(ar.getReportUUID(), new ISODate(ar.getLastModifiedDate().getTime()).toString());	
 			results.add(ri);
 
@@ -161,6 +162,8 @@ class YwfsRequest
 		Element reportXml = streamObject(report);
 		reportXml.addContent(
 			new Element("reportURL").setText("http://"+params.hostname+":"+params.port+"/RunReport.i4?reportUUID="+uuid+"&primaryOrg=1&clientOrg=1"));
+		reportXml.addContent(
+			new Element("dateStamp").setText(new ISODate(new Date().getTime()).toString()));
 		root.addContent(reportXml);
 
 		// Get the i4report into XML format (again)
@@ -177,7 +180,7 @@ class YwfsRequest
 			personXml.setAttribute("role","processor");
 			root.addContent(personXml);
 		} else {
-			Log.error(Geonet.HARVESTER, "Yellowfin report modifier by ip "+report.getLastModifierId()+" doesn't exist");
+			log.warning( "Yellowfin report modifier by ip "+report.getLastModifierId()+" doesn't exist");
 		}
 
 		// Get author name and then use that to get the user details of
@@ -188,9 +191,9 @@ class YwfsRequest
 			personXml.setAttribute("role","author");
 			root.addContent(personXml);
 		} else {
-			Log.error(Geonet.HARVESTER, "Yellowfin report author "+rep.getAuthor()+" doesn't exist");
+			log.warning( "Yellowfin report author "+rep.getAuthor()+" doesn't exist");
 		}
-		System.out.println(Xml.getString(root));
+		log.debug("Prepared for fragments: "+Xml.getString(root));
 
 		return root;
 	}
@@ -221,7 +224,7 @@ class YwfsRequest
 		// split the userFirstNameLastName into two parts by space
 		String[] names = userFirstNameLastName.split(" ");
 		if (names.length != 2) {
-			Log.warning(Geonet.HARVESTER, "Metadata author field ("+userFirstNameLastName+") didn't have expected format 'firstname lastname'");
+			log.warning( "Metadata author field ("+userFirstNameLastName+") didn't have expected format 'firstname lastname'");
 			person.setUserId(userFirstNameLastName);
 		 	return person;	
 		}
@@ -238,17 +241,17 @@ class YwfsRequest
 			e.printStackTrace();
 		} finally {
 			if ("SUCCESS".equals(as.getStatusCode()) ) {
-				Log.debug(Geonet.HARVESTER, "Success");
+				log.debug( "Success");
 				AdministrationPerson[] ap = as.getPeople();
 				if (ap != null && ap.length > 0) {
 					personNameCache.put(userFirstNameLastName, ap[0]);
 					return ap[0];
 				} else {
-					Log.error(Geonet.HARVESTER, "Couldn't find " +userFirstNameLastName);
+					log.warning( "Couldn't find yellowfin user with names: " +userFirstNameLastName);
 					return null;
 				}
 			} else {
-				Log.error(Geonet.HARVESTER, "Failure Code: " + as.getErrorCode());
+				log.error( "Failure Code: " + as.getErrorCode());
 				return null;
 			}	
 		}
@@ -274,12 +277,12 @@ class YwfsRequest
 			e.printStackTrace();
 		} finally {
 			if ("SUCCESS".equals(as.getStatusCode()) ) {
-				Log.debug(Geonet.HARVESTER, "Success");
+				log.debug( "Success");
 				AdministrationPerson ap = as.getPerson();
 				if (ap != null) personCache.put(id, ap);
 				return ap;
 			} else {
-				Log.debug(Geonet.HARVESTER, "Failure Code: " + as.getErrorCode());
+				log.debug( "Failure Code: " + as.getErrorCode());
 				return null;
 			}	
 		}
@@ -294,12 +297,34 @@ class YwfsRequest
 		String alias = obj.getClass().getSimpleName();
 		//add the alias for the User class
 		xStream.alias(alias, obj.getClass());
+		if (obj instanceof AdministrationReport) {
+			YwfsDateConverter dc = new YwfsDateConverter();
+			xStream.registerLocalConverter(obj.getClass(), "PublishDate", dc);
+			xStream.registerLocalConverter(obj.getClass(), "LastModifiedDate", dc);
+		}
 
 		//create the container element which the serialized object will go into
 		Element container = new Element("container");
 		//marshall the onject into the container
 		xStream.marshal(obj, new JDomWriter(container));
 		return (Element) container.getChild(alias).detach();
+	}
+
+	//---------------------------------------------------------------------------
+
+	public class YwfsDateConverter extends AbstractSingleValueConverter {
+    public boolean canConvert(Class clazz) {
+      return clazz.equals(Date.class);
+     }
+     public Object fromString(String str) { // don't care here
+       return new Date(); // don't care
+     }
+		 @Override
+     public String toString(Object obj) {
+			 if (obj == null) return null;
+			 Date theDate = (Date)obj;
+			 return new ISODate(theDate.getTime()).toString();
+     }
 	}
 
 	//---------------------------------------------------------------------------

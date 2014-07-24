@@ -109,6 +109,7 @@ class Harvester
 		log.info("Total records processed in all searches :"+ records.size());
 
 		localUuids = new UUIDMapper(dbms, params.uuid);
+		updatedMetadata = new HashSet<String>();
 
 		//--- harvest metadata and subtemplates from fragments using generic fragment harvester
     FragmentHarvester fragmentHarvester = new FragmentHarvester(log, context, dbms, getFragmentHarvesterParams());
@@ -135,6 +136,8 @@ class Harvester
       // now do the fragment harvester stuff
 			harvest(response, fragmentHarvester);
 		}
+
+		deleteOrphanedMetadata();
 
     return result;	
 
@@ -180,7 +183,7 @@ class Harvester
 
     HarvestSummary fragmentResult = fragmentHarvester.harvest(xml, this.harvestUrl);
 
-    deleteOrphanedMetadata(fragmentResult.updatedMetadata);
+    updatedMetadata.addAll(fragmentResult.updatedMetadata);
 
     result.fragmentsReturned += fragmentResult.fragmentsReturned;
     result.fragmentsUnknownSchema += fragmentResult.fragmentsUnknownSchema;
@@ -199,7 +202,8 @@ class Harvester
    * Remove old metadata and subtemplates and uncache any subtemplates
    * that are left over after the update.
    */
-  public void deleteOrphanedMetadata(Set<String> updatedMetadata) throws Exception {
+  public void deleteOrphanedMetadata() throws Exception {
+
      if(log.isDebugEnabled()) log.debug("  - Removing orphaned metadata records and fragments after update");
 
     for (String uuid : localUuids.getUUIDs()) {
@@ -265,6 +269,7 @@ class Harvester
 	private YellowfinResult      result;
 	private String metadataGetService;
 	private Map<String,String> ssParams = new HashMap<String,String>();
+	private Set<String> updatedMetadata = new HashSet<String>();
 }
 
 //=============================================================================

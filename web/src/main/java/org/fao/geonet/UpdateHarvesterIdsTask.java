@@ -21,7 +21,7 @@ public class UpdateHarvesterIdsTask implements DatabaseMigrationTask {
 						+ MIN_HARVEST_ID);
 
 		if (result.getChildren().size() > 0) {
-			dbms.execute("CREATE OR REPLACE TABLE Harvester AS SELECT * FROM Settings WHERE parentid = 2");
+			dbms.execute("CREATE TABLE Harvester AS SELECT * FROM Settings WHERE parentid = 2");
 			int changed = result.getChildren().size();
 			while(changed > 0) {
 				changed = dbms.execute("INSERT INTO Harvester SELECT * FROM Settings WHERE parentid IN (SELECT id FROM Harvester) AND NOT id IN (SELECT id FROM Harvester)");
