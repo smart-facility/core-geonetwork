@@ -117,7 +117,15 @@ public class Transaction extends AbstractOperation implements CatalogService
             for (Element transRequest : childList) {
                 String transactionType = transRequest.getName().toLowerCase();
                 if (transactionType.equals("insert") || transactionType.equals("update") || transactionType.equals("delete")) {
-                    List<Element> mdList = transRequest.getChildren();
+										String text = transRequest.getTextTrim();
+										List mdList = new ArrayList<Element>(); 
+										if (!text.equals("")) {
+											text.replace("&lt;","<").replace("&gt;",">");
+											Element elem = jeeves.utils.Xml.loadString(text, false);
+											mdList.add(elem);
+										} else {
+                    	mdList = transRequest.getChildren();
+										}
 
                     // insert to database, and get the number of inserted successful
                     if (transactionType.equals("insert")) {
