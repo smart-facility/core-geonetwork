@@ -294,9 +294,9 @@ MarLIN.SearchFormTools = {
     getResourceTypeField : function (multi) {
         var resourceTypes = [ 
 															[ 'dataset',  'Dataset'  ],
+                              [ 'datasetAgreement',   'Dataset Agreement'   ],
 														  [ 'project',  'Project'  ],
-                              [ 'survey',   'Survey'   ],
-                              [ 'service',  'Service'  ],
+                              [ 'document',  'YF Report'  ],
                               [ 'register', 'Register' ]
 													  ];
 
@@ -597,7 +597,7 @@ MarLIN.SearchFormTools = {
 				anchor: '100%', // parent is a form panel
 				autoHeight: true,
 				id: 'marlin-keywords',
-				items: [this.getResourceTypeField(multi), this.getTitleField(services), this.getOrganisationField(services), this.getCreditField(services), this.getDataParamField(services)]
+				items: [this.getResourceTypeField(multi), this.getTitleField(services), this.getOrganisationField(services), this.getCreditField(services)]
 			});
 
 			// now get all thesauri in use from Lucene index field thesaurusName
