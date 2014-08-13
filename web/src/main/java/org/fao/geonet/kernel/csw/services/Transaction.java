@@ -117,6 +117,14 @@ public class Transaction extends AbstractOperation implements CatalogService
             for (Element transRequest : childList) {
                 String transactionType = transRequest.getName().toLowerCase();
                 if (transactionType.equals("insert") || transactionType.equals("update") || transactionType.equals("delete")) {
+										// sometimes the insert transaction will contain an 
+										// xml document that has been encoded 
+										// eg. &lt;gmd:MD_...&gt; This is a bug in the sender
+										// but we can work around it by checking for a text
+										// element, decoding it if we find it and then 
+										// parsing it as a JDOM element into mdList - phew
+										// the client that generates such an insert transaction
+										// is definitely broken!
 										String text = transRequest.getTextTrim();
 										List mdList = new ArrayList<Element>(); 
 										if (!text.equals("")) {
