@@ -221,6 +221,19 @@ GeoNetwork.HTML5UI.Templates.DOWNLOAD =
  */
 GeoNetwork.HTML5UI.Templates.VALID =
 	'<tpl if="this.isAdmin()">\
+    <tpl if="valid == \'1\'">\
+    	<div class="validStatus">\
+      <img src="../../apps/html5ui/img/valid_metadata.png" title="{[OpenLayers.i18n("validityInfo")]}\
+    		<tpl for="valid_details">\
+   				{values.type}: \
+     			{[OpenLayers.i18n("valid")]}\
+     			<tpl if="values.ratio != \'\'"> ({values.ratio}) </tpl> - \
+    		</tpl>\
+      "></img></div>\
+    </tpl>\
+   </tpl>';
+ /*
+	'<tpl if="this.isAdmin()">\
     <tpl if="valid != \'-1\'">\
     <div class="validStatus">\
     <tpl if="valid == \'1\'"><img src="../../apps/html5ui/img/valid_metadata.png"</tpl>\
@@ -236,7 +249,7 @@ GeoNetwork.HTML5UI.Templates.VALID =
         "></img></div>\
     </tpl>\
    </tpl>';
-
+*/
 /**
  * Shows if the WMS is valid
  * 
