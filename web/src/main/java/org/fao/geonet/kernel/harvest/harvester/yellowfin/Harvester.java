@@ -253,6 +253,8 @@ class Harvester
     fragmentParams.url = ""; 
     fragmentParams.uuid = params.uuid;
     fragmentParams.owner = params.ownerId;
+		fragmentParams.addUuidAsId = true; // put fragment uuid in as id attribute
+		                                   // for updates by copy
     return fragmentParams;
   }
 

@@ -84,7 +84,7 @@ public class FragmentHarvester extends BaseAligner{
 		metadataGetService = "local://xml.metadata.get";
 
 		if (params.templateId != null && !params.templateId.equals("0")) {
-			loadTemplate();
+			loadTemplate(params.templateId);
 		}
 	}
 
@@ -135,7 +135,11 @@ public class FragmentHarvester extends BaseAligner{
 		List<Element> recs = fragments.getChildren();
 		
 		for (Element rec : recs) {
-			addRecord(rec);
+			if (params.addUuidAsId) {
+				updateRecord(rec);
+			} else {
+				addRecord(rec);
+			}
 		}
 		
 		return harvestSummary;
@@ -146,10 +150,10 @@ public class FragmentHarvester extends BaseAligner{
     * Load metadata template to be used to generate metadata
     * 
     */
-	private void loadTemplate() {
+	private void loadTemplate(String templateId) {
 		try {
 			//--- Load template to be used to create metadata from fragments
-			metadataTemplate = dataMan.getMetadata(dbms, params.templateId);
+			metadataTemplate = dataMan.getMetadata(dbms, templateId);
 			
 			//--- Build a list of all Namespaces in the metadata document
 			Namespace ns = metadataTemplate.getNamespace();
@@ -177,6 +181,56 @@ public class FragmentHarvester extends BaseAligner{
 		}
 	}
 	
+	//---------------------------------------------------------------------------
+	/** 
+     * Update metadata using fragments and fragment uuid
+     *   
+     * @param rec		record containing fragments to add to GeoNetwork database
+     * 
+     */
+	private void updateRecord(Element rec) throws Exception {
+		String recUuid = rec.getAttributeValue("uuid");
+		String id = dataMan.getMetadataId(dbms, recUuid);
+		if (id == null) {
+			log.info("Cannot find record with uuid "+recUuid+", will add it");
+			loadTemplate(params.templateId);
+			addRecord(rec);
+			return;
+		}
+
+		//--- Load template = metadata record that is being updated
+		loadTemplate(id);
+
+		List<Element> fragments = rec.getChildren();
+		
+		Element recordMetadata = null;
+		Set<String> recordMetadataRefs = new HashSet<String>();
+		
+		if (metadataTemplate != null) {
+			recordMetadata = (Element)metadataTemplate.clone();
+			recordMetadataRefs.addAll(templateIdAtts);
+			
+			//Jaxen requires element to be associated with a
+			//document to correctly interpret XPath expressions 
+			new Document(recordMetadata);
+		}
+		
+		for (Element fragment : fragments) {
+			addMetadata(fragment);
+			
+			if (recordMetadata != null) {
+				updateMetadataReferences(recordMetadata, recordMetadataRefs, "uuid", fragment);
+			}
+		}
+	
+		harvestSummary.fragmentsReturned += fragments.size();
+
+		if (recordMetadata != null) {
+			log.debug("Updating metadata "+recUuid+" with id : " + id);
+			updateMetadata(recUuid, id, recordMetadata);
+		}
+	}
+
 	//---------------------------------------------------------------------------
 	/** 
      * Add subtemplates and/or metadata using fragments and metadata template 
@@ -207,7 +261,7 @@ public class FragmentHarvester extends BaseAligner{
 			}
 				
 			if (recordMetadata != null) {
-				updateMetadataReferences(recordMetadata, recordMetadataRefs, fragment);
+				updateMetadataReferences(recordMetadata, recordMetadataRefs, "id", fragment);
 			}
 		}
 	
@@ -391,20 +445,21 @@ public class FragmentHarvester extends BaseAligner{
      *   
      * @param template		template to update
      * @param templateRefs names of id attributes in template
+		 * @param attName     either id or uuid
      * @param fragment		fragment referenced
      * 
      */
-	private void updateMetadataReferences(Element template, Set<String> templateRefs, Element fragment) throws Exception {
-		String matchId = fragment.getAttributeValue("id");
+	private void updateMetadataReferences(Element template, Set<String> templateRefs, String attName, Element fragment) throws Exception {
+		String matchId = fragment.getAttributeValue(attName);
 
 		if (matchId == null || matchId.equals("")) {
 			log.error(fragment.getName()+" can't be matched because it has no id attribute "+Xml.getString(fragment));
 			return;
 		}
 
-		// find all elements that have an attribute id with the matchId
+		// find all elements that have an attribute id or uuidref with the matchId
         if(log.isDebugEnabled())
-            log.debug("Attempting to search metadata for "+matchId);
+            log.debug("Attempting to search metadata template for id="+matchId);
 		List elems = Xml.selectNodes(template,"//*[@id='"+matchId+"']", metadataTemplateNamespaces);
 
 		// for each of these elements...
@@ -480,7 +535,7 @@ public class FragmentHarvester extends BaseAligner{
 		String title = fragment.getAttributeValue("title");
 		String uuid = fragment.getAttributeValue("uuid");
 		String schema = fragment.getAttributeValue("schema");
-		boolean addUuid = fragment.getAttributeValue("addUuidAsId","false").equals("true");
+		boolean addUuid = fragment.getAttributeValue("addUuidAsId","false").equals("true") || params.addUuidAsId;
 		
 		if (schema==null) return;  //skip fragments with unknown schema
 		
@@ -654,6 +709,7 @@ public class FragmentHarvester extends BaseAligner{
 		public Boolean createSubtemplates;
 		public Iterable<Privileges> privileges;
 		public Iterable<String> categories;
+		public boolean addUuidAsId = false;
 	}
 	
 	public class HarvestSummary {

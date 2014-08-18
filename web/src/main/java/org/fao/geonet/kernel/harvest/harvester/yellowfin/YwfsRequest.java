@@ -94,8 +94,7 @@ class YwfsRequest
 		if ("SUCCESS".equals(as.getStatusCode()) ) {
 			log.debug( "Success");
 		} else {
-			log.debug( "Failure Code: " + as.getErrorCode());
-			throw new Exception("Failed to connect to yellowfin: "+as.getErrorCode());
+			throw new Exception("Couldn't get all user reports from yellowfin: "+as.getErrorCode());
 		}	
 
 		// get reports - filter with search expression?
@@ -256,7 +255,7 @@ class YwfsRequest
 					return null;
 				}
 			} else {
-				log.error( "Failure Code: " + as.getErrorCode());
+				log.error( "Looking up yellowfin user "+userFirstNameLastName+" failed: " + as.getErrorCode());
 				return null;
 			}	
 		}
@@ -287,7 +286,7 @@ class YwfsRequest
 				if (ap != null) personCache.put(id, ap);
 				return ap;
 			} else {
-				log.debug( "Failure Code: " + as.getErrorCode());
+				log.error( "Yellowfin user by ip lookup on "+id+" failed: " + as.getErrorCode());
 				return null;
 			}	
 		}
