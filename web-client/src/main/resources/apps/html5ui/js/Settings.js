@@ -35,7 +35,7 @@ GeoNetwork.Settings.hideExtEditor = true;
 
 GeoNetwork.Settings.editor = {
     defaultViewMode : 'simple',
-    editHarvested: false
+    editHarvested: true
 //    defaultViewMode : 'inspire'
 };
 
