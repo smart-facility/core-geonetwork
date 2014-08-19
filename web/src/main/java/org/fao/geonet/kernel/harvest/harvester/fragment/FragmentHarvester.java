@@ -37,6 +37,7 @@ import org.fao.geonet.kernel.harvest.harvester.CategoryMapper;
 import org.fao.geonet.kernel.harvest.harvester.GroupMapper;
 import org.fao.geonet.kernel.harvest.harvester.Privileges;
 import org.fao.geonet.kernel.setting.SettingInfo;
+import org.fao.geonet.kernel.search.spatial.Pair;
 import org.jdom.Document;
 import org.jdom.Element;
 import org.jdom.Namespace;
@@ -219,7 +220,7 @@ public class FragmentHarvester extends BaseAligner{
 			addMetadata(fragment);
 			
 			if (recordMetadata != null) {
-				updateMetadataReferences(recordMetadata, recordMetadataRefs, "uuid", fragment);
+				updateMetadataReferencesUsingUuid(recordMetadata, recordMetadataRefs, fragment);
 			}
 		}
 	
@@ -261,7 +262,7 @@ public class FragmentHarvester extends BaseAligner{
 			}
 				
 			if (recordMetadata != null) {
-				updateMetadataReferences(recordMetadata, recordMetadataRefs, "id", fragment);
+				updateMetadataReferencesUsingId(recordMetadata, recordMetadataRefs, fragment);
 			}
 		}
 	
@@ -440,24 +441,76 @@ public class FragmentHarvester extends BaseAligner{
 
 	//---------------------------------------------------------------------------
 	/** 
+     * Update references in a record to the fragment (via uuid) with the fragment or an xlink to the 
+     * sub-template created for it 
+     *   
+     * @param template		template to update
+     * @param templateRefs names of id attributes in template
+     * @param fragment		fragment referenced
+     * 
+     */
+	private void updateMetadataReferencesUsingUuid(Element template, Set<String> templateRefs, Element fragment) throws Exception {
+		List<Pair<String, Element>> updaters = new ArrayList<Pair<String, Element>>();
+
+		if (fragment.getName().equals(REPLACEMENT_GROUP)) {
+			List<Element> children = fragment.getChildren();
+			for (Element child : children) {
+				Pair<String,Element> f = Pair.read(child.getAttributeValue("uuid"), child);
+				updaters.add(f);
+			}
+		} else {
+			Pair<String,Element> f = Pair.read(fragment.getAttributeValue("uuid"), fragment);
+			updaters.add(f);
+		}
+
+		for (Pair<String,Element> f : updaters) {
+			String matchId = f.one();
+			Element frag = f.two();
+			if (matchId == null || matchId.equals("")) {
+				log.error(frag.getName()+" can't be matched because it has no uuid attribute "+Xml.getString(frag));
+				continue;
+			}
+
+			// find all elements that have an attribute id = matchId
+     if(log.isDebugEnabled())
+        log.debug("Attempting to search metadata template for id="+matchId);
+		 List elems = Xml.selectNodes(template,"//*[@id='"+matchId+"']", metadataTemplateNamespaces);
+
+			// for each of these elements...
+			for (Iterator<Object> iter = elems.iterator(); iter.hasNext();) {
+				Object ob = iter.next();
+				if (ob instanceof Element) {
+					Element elem = (Element)ob;
+		    	updateTemplateReference(elem, frag);
+				}
+			}
+		
+			if (elems.size() > 0) {
+				harvestSummary.fragmentsMatched++;
+				templateRefs.remove(matchId);
+			}
+		}
+	}
+
+	//---------------------------------------------------------------------------
+	/** 
      * Update references in the template to the fragment with the fragment or an xlink to the 
      * sub-template created for it 
      *   
      * @param template		template to update
      * @param templateRefs names of id attributes in template
-		 * @param attName     either id or uuid
      * @param fragment		fragment referenced
      * 
      */
-	private void updateMetadataReferences(Element template, Set<String> templateRefs, String attName, Element fragment) throws Exception {
-		String matchId = fragment.getAttributeValue(attName);
+	private void updateMetadataReferencesUsingId(Element template, Set<String> templateRefs, Element fragment) throws Exception {
+		String matchId = fragment.getAttributeValue("id");
 
 		if (matchId == null || matchId.equals("")) {
 			log.error(fragment.getName()+" can't be matched because it has no id attribute "+Xml.getString(fragment));
 			return;
 		}
 
-		// find all elements that have an attribute id or uuidref with the matchId
+		// find all elements that have an attribute id = matchId
         if(log.isDebugEnabled())
             log.debug("Attempting to search metadata template for id="+matchId);
 		List elems = Xml.selectNodes(template,"//*[@id='"+matchId+"']", metadataTemplateNamespaces);
