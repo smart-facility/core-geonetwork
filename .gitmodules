@@ -13,3 +13,4 @@
 [submodule "schemaPlugins"]
 	path = schemaPlugins
 	url = git://github.com/geonetwork/schema-plugins
+	branch = 2.10.x
