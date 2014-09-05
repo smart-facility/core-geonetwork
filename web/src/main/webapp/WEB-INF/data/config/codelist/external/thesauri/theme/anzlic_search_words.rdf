@@ -1,0 +1,1189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF xmlns:dct="http://purl.org/dc/terms/" xmlns:foaf="http://xmlns.com/foaf/0.1/"
+         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:dc="http://purl.org/dc/elements/1.1/"
+         xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+         xmlns:gml="http://www.opengis.net/gml">
+   <skos:ConceptScheme rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2">
+      <dc:identifier>b920278d-fafa-4d75-898f-cd55bce8f04f</dc:identifier>
+      <dc:title>ANZLIC Search Words Register</dc:title>
+      <dc:description>Terms for thematic classification of resources, as defined by ANZLIC (Australia New Zealand Land Information Council)</dc:description>
+      <dc:URI>http://asdd.ga.gov.au/asdd/profileinfo/anzlic-theme.xml</dc:URI>
+      <dct:modified>2011-07-06</dct:modified>
+      <dc:creator>
+         <foaf:Organization>
+            <foaf:name>ANZLIC</foaf:name>
+         </foaf:Organization>
+         <foaf:Organization>
+            <foaf:name>ANZLIC - Australia/New-Zealand Spatial Information Council</foaf:name>
+         </foaf:Organization>
+      </dc:creator>
+      <dc:publisher>
+         <foaf:Organization>
+            <foaf:name>ANZLIC - Australia/New-Zealand Spatial Information Council</foaf:name>
+         </foaf:Organization>
+      </dc:publisher>
+      <dct:issued>2014-09-05T13:15:54</dct:issued>
+   </skos:ConceptScheme>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:1">
+      <skos:prefLabel xml:lang="en">AGRICULTURE</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:narrower rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:2"/>
+      <skos:narrower rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:3"/>
+      <skos:narrower rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:4"/>
+      <skos:narrower rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:5"/>
+      <skos:definition xml:lang="en">AGRICULTURE non-specific</skos:definition>
+      <skos:scopeNote xml:lang="en">AGRICULTURE: AGRICULTURE non-specific</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:2">
+      <skos:prefLabel xml:lang="en">AGRICULTURE-Crops</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:broader rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:1"/>
+      <skos:definition xml:lang="en">AGRICULTURE Crops</skos:definition>
+      <skos:scopeNote xml:lang="en">AGRICULTURE-Crops: AGRICULTURE Crops</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:3">
+      <skos:prefLabel xml:lang="en">AGRICULTURE-Horticulture</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:broader rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:1"/>
+      <skos:definition xml:lang="en">AGRICULTURE Horticulture</skos:definition>
+      <skos:scopeNote xml:lang="en">AGRICULTURE-Horticulture: AGRICULTURE Horticulture</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:4">
+      <skos:prefLabel xml:lang="en">AGRICULTURE-Irrigation</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:broader rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:1"/>
+      <skos:definition xml:lang="en">AGRICULTURE Irrigation</skos:definition>
+      <skos:scopeNote xml:lang="en">AGRICULTURE-Irrigation: AGRICULTURE Irrigation</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:5">
+      <skos:prefLabel xml:lang="en">AGRICULTURE-Livestock</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:broader rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:1"/>
+      <skos:definition xml:lang="en">AGRICULTURE Livestock</skos:definition>
+      <skos:scopeNote xml:lang="en">AGRICULTURE-Livestock: AGRICULTURE Livestock</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:6">
+      <skos:prefLabel xml:lang="en">ATMOSPHERE</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:narrower rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:7"/>
+      <skos:narrower rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:8"/>
+      <skos:narrower rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:9"/>
+      <skos:narrower rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:10"/>
+      <skos:definition xml:lang="en">ATMOSPHERE non-specific</skos:definition>
+      <skos:scopeNote xml:lang="en">ATMOSPHERE: ATMOSPHERE non-specific</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:7">
+      <skos:prefLabel xml:lang="en">ATMOSPHERE-Air-Quality</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:broader rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:6"/>
+      <skos:definition xml:lang="en">ATMOSPHERE Air Quality</skos:definition>
+      <skos:scopeNote xml:lang="en">ATMOSPHERE-Air-Quality: ATMOSPHERE Air Quality</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:8">
+      <skos:prefLabel xml:lang="en">ATMOSPHERE-Greenhouse</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:broader rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:6"/>
+      <skos:definition xml:lang="en">ATMOSPHERE Greenhouse</skos:definition>
+      <skos:scopeNote xml:lang="en">ATMOSPHERE-Greenhouse: ATMOSPHERE Greenhouse</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:9">
+      <skos:prefLabel xml:lang="en">ATMOSPHERE-Ozone</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:broader rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:6"/>
+      <skos:definition xml:lang="en">ATMOSPHERE Ozone</skos:definition>
+      <skos:scopeNote xml:lang="en">ATMOSPHERE-Ozone: ATMOSPHERE Ozone</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:10">
+      <skos:prefLabel xml:lang="en">ATMOSPHERE-Pressure</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:broader rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:6"/>
+      <skos:definition xml:lang="en">ATMOSPHERE Pressure</skos:definition>
+      <skos:scopeNote xml:lang="en">ATMOSPHERE-Pressure: ATMOSPHERE Pressure</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:11">
+      <skos:prefLabel xml:lang="en">BOUNDARIES</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:narrower rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:12"/>
+      <skos:narrower rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:13"/>
+      <skos:narrower rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:14"/>
+      <skos:definition xml:lang="en">BOUNDARIES non-specific</skos:definition>
+      <skos:scopeNote xml:lang="en">BOUNDARIES: BOUNDARIES non-specific</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:12">
+      <skos:prefLabel xml:lang="en">BOUNDARIES-Administrative</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:broader rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:11"/>
+      <skos:definition xml:lang="en">BOUNDARIES Administrative</skos:definition>
+      <skos:scopeNote xml:lang="en">BOUNDARIES-Administrative: BOUNDARIES Administrative</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:13">
+      <skos:prefLabel xml:lang="en">BOUNDARIES-Biophysical</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:broader rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:11"/>
+      <skos:definition xml:lang="en">BOUNDARIES Biophysical</skos:definition>
+      <skos:scopeNote xml:lang="en">BOUNDARIES-Biophysical: BOUNDARIES Biophysical</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:14">
+      <skos:prefLabel xml:lang="en">BOUNDARIES-Cultural</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:broader rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:11"/>
+      <skos:definition xml:lang="en">BOUNDARIES Cultural</skos:definition>
+      <skos:scopeNote xml:lang="en">BOUNDARIES-Cultural: BOUNDARIES Cultural</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:15">
+      <skos:prefLabel xml:lang="en">CLIMATE-AND-WEATHER</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:narrower rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:16"/>
+      <skos:narrower rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:17"/>
+      <skos:narrower rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:18"/>
+      <skos:narrower rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:19"/>
+      <skos:narrower rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:20"/>
+      <skos:narrower rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:21"/>
+      <skos:narrower rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:22"/>
+      <skos:narrower rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:23"/>
+      <skos:definition xml:lang="en">CLIMATE AND WEATHER</skos:definition>
+      <skos:scopeNote xml:lang="en">CLIMATE-AND-WEATHER: CLIMATE AND WEATHER</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:16">
+      <skos:prefLabel xml:lang="en">CLIMATE-AND-WEATHER-Climate-change</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:broader rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:15"/>
+      <skos:definition xml:lang="en">CLIMATE AND WEATHER Climate change</skos:definition>
+      <skos:scopeNote xml:lang="en">CLIMATE-AND-WEATHER-Climate-change: CLIMATE AND WEATHER Climate change</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:17">
+      <skos:prefLabel xml:lang="en">CLIMATE-AND-WEATHER-Drought</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:broader rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:15"/>
+      <skos:definition xml:lang="en">CLIMATE AND WEATHER Drought</skos:definition>
+      <skos:scopeNote xml:lang="en">CLIMATE-AND-WEATHER-Drought: CLIMATE AND WEATHER Drought</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:18">
+      <skos:prefLabel xml:lang="en">CLIMATE-AND-WEATHER-El-Nino</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:broader rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:15"/>
+      <skos:definition xml:lang="en">CLIMATE AND WEATHER El Nino</skos:definition>
+      <skos:scopeNote xml:lang="en">CLIMATE-AND-WEATHER-El-Nino: CLIMATE AND WEATHER El Nino</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:19">
+      <skos:prefLabel xml:lang="en">CLIMATE-AND-WEATHER-Extreme-weather-events</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:broader rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:15"/>
+      <skos:definition xml:lang="en">CLIMATE AND WEATHER Extreme weather events</skos:definition>
+      <skos:scopeNote xml:lang="en">CLIMATE-AND-WEATHER-Extreme-weather-events: CLIMATE AND WEATHER Extreme weather events</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:20">
+      <skos:prefLabel xml:lang="en">CLIMATE-AND-WEATHER-Meteorology</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:broader rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:15"/>
+      <skos:definition xml:lang="en">CLIMATE AND WEATHER Meteorology</skos:definition>
+      <skos:scopeNote xml:lang="en">CLIMATE-AND-WEATHER-Meteorology: CLIMATE AND WEATHER Meteorology</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:21">
+      <skos:prefLabel xml:lang="en">CLIMATE-AND-WEATHER-Radiation</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:broader rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:15"/>
+      <skos:definition xml:lang="en">CLIMATE AND WEATHER Radiation</skos:definition>
+      <skos:scopeNote xml:lang="en">CLIMATE-AND-WEATHER-Radiation: CLIMATE AND WEATHER Radiation</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:22">
+      <skos:prefLabel xml:lang="en">CLIMATE-AND-WEATHER-Rainfall</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:broader rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:15"/>
+      <skos:definition xml:lang="en">CLIMATE AND WEATHER Rainfall</skos:definition>
+      <skos:scopeNote xml:lang="en">CLIMATE-AND-WEATHER-Rainfall: CLIMATE AND WEATHER Rainfall</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:23">
+      <skos:prefLabel xml:lang="en">CLIMATE-AND-WEATHER-Temperature</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:broader rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:15"/>
+      <skos:definition xml:lang="en">CLIMATE AND WEATHER Temperature</skos:definition>
+      <skos:scopeNote xml:lang="en">CLIMATE-AND-WEATHER-Temperature: CLIMATE AND WEATHER Temperature</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:24">
+      <skos:prefLabel xml:lang="en">DEMOGRAPHY</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:definition xml:lang="en">DEMOGRAPHY non-specific</skos:definition>
+      <skos:scopeNote xml:lang="en">DEMOGRAPHY: DEMOGRAPHY non-specific</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:25">
+      <skos:prefLabel xml:lang="en">DISEASE</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:definition xml:lang="en">DISEASE non-specific</skos:definition>
+      <skos:scopeNote xml:lang="en">DISEASE: DISEASE non-specific</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:26">
+      <skos:prefLabel xml:lang="en">ECOLOGY</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:narrower rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:27"/>
+      <skos:narrower rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:28"/>
+      <skos:narrower rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:29"/>
+      <skos:narrower rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:30"/>
+      <skos:definition xml:lang="en">ECOLOGY non-specific</skos:definition>
+      <skos:scopeNote xml:lang="en">ECOLOGY: ECOLOGY non-specific</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:27">
+      <skos:prefLabel xml:lang="en">ECOLOGY-Community</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:broader rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:26"/>
+      <skos:definition xml:lang="en">ECOLOGY Community</skos:definition>
+      <skos:scopeNote xml:lang="en">ECOLOGY-Community: ECOLOGY Community</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:28">
+      <skos:prefLabel xml:lang="en">ECOLOGY-Ecosystem</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:broader rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:26"/>
+      <skos:definition xml:lang="en">ECOLOGY Ecosystem</skos:definition>
+      <skos:scopeNote xml:lang="en">ECOLOGY-Ecosystem: ECOLOGY Ecosystem</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:29">
+      <skos:prefLabel xml:lang="en">ECOLOGY-Habitat</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:broader rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:26"/>
+      <skos:definition xml:lang="en">ECOLOGY Habitat</skos:definition>
+      <skos:scopeNote xml:lang="en">ECOLOGY-Habitat: ECOLOGY Habitat</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:30">
+      <skos:prefLabel xml:lang="en">ECOLOGY-Landscape</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:broader rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:26"/>
+      <skos:definition xml:lang="en">ECOLOGY Landscape</skos:definition>
+      <skos:scopeNote xml:lang="en">ECOLOGY-Landscape: ECOLOGY Landscape</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:31">
+      <skos:prefLabel xml:lang="en">ENERGY</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:narrower rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:32"/>
+      <skos:narrower rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:33"/>
+      <skos:narrower rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:34"/>
+      <skos:narrower rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:35"/>
+      <skos:narrower rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:36"/>
+      <skos:definition xml:lang="en">ENERGY non-specific</skos:definition>
+      <skos:scopeNote xml:lang="en">ENERGY: ENERGY non-specific</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:32">
+      <skos:prefLabel xml:lang="en">ENERGY-Coal</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:broader rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:31"/>
+      <skos:definition xml:lang="en">ENERGY Coal</skos:definition>
+      <skos:scopeNote xml:lang="en">ENERGY-Coal: ENERGY Coal</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:33">
+      <skos:prefLabel xml:lang="en">ENERGY-Electricity</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:broader rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:31"/>
+      <skos:definition xml:lang="en">ENERGY Electricity</skos:definition>
+      <skos:scopeNote xml:lang="en">ENERGY-Electricity: ENERGY Electricity</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:34">
+      <skos:prefLabel xml:lang="en">ENERGY-Petroleum</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:broader rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:31"/>
+      <skos:definition xml:lang="en">ENERGY Petroleum</skos:definition>
+      <skos:scopeNote xml:lang="en">ENERGY-Petroleum: ENERGY Petroleum</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:35">
+      <skos:prefLabel xml:lang="en">ENERGY-Renewable</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:broader rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:31"/>
+      <skos:definition xml:lang="en">ENERGY Renewable</skos:definition>
+      <skos:scopeNote xml:lang="en">ENERGY-Renewable: ENERGY Renewable</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:36">
+      <skos:prefLabel xml:lang="en">ENERGY-Use</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:broader rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:31"/>
+      <skos:definition xml:lang="en">ENERGY Use</skos:definition>
+      <skos:scopeNote xml:lang="en">ENERGY-Use: ENERGY Use</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:37">
+      <skos:prefLabel xml:lang="en">FAUNA</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:narrower rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:38"/>
+      <skos:narrower rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:39"/>
+      <skos:narrower rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:40"/>
+      <skos:narrower rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:41"/>
+      <skos:narrower rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:42"/>
+      <skos:definition xml:lang="en">FAUNA non-specific</skos:definition>
+      <skos:scopeNote xml:lang="en">FAUNA: FAUNA non-specific</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:38">
+      <skos:prefLabel xml:lang="en">FAUNA-Exotic</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:broader rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:37"/>
+      <skos:definition xml:lang="en">FAUNA Exotic</skos:definition>
+      <skos:scopeNote xml:lang="en">FAUNA-Exotic: FAUNA Exotic</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:39">
+      <skos:prefLabel xml:lang="en">FAUNA-Insects</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:broader rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:37"/>
+      <skos:definition xml:lang="en">FAUNA Insects</skos:definition>
+      <skos:scopeNote xml:lang="en">FAUNA-Insects: FAUNA Insects</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:40">
+      <skos:prefLabel xml:lang="en">FAUNA-Invertebrates</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:broader rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:37"/>
+      <skos:definition xml:lang="en">FAUNA Invertebrates</skos:definition>
+      <skos:scopeNote xml:lang="en">FAUNA-Invertebrates: FAUNA Invertebrates</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:41">
+      <skos:prefLabel xml:lang="en">FAUNA-Native</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:broader rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:37"/>
+      <skos:definition xml:lang="en">FAUNA Native</skos:definition>
+      <skos:scopeNote xml:lang="en">FAUNA-Native: FAUNA Native</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:42">
+      <skos:prefLabel xml:lang="en">FAUNA-Vertebrates</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:broader rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:37"/>
+      <skos:definition xml:lang="en">FAUNA Vertebrates</skos:definition>
+      <skos:scopeNote xml:lang="en">FAUNA-Vertebrates: FAUNA Vertebrates</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:43">
+      <skos:prefLabel xml:lang="en">FISHERIES</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:narrower rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:44"/>
+      <skos:narrower rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:45"/>
+      <skos:narrower rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:46"/>
+      <skos:narrower rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:47"/>
+      <skos:definition xml:lang="en">FISHERIES non-specific</skos:definition>
+      <skos:scopeNote xml:lang="en">FISHERIES: FISHERIES non-specific</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:44">
+      <skos:prefLabel xml:lang="en">FISHERIES-Aquaculture</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:broader rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:43"/>
+      <skos:definition xml:lang="en">FISHERIES Aquaculture</skos:definition>
+      <skos:scopeNote xml:lang="en">FISHERIES-Aquaculture: FISHERIES Aquaculture</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:45">
+      <skos:prefLabel xml:lang="en">FISHERIES-Freshwater</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:broader rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:43"/>
+      <skos:definition xml:lang="en">FISHERIES Freshwater</skos:definition>
+      <skos:scopeNote xml:lang="en">FISHERIES-Freshwater: FISHERIES Freshwater</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:46">
+      <skos:prefLabel xml:lang="en">FISHERIES-Marine</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:broader rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:43"/>
+      <skos:definition xml:lang="en">FISHERIES Marine</skos:definition>
+      <skos:scopeNote xml:lang="en">FISHERIES-Marine: FISHERIES Marine</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:47">
+      <skos:prefLabel xml:lang="en">FISHERIES-Recreational</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:broader rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:43"/>
+      <skos:definition xml:lang="en">FISHERIES Recreational</skos:definition>
+      <skos:scopeNote xml:lang="en">FISHERIES-Recreational: FISHERIES Recreational</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:48">
+      <skos:prefLabel xml:lang="en">FLORA</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:narrower rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:49"/>
+      <skos:narrower rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:50"/>
+      <skos:definition xml:lang="en">FLORA non-specific</skos:definition>
+      <skos:scopeNote xml:lang="en">FLORA: FLORA non-specific</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:49">
+      <skos:prefLabel xml:lang="en">FLORA-Exotic</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:broader rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:48"/>
+      <skos:definition xml:lang="en">FLORA Exotic</skos:definition>
+      <skos:scopeNote xml:lang="en">FLORA-Exotic: FLORA Exotic</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:50">
+      <skos:prefLabel xml:lang="en">FLORA-Native</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:broader rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:48"/>
+      <skos:definition xml:lang="en">FLORA Native</skos:definition>
+      <skos:scopeNote xml:lang="en">FLORA-Native: FLORA Native</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:51">
+      <skos:prefLabel xml:lang="en">FORESTS</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:narrower rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:52"/>
+      <skos:narrower rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:53"/>
+      <skos:narrower rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:54"/>
+      <skos:definition xml:lang="en">FORESTS non-specific</skos:definition>
+      <skos:scopeNote xml:lang="en">FORESTS: FORESTS non-specific</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:52">
+      <skos:prefLabel xml:lang="en">FORESTS-Agriforestry</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:broader rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:51"/>
+      <skos:definition xml:lang="en">FORESTS Agriforestry</skos:definition>
+      <skos:scopeNote xml:lang="en">FORESTS-Agriforestry: FORESTS Agriforestry</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:53">
+      <skos:prefLabel xml:lang="en">FORESTS-Natural</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:broader rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:51"/>
+      <skos:definition xml:lang="en">FORESTS Natural</skos:definition>
+      <skos:scopeNote xml:lang="en">FORESTS-Natural: FORESTS Natural</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:54">
+      <skos:prefLabel xml:lang="en">FORESTS-Plantation</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:broader rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:51"/>
+      <skos:definition xml:lang="en">FORESTS Plantation</skos:definition>
+      <skos:scopeNote xml:lang="en">FORESTS-Plantation: FORESTS Plantation</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:55">
+      <skos:prefLabel xml:lang="en">GEOSCIENCES</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:narrower rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:56"/>
+      <skos:narrower rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:57"/>
+      <skos:narrower rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:58"/>
+      <skos:narrower rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:59"/>
+      <skos:narrower rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:60"/>
+      <skos:definition xml:lang="en">GEOSCIENCES non-specific</skos:definition>
+      <skos:scopeNote xml:lang="en">GEOSCIENCES: GEOSCIENCES non-specific</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:56">
+      <skos:prefLabel xml:lang="en">GEOSCIENCES-Geochemistry</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:broader rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:55"/>
+      <skos:definition xml:lang="en">GEOSCIENCES Geochemistry</skos:definition>
+      <skos:scopeNote xml:lang="en">GEOSCIENCES-Geochemistry: GEOSCIENCES Geochemistry</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:57">
+      <skos:prefLabel xml:lang="en">GEOSCIENCES-Geology</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:broader rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:55"/>
+      <skos:definition xml:lang="en">GEOSCIENCES Geology</skos:definition>
+      <skos:scopeNote xml:lang="en">GEOSCIENCES-Geology: GEOSCIENCES Geology</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:58">
+      <skos:prefLabel xml:lang="en">GEOSCIENCES-Geomorphology</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:broader rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:55"/>
+      <skos:definition xml:lang="en">GEOSCIENCES Geomorphology</skos:definition>
+      <skos:scopeNote xml:lang="en">GEOSCIENCES-Geomorphology: GEOSCIENCES Geomorphology</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:59">
+      <skos:prefLabel xml:lang="en">GEOSCIENCES-Geophysics</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:broader rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:55"/>
+      <skos:definition xml:lang="en">GEOSCIENCES Geophysics</skos:definition>
+      <skos:scopeNote xml:lang="en">GEOSCIENCES-Geophysics: GEOSCIENCES Geophysics</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:60">
+      <skos:prefLabel xml:lang="en">GEOSCIENCES-Hydrogeology</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:broader rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:55"/>
+      <skos:definition xml:lang="en">GEOSCIENCES Hydrogeology</skos:definition>
+      <skos:scopeNote xml:lang="en">GEOSCIENCES-Hydrogeology: GEOSCIENCES Hydrogeology</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:61">
+      <skos:prefLabel xml:lang="en">HAZARDS</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:narrower rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:62"/>
+      <skos:narrower rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:63"/>
+      <skos:narrower rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:64"/>
+      <skos:narrower rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:65"/>
+      <skos:narrower rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:66"/>
+      <skos:narrower rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:67"/>
+      <skos:narrower rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:68"/>
+      <skos:narrower rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:69"/>
+      <skos:narrower rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:70"/>
+      <skos:narrower rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:71"/>
+      <skos:definition xml:lang="en">HAZARDS non-specific</skos:definition>
+      <skos:scopeNote xml:lang="en">HAZARDS: HAZARDS non-specific</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:62">
+      <skos:prefLabel xml:lang="en">HAZARDS-Cyclones</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:broader rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:61"/>
+      <skos:definition xml:lang="en">HAZARDS Cyclones</skos:definition>
+      <skos:scopeNote xml:lang="en">HAZARDS-Cyclones: HAZARDS Cyclones</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:63">
+      <skos:prefLabel xml:lang="en">HAZARDS-Drought</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:broader rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:61"/>
+      <skos:definition xml:lang="en">HAZARDS Drought</skos:definition>
+      <skos:scopeNote xml:lang="en">HAZARDS-Drought: HAZARDS Drought</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:64">
+      <skos:prefLabel xml:lang="en">HAZARDS-Earthquake</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:broader rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:61"/>
+      <skos:definition xml:lang="en">HAZARDS Earthquake</skos:definition>
+      <skos:scopeNote xml:lang="en">HAZARDS-Earthquake: HAZARDS Earthquake</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:65">
+      <skos:prefLabel xml:lang="en">HAZARDS-Fire</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:broader rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:61"/>
+      <skos:definition xml:lang="en">HAZARDS Fire</skos:definition>
+      <skos:scopeNote xml:lang="en">HAZARDS-Fire: HAZARDS Fire</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:66">
+      <skos:prefLabel xml:lang="en">HAZARDS-Flood</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:broader rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:61"/>
+      <skos:definition xml:lang="en">HAZARDS Flood</skos:definition>
+      <skos:scopeNote xml:lang="en">HAZARDS-Flood: HAZARDS Flood</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:67">
+      <skos:prefLabel xml:lang="en">HAZARDS-Landslip</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:broader rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:61"/>
+      <skos:definition xml:lang="en">HAZARDS Landslip</skos:definition>
+      <skos:scopeNote xml:lang="en">HAZARDS-Landslip: HAZARDS Landslip</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:68">
+      <skos:prefLabel xml:lang="en">HAZARDS-Manmade</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:broader rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:61"/>
+      <skos:definition xml:lang="en">HAZARDS Manmade</skos:definition>
+      <skos:scopeNote xml:lang="en">HAZARDS-Manmade: HAZARDS Manmade</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:69">
+      <skos:prefLabel xml:lang="en">HAZARDS-Pests</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:broader rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:61"/>
+      <skos:definition xml:lang="en">HAZARDS Pests</skos:definition>
+      <skos:scopeNote xml:lang="en">HAZARDS-Pests: HAZARDS Pests</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:70">
+      <skos:prefLabel xml:lang="en">HAZARDS-Severe-local-storms</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:broader rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:61"/>
+      <skos:definition xml:lang="en">HAZARDS Severe local storms</skos:definition>
+      <skos:scopeNote xml:lang="en">HAZARDS-Severe-local-storms: HAZARDS Severe local storms</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:71">
+      <skos:prefLabel xml:lang="en">HAZARDS-Tsunamis</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:broader rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:61"/>
+      <skos:definition xml:lang="en">HAZARDS Tsunamis</skos:definition>
+      <skos:scopeNote xml:lang="en">HAZARDS-Tsunamis: HAZARDS Tsunamis</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:72">
+      <skos:prefLabel xml:lang="en">HEALTH</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:definition xml:lang="en">HEALTH non-specific</skos:definition>
+      <skos:scopeNote xml:lang="en">HEALTH: HEALTH non-specific</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:73">
+      <skos:prefLabel xml:lang="en">HERITAGE</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:narrower rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:74"/>
+      <skos:narrower rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:75"/>
+      <skos:narrower rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:76"/>
+      <skos:narrower rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:77"/>
+      <skos:definition xml:lang="en">HERITAGE non-specific</skos:definition>
+      <skos:scopeNote xml:lang="en">HERITAGE: HERITAGE non-specific</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:74">
+      <skos:prefLabel xml:lang="en">HERITAGE-Aboriginal</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:broader rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:73"/>
+      <skos:definition xml:lang="en">HERITAGE Aboriginal</skos:definition>
+      <skos:scopeNote xml:lang="en">HERITAGE-Aboriginal: HERITAGE Aboriginal</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:75">
+      <skos:prefLabel xml:lang="en">HERITAGE-Architectural</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:broader rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:73"/>
+      <skos:definition xml:lang="en">HERITAGE Architectural</skos:definition>
+      <skos:scopeNote xml:lang="en">HERITAGE-Architectural: HERITAGE Architectural</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:76">
+      <skos:prefLabel xml:lang="en">HERITAGE-Natural</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:broader rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:73"/>
+      <skos:definition xml:lang="en">HERITAGE Natural</skos:definition>
+      <skos:scopeNote xml:lang="en">HERITAGE-Natural: HERITAGE Natural</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:77">
+      <skos:prefLabel xml:lang="en">HERITAGE-World</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:broader rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:73"/>
+      <skos:definition xml:lang="en">HERITAGE World</skos:definition>
+      <skos:scopeNote xml:lang="en">HERITAGE-World: HERITAGE World</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:78">
+      <skos:prefLabel xml:lang="en">HUMAN-ENVIRONMENT</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:narrower rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:79"/>
+      <skos:narrower rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:80"/>
+      <skos:narrower rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:81"/>
+      <skos:narrower rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:82"/>
+      <skos:narrower rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:83"/>
+      <skos:narrower rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:84"/>
+      <skos:definition xml:lang="en">HUMAN ENVIRONMENT</skos:definition>
+      <skos:scopeNote xml:lang="en">HUMAN-ENVIRONMENT: HUMAN ENVIRONMENT</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:79">
+      <skos:prefLabel xml:lang="en">HUMAN-ENVIRONMENT-Economics</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:broader rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:78"/>
+      <skos:definition xml:lang="en">HUMAN ENVIRONMENT Economics</skos:definition>
+      <skos:scopeNote xml:lang="en">HUMAN-ENVIRONMENT-Economics: HUMAN ENVIRONMENT Economics</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:80">
+      <skos:prefLabel xml:lang="en">HUMAN-ENVIRONMENT-Housing</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:broader rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:78"/>
+      <skos:definition xml:lang="en">HUMAN ENVIRONMENT Housing</skos:definition>
+      <skos:scopeNote xml:lang="en">HUMAN-ENVIRONMENT-Housing: HUMAN ENVIRONMENT Housing</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:81">
+      <skos:prefLabel xml:lang="en">HUMAN-ENVIRONMENT-Livability</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:broader rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:78"/>
+      <skos:definition xml:lang="en">HUMAN ENVIRONMENT Livability</skos:definition>
+      <skos:scopeNote xml:lang="en">HUMAN-ENVIRONMENT-Livability: HUMAN ENVIRONMENT Livability</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:82">
+      <skos:prefLabel xml:lang="en">HUMAN-ENVIRONMENT-Planning</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:broader rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:78"/>
+      <skos:definition xml:lang="en">HUMAN ENVIRONMENT Planning</skos:definition>
+      <skos:scopeNote xml:lang="en">HUMAN-ENVIRONMENT-Planning: HUMAN ENVIRONMENT Planning</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:83">
+      <skos:prefLabel xml:lang="en">HUMAN-ENVIRONMENT-Structures-and-Facilities</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:broader rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:78"/>
+      <skos:definition xml:lang="en">HUMAN ENVIRONMENT Structures and Facilities</skos:definition>
+      <skos:scopeNote xml:lang="en">HUMAN-ENVIRONMENT-Structures-and-Facilities: HUMAN ENVIRONMENT Structures and Facilities</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:84">
+      <skos:prefLabel xml:lang="en">HUMAN-ENVIRONMENT-Urban-Design</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:broader rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:78"/>
+      <skos:definition xml:lang="en">HUMAN ENVIRONMENT Urban Design</skos:definition>
+      <skos:scopeNote xml:lang="en">HUMAN-ENVIRONMENT-Urban-Design: HUMAN ENVIRONMENT Urban Design</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:85">
+      <skos:prefLabel xml:lang="en">INDUSTRY</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:narrower rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:86"/>
+      <skos:narrower rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:87"/>
+      <skos:narrower rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:88"/>
+      <skos:narrower rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:89"/>
+      <skos:narrower rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:90"/>
+      <skos:definition xml:lang="en">INDUSTRY non-specific</skos:definition>
+      <skos:scopeNote xml:lang="en">INDUSTRY: INDUSTRY non-specific</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:86">
+      <skos:prefLabel xml:lang="en">INDUSTRY-Manufacturing</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:broader rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:85"/>
+      <skos:definition xml:lang="en">INDUSTRY Manufacturing</skos:definition>
+      <skos:scopeNote xml:lang="en">INDUSTRY-Manufacturing: INDUSTRY Manufacturing</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:87">
+      <skos:prefLabel xml:lang="en">INDUSTRY-Mining</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:broader rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:85"/>
+      <skos:definition xml:lang="en">INDUSTRY Mining</skos:definition>
+      <skos:scopeNote xml:lang="en">INDUSTRY-Mining: INDUSTRY Mining</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:88">
+      <skos:prefLabel xml:lang="en">INDUSTRY-Other</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:broader rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:85"/>
+      <skos:definition xml:lang="en">INDUSTRY Other</skos:definition>
+      <skos:scopeNote xml:lang="en">INDUSTRY-Other: INDUSTRY Other</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:89">
+      <skos:prefLabel xml:lang="en">INDUSTRY-Primary</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:broader rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:85"/>
+      <skos:definition xml:lang="en">INDUSTRY Primary</skos:definition>
+      <skos:scopeNote xml:lang="en">INDUSTRY-Primary: INDUSTRY Primary</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:90">
+      <skos:prefLabel xml:lang="en">INDUSTRY-Service</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:broader rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:85"/>
+      <skos:definition xml:lang="en">INDUSTRY Service</skos:definition>
+      <skos:scopeNote xml:lang="en">INDUSTRY-Service: INDUSTRY Service</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:91">
+      <skos:prefLabel xml:lang="en">LAND</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:narrower rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:92"/>
+      <skos:narrower rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:93"/>
+      <skos:narrower rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:94"/>
+      <skos:narrower rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:95"/>
+      <skos:narrower rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:96"/>
+      <skos:narrower rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:97"/>
+      <skos:narrower rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:98"/>
+      <skos:narrower rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:99"/>
+      <skos:definition xml:lang="en">LAND non-specific</skos:definition>
+      <skos:scopeNote xml:lang="en">LAND: LAND non-specific</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:92">
+      <skos:prefLabel xml:lang="en">LAND-Cadastre</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:broader rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:91"/>
+      <skos:definition xml:lang="en">LAND Cadastre</skos:definition>
+      <skos:scopeNote xml:lang="en">LAND-Cadastre: LAND Cadastre</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:93">
+      <skos:prefLabel xml:lang="en">LAND-Cover</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:broader rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:91"/>
+      <skos:definition xml:lang="en">LAND Cover</skos:definition>
+      <skos:scopeNote xml:lang="en">LAND-Cover: LAND Cover</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:94">
+      <skos:prefLabel xml:lang="en">LAND-Geodesy</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:broader rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:91"/>
+      <skos:definition xml:lang="en">LAND Geodesy</skos:definition>
+      <skos:scopeNote xml:lang="en">LAND-Geodesy: LAND Geodesy</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:95">
+      <skos:prefLabel xml:lang="en">LAND-Geography</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:broader rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:91"/>
+      <skos:definition xml:lang="en">LAND Geography</skos:definition>
+      <skos:scopeNote xml:lang="en">LAND-Geography: LAND Geography</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:96">
+      <skos:prefLabel xml:lang="en">LAND-Ownership</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:broader rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:91"/>
+      <skos:definition xml:lang="en">LAND Ownership</skos:definition>
+      <skos:scopeNote xml:lang="en">LAND-Ownership: LAND Ownership</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:97">
+      <skos:prefLabel xml:lang="en">LAND-Topography</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:broader rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:91"/>
+      <skos:definition xml:lang="en">LAND Topography</skos:definition>
+      <skos:scopeNote xml:lang="en">LAND-Topography: LAND Topography</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:98">
+      <skos:prefLabel xml:lang="en">LAND-Use</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:broader rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:91"/>
+      <skos:definition xml:lang="en">LAND Use</skos:definition>
+      <skos:scopeNote xml:lang="en">LAND-Use: LAND Use</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:99">
+      <skos:prefLabel xml:lang="en">LAND-Valuation</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:broader rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:91"/>
+      <skos:definition xml:lang="en">LAND Valuation</skos:definition>
+      <skos:scopeNote xml:lang="en">LAND-Valuation: LAND Valuation</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:100">
+      <skos:prefLabel xml:lang="en">MARINE</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:narrower rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:101"/>
+      <skos:narrower rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:102"/>
+      <skos:narrower rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:103"/>
+      <skos:narrower rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:104"/>
+      <skos:narrower rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:105"/>
+      <skos:narrower rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:106"/>
+      <skos:narrower rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:107"/>
+      <skos:definition xml:lang="en">MARINE non-specific</skos:definition>
+      <skos:scopeNote xml:lang="en">MARINE: MARINE non-specific</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:101">
+      <skos:prefLabel xml:lang="en">MARINE-Biology</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:broader rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:100"/>
+      <skos:definition xml:lang="en">MARINE Biology</skos:definition>
+      <skos:scopeNote xml:lang="en">MARINE-Biology: MARINE Biology</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:102">
+      <skos:prefLabel xml:lang="en">MARINE-Coasts</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:broader rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:100"/>
+      <skos:definition xml:lang="en">MARINE Coasts</skos:definition>
+      <skos:scopeNote xml:lang="en">MARINE-Coasts: MARINE Coasts</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:103">
+      <skos:prefLabel xml:lang="en">MARINE-Estuaries</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:broader rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:100"/>
+      <skos:definition xml:lang="en">MARINE Estuaries</skos:definition>
+      <skos:scopeNote xml:lang="en">MARINE-Estuaries: MARINE Estuaries</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:104">
+      <skos:prefLabel xml:lang="en">MARINE-Geology-and-Geophysics</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:definition xml:lang="en">MARINE Geology and Geophysics</skos:definition>
+      <skos:scopeNote xml:lang="en">MARINE-Geology-and-Geophysics: MARINE Geology and Geophysics</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:105">
+      <skos:prefLabel xml:lang="en">MARINE-Human-Impacts</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:broader rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:100"/>
+      <skos:definition xml:lang="en">MARINE Human Impacts</skos:definition>
+      <skos:scopeNote xml:lang="en">MARINE-Human-Impacts: MARINE Human Impacts</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:106">
+      <skos:prefLabel xml:lang="en">MARINE-Meteorology</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:broader rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:100"/>
+      <skos:definition xml:lang="en">MARINE Meteorology</skos:definition>
+      <skos:scopeNote xml:lang="en">MARINE-Meteorology: MARINE Meteorology</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:107">
+      <skos:prefLabel xml:lang="en">MARINE-Reefs</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:broader rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:100"/>
+      <skos:definition xml:lang="en">MARINE Reefs</skos:definition>
+      <skos:scopeNote xml:lang="en">MARINE-Reefs: MARINE Reefs</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:108">
+      <skos:prefLabel xml:lang="en">MINERALS</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:definition xml:lang="en">MINERALS non-specific</skos:definition>
+      <skos:scopeNote xml:lang="en">MINERALS: MINERALS non-specific</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:109">
+      <skos:prefLabel xml:lang="en">MOLECULAR-BIOLOGY</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:narrower rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:110"/>
+      <skos:definition xml:lang="en">MOLECULAR BIOLOGY</skos:definition>
+      <skos:scopeNote xml:lang="en">MOLECULAR-BIOLOGY: MOLECULAR BIOLOGY</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:110">
+      <skos:prefLabel xml:lang="en">MOLECULAR-BIOLOGY-Genetics</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:broader rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:109"/>
+      <skos:definition xml:lang="en">MOLECULAR BIOLOGY Genetics</skos:definition>
+      <skos:scopeNote xml:lang="en">MOLECULAR-BIOLOGY-Genetics: MOLECULAR BIOLOGY Genetics</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:111">
+      <skos:prefLabel xml:lang="en">OCEANOGRAPHY</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:narrower rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:112"/>
+      <skos:narrower rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:113"/>
+      <skos:definition xml:lang="en">OCEANOGRAPHY non-specific</skos:definition>
+      <skos:scopeNote xml:lang="en">OCEANOGRAPHY: OCEANOGRAPHY non-specific</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:112">
+      <skos:prefLabel xml:lang="en">OCEANOGRAPHY-Chemical</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:broader rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:111"/>
+      <skos:definition xml:lang="en">OCEANOGRAPHY Chemical</skos:definition>
+      <skos:scopeNote xml:lang="en">OCEANOGRAPHY-Chemical: OCEANOGRAPHY Chemical</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:113">
+      <skos:prefLabel xml:lang="en">OCEANOGRAPHY-Physical</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:broader rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:111"/>
+      <skos:definition xml:lang="en">OCEANOGRAPHY Physical</skos:definition>
+      <skos:scopeNote xml:lang="en">OCEANOGRAPHY-Physical: OCEANOGRAPHY Physical</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:114">
+      <skos:prefLabel xml:lang="en">PHOTOGRAPHY-AND-IMAGERY</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:narrower rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:115"/>
+      <skos:narrower rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:116"/>
+      <skos:narrower rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:117"/>
+      <skos:definition xml:lang="en">PHOTOGRAPHY AND IMAGERY</skos:definition>
+      <skos:scopeNote xml:lang="en">PHOTOGRAPHY-AND-IMAGERY: PHOTOGRAPHY AND IMAGERY</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:115">
+      <skos:prefLabel xml:lang="en">PHOTOGRAPHY-AND-IMAGERY-Aerial</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:broader rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:114"/>
+      <skos:definition xml:lang="en">PHOTOGRAPHY AND IMAGERY Aerial</skos:definition>
+      <skos:scopeNote xml:lang="en">PHOTOGRAPHY-AND-IMAGERY-Aerial: PHOTOGRAPHY AND IMAGERY Aerial</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:116">
+      <skos:prefLabel xml:lang="en">PHOTOGRAPHY-AND-IMAGERY-Remote-Sensing</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:broader rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:114"/>
+      <skos:definition xml:lang="en">PHOTOGRAPHY AND IMAGERY Remote Sensing</skos:definition>
+      <skos:scopeNote xml:lang="en">PHOTOGRAPHY-AND-IMAGERY-Remote-Sensing: PHOTOGRAPHY AND IMAGERY Remote Sensing</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:117">
+      <skos:prefLabel xml:lang="en">PHOTOGRAPHY-AND-IMAGERY-Satellite</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:broader rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:114"/>
+      <skos:definition xml:lang="en">PHOTOGRAPHY AND IMAGERY Satellite</skos:definition>
+      <skos:scopeNote xml:lang="en">PHOTOGRAPHY-AND-IMAGERY-Satellite: PHOTOGRAPHY AND IMAGERY Satellite</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:118">
+      <skos:prefLabel xml:lang="en">POLLUTION</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:narrower rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:119"/>
+      <skos:narrower rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:120"/>
+      <skos:narrower rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:121"/>
+      <skos:narrower rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:122"/>
+      <skos:definition xml:lang="en">POLLUTION non-specific</skos:definition>
+      <skos:scopeNote xml:lang="en">POLLUTION: POLLUTION non-specific</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:119">
+      <skos:prefLabel xml:lang="en">POLLUTION-Air</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:broader rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:118"/>
+      <skos:definition xml:lang="en">POLLUTION Air</skos:definition>
+      <skos:scopeNote xml:lang="en">POLLUTION-Air: POLLUTION Air</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:120">
+      <skos:prefLabel xml:lang="en">POLLUTION-Noise</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:broader rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:118"/>
+      <skos:definition xml:lang="en">POLLUTION Noise</skos:definition>
+      <skos:scopeNote xml:lang="en">POLLUTION-Noise: POLLUTION Noise</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:121">
+      <skos:prefLabel xml:lang="en">POLLUTION-Soil</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:broader rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:118"/>
+      <skos:definition xml:lang="en">POLLUTION Soil</skos:definition>
+      <skos:scopeNote xml:lang="en">POLLUTION-Soil: POLLUTION Soil</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:122">
+      <skos:prefLabel xml:lang="en">POLLUTION-Water</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:broader rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:118"/>
+      <skos:definition xml:lang="en">POLLUTION Water</skos:definition>
+      <skos:scopeNote xml:lang="en">POLLUTION-Water: POLLUTION Water</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:123">
+      <skos:prefLabel xml:lang="en">SOIL</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:narrower rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:124"/>
+      <skos:narrower rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:125"/>
+      <skos:narrower rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:126"/>
+      <skos:narrower rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:127"/>
+      <skos:definition xml:lang="en">SOIL non-specific</skos:definition>
+      <skos:scopeNote xml:lang="en">SOIL: SOIL non-specific</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:124">
+      <skos:prefLabel xml:lang="en">SOIL-Biology</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:broader rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:123"/>
+      <skos:definition xml:lang="en">SOIL Biology</skos:definition>
+      <skos:scopeNote xml:lang="en">SOIL-Biology: SOIL Biology</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:125">
+      <skos:prefLabel xml:lang="en">SOIL-Chemistry</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:broader rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:123"/>
+      <skos:definition xml:lang="en">SOIL Chemistry</skos:definition>
+      <skos:scopeNote xml:lang="en">SOIL-Chemistry: SOIL Chemistry</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:126">
+      <skos:prefLabel xml:lang="en">SOIL-Erosion</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:broader rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:123"/>
+      <skos:definition xml:lang="en">SOIL Erosion</skos:definition>
+      <skos:scopeNote xml:lang="en">SOIL-Erosion: SOIL Erosion</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:127">
+      <skos:prefLabel xml:lang="en">SOIL-Physics</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:broader rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:123"/>
+      <skos:definition xml:lang="en">SOIL Physics</skos:definition>
+      <skos:scopeNote xml:lang="en">SOIL-Physics: SOIL Physics</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:128">
+      <skos:prefLabel xml:lang="en">TRANSPORTATION</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:narrower rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:129"/>
+      <skos:narrower rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:130"/>
+      <skos:narrower rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:131"/>
+      <skos:definition xml:lang="en">TRANSPORTATION non-specific</skos:definition>
+      <skos:scopeNote xml:lang="en">TRANSPORTATION: TRANSPORTATION non-specific</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:129">
+      <skos:prefLabel xml:lang="en">TRANSPORTATION-Air</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:broader rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:128"/>
+      <skos:definition xml:lang="en">TRANSPORTATION Air</skos:definition>
+      <skos:scopeNote xml:lang="en">TRANSPORTATION-Air: TRANSPORTATION Air</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:130">
+      <skos:prefLabel xml:lang="en">TRANSPORTATION-Land</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:broader rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:128"/>
+      <skos:definition xml:lang="en">TRANSPORTATION Land</skos:definition>
+      <skos:scopeNote xml:lang="en">TRANSPORTATION-Land: TRANSPORTATION Land</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:131">
+      <skos:prefLabel xml:lang="en">TRANSPORTATION-Marine</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:broader rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:128"/>
+      <skos:definition xml:lang="en">TRANSPORTATION Marine</skos:definition>
+      <skos:scopeNote xml:lang="en">TRANSPORTATION-Marine: TRANSPORTATION Marine</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:132">
+      <skos:prefLabel xml:lang="en">UTILITIES</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:definition xml:lang="en">UTILITIES non-specific</skos:definition>
+      <skos:scopeNote xml:lang="en">UTILITIES: UTILITIES non-specific</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:133">
+      <skos:prefLabel xml:lang="en">VEGETATION</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:narrower rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:134"/>
+      <skos:narrower rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:135"/>
+      <skos:definition xml:lang="en">VEGETATION non-specific</skos:definition>
+      <skos:scopeNote xml:lang="en">VEGETATION: VEGETATION non-specific</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:134">
+      <skos:prefLabel xml:lang="en">VEGETATION-Floristic</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:broader rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:133"/>
+      <skos:definition xml:lang="en">VEGETATION Floristic</skos:definition>
+      <skos:scopeNote xml:lang="en">VEGETATION-Floristic: VEGETATION Floristic</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:135">
+      <skos:prefLabel xml:lang="en">VEGETATION-Structural</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:broader rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:133"/>
+      <skos:definition xml:lang="en">VEGETATION Structural</skos:definition>
+      <skos:scopeNote xml:lang="en">VEGETATION-Structural: VEGETATION Structural</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:136">
+      <skos:prefLabel xml:lang="en">WASTE</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:narrower rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:137"/>
+      <skos:narrower rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:138"/>
+      <skos:narrower rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:139"/>
+      <skos:narrower rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:140"/>
+      <skos:narrower rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:141"/>
+      <skos:narrower rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:142"/>
+      <skos:definition xml:lang="en">WASTE non-specific</skos:definition>
+      <skos:scopeNote xml:lang="en">WASTE: WASTE non-specific</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:137">
+      <skos:prefLabel xml:lang="en">WASTE-Greenhouse-gas</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:broader rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:136"/>
+      <skos:definition xml:lang="en">WASTE Greenhouse gas</skos:definition>
+      <skos:scopeNote xml:lang="en">WASTE-Greenhouse-gas: WASTE Greenhouse gas</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:138">
+      <skos:prefLabel xml:lang="en">WASTE-Heat</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:broader rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:136"/>
+      <skos:definition xml:lang="en">WASTE Heat</skos:definition>
+      <skos:scopeNote xml:lang="en">WASTE-Heat: WASTE Heat</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:139">
+      <skos:prefLabel xml:lang="en">WASTE-Liquid</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:broader rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:136"/>
+      <skos:definition xml:lang="en">WASTE Liquid</skos:definition>
+      <skos:scopeNote xml:lang="en">WASTE-Liquid: WASTE Liquid</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:140">
+      <skos:prefLabel xml:lang="en">WASTE-Sewage</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:broader rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:136"/>
+      <skos:definition xml:lang="en">WASTE Sewage</skos:definition>
+      <skos:scopeNote xml:lang="en">WASTE-Sewage: WASTE Sewage</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:141">
+      <skos:prefLabel xml:lang="en">WASTE-Solid</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:broader rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:136"/>
+      <skos:definition xml:lang="en">WASTE Solid</skos:definition>
+      <skos:scopeNote xml:lang="en">WASTE-Solid: WASTE Solid</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:142">
+      <skos:prefLabel xml:lang="en">WASTE-Toxic</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:broader rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:136"/>
+      <skos:definition xml:lang="en">WASTE Toxic</skos:definition>
+      <skos:scopeNote xml:lang="en">WASTE-Toxic: WASTE Toxic</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:143">
+      <skos:prefLabel xml:lang="en">WATER</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:narrower rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:144"/>
+      <skos:narrower rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:145"/>
+      <skos:narrower rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:146"/>
+      <skos:narrower rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:147"/>
+      <skos:narrower rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:148"/>
+      <skos:narrower rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:149"/>
+      <skos:narrower rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:150"/>
+      <skos:narrower rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:151"/>
+      <skos:narrower rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:152"/>
+      <skos:narrower rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:153"/>
+      <skos:definition xml:lang="en">WATER non-specific</skos:definition>
+      <skos:scopeNote xml:lang="en">WATER: WATER non-specific</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:144">
+      <skos:prefLabel xml:lang="en">WATER-Groundwater</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:broader rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:143"/>
+      <skos:definition xml:lang="en">WATER Groundwater</skos:definition>
+      <skos:scopeNote xml:lang="en">WATER-Groundwater: WATER Groundwater</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:145">
+      <skos:prefLabel xml:lang="en">WATER-Hydrochemistry</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:broader rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:143"/>
+      <skos:definition xml:lang="en">WATER Hydrochemistry</skos:definition>
+      <skos:scopeNote xml:lang="en">WATER-Hydrochemistry: WATER Hydrochemistry</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:146">
+      <skos:prefLabel xml:lang="en">WATER-Hydrology</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:broader rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:143"/>
+      <skos:definition xml:lang="en">WATER Hydrology</skos:definition>
+      <skos:scopeNote xml:lang="en">WATER-Hydrology: WATER Hydrology</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:147">
+      <skos:prefLabel xml:lang="en">WATER-Lakes</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:broader rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:143"/>
+      <skos:definition xml:lang="en">WATER Lakes</skos:definition>
+      <skos:scopeNote xml:lang="en">WATER-Lakes: WATER Lakes</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:148">
+      <skos:prefLabel xml:lang="en">WATER-Quality</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:broader rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:143"/>
+      <skos:definition xml:lang="en">WATER Quality</skos:definition>
+      <skos:scopeNote xml:lang="en">WATER-Quality: WATER Quality</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:149">
+      <skos:prefLabel xml:lang="en">WATER-Rivers</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:broader rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:143"/>
+      <skos:definition xml:lang="en">WATER Rivers</skos:definition>
+      <skos:scopeNote xml:lang="en">WATER-Rivers: WATER Rivers</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:150">
+      <skos:prefLabel xml:lang="en">WATER-Salinity</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:broader rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:143"/>
+      <skos:definition xml:lang="en">WATER Salinity</skos:definition>
+      <skos:scopeNote xml:lang="en">WATER-Salinity: WATER Salinity</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:151">
+      <skos:prefLabel xml:lang="en">WATER-Supply</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:broader rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:143"/>
+      <skos:definition xml:lang="en">WATER Supply</skos:definition>
+      <skos:scopeNote xml:lang="en">WATER-Supply: WATER Supply</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:152">
+      <skos:prefLabel xml:lang="en">WATER-Surface</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:broader rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:143"/>
+      <skos:definition xml:lang="en">WATER Surface</skos:definition>
+      <skos:scopeNote xml:lang="en">WATER-Surface: WATER Surface</skos:scopeNote>
+   </skos:Concept>
+   <skos:Concept rdf:about="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:153">
+      <skos:prefLabel xml:lang="en">WATER-Wetlands</skos:prefLabel>
+      <skos:inScheme rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:conceptscheme:2.2"/>
+      <skos:broader rdf:resource="b920278d-fafa-4d75-898f-cd55bce8f04f:concept:143"/>
+      <skos:definition xml:lang="en">WATER Wetlands</skos:definition>
+      <skos:scopeNote xml:lang="en">WATER-Wetlands: WATER Wetlands</skos:scopeNote>
+   </skos:Concept>
+</rdf:RDF>
