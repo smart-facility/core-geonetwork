@@ -11,6 +11,12 @@
     <dc:rights>Free to all for non commercial use.</dc:rights>
     <dcterms:issued>2014-04-29T14:25:37</dcterms:issued>
   </skos:ConceptScheme>
+	<!-- Add Earth Science keyword - SPPigot -->
+  <skos:Concept rdf:about="e9f67a66-e9fc-435c-b720-ae32a2c3d8f5" xml:base="http://gcmdservices.gsfc.nasa.gov/kms/concept/">
+    <skos:inScheme rdf:resource="http://gcmdservices.gsfc.nasa.gov/kms/concepts/concept_scheme/sciencekeywords" />
+    <skos:prefLabel xml:lang="en">Earth Science</skos:prefLabel>
+  </skos:Concept>
+	<!-- End SPPigot Additions -->
   <skos:Concept rdf:about="1eb0ea0a-312c-4d74-8d42-6f1ad758f999" xml:base="http://gcmdservices.gsfc.nasa.gov/kms/concept/">
     <skos:inScheme rdf:resource="http://gcmdservices.gsfc.nasa.gov/kms/concepts/concept_scheme/sciencekeywords" />
     <skos:prefLabel xml:lang="en">Science Keywords</skos:prefLabel>

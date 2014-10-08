@@ -129,6 +129,22 @@
       <error sheet="../xslt/error/error-json.xsl"/>
     </service>
     
+    <service name="thesaurus.keyword.jskos" type="xml">
+      <documentation><![CDATA[
+        Return one keyword with narrower, broader and equal links.
+        
+        Parameters are:
+        * id: Concept identifier (eg. http://www.eionet.europa.eu/gemet/concept/5510)
+        * thesaurus: Thesaurus identifier (eg. external.theme.gemet)
+        ]]>
+      </documentation>
+      <class name=".services.thesaurus.GetKeywordByIdAsJSKOS"/>
+      <output sheet="../xslt/services/thesaurus/to-jskos.xsl">
+        <call name="thesaurus" class=".services.thesaurus.GetList" />
+      </output>
+      <error sheet="../xslt/error/error-json.xsl"/>
+    </service>
+    
     
     <service name="thesaurus.keyword.links">
       <documentation><![CDATA[
