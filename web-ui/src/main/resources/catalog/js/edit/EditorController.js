@@ -37,6 +37,7 @@
   goog.require('gn_scroll_spy');
   goog.require('gn_share');
   goog.require('gn_thesaurus');
+  goog.require('gn_skos_thesaurus');
   goog.require('gn_commons');
   goog.require('gn_utility_directive');
 
@@ -45,7 +46,7 @@
        'gn_import_controller',
        'gn_editorboard_controller', 'gn_share',
        'gn_directory_controller', 'gn_utility_directive',
-       'gn_scroll_spy', 'gn_thesaurus', 'gn_commons',
+       'gn_scroll_spy', 'gn_thesaurus', 'gn_skos_thesaurus', 'gn_commons',
 			 'ui.bootstrap.datetimepicker'
 			 ]);
 
@@ -92,21 +93,23 @@
   /**
    * Metadata editor controller - draft
    */
-  module.controller('GnEditorController', [
+  module.controller('GnEditorController', [ '$q',
     '$scope', '$routeParams', '$http', '$rootScope',
     '$translate', '$compile', '$timeout', 
     'gnEditor',
     'gnSearchManagerService',
     'gnSchemaManagerService',
+    'gnSkosThesaurusService',
     'gnConfigService',
     'gnUtilityService',
     'gnCurrentEdit',
     'gnConfig',
-    function($scope, $routeParams, $http, $rootScope, 
+    function($q, $scope, $routeParams, $http, $rootScope, 
         $translate, $compile, $timeout, 
         gnEditor, 
         gnSearchManagerService, 
         gnSchemaManagerService, 
+        gnSkosThesaurusService, 
         gnConfigService,
             gnUtilityService, 
             gnCurrentEdit,
@@ -143,8 +146,12 @@
       // Controller initialization
       var init = function() {
 				// Load the namespaces for the schemas
-				$.when(gnSchemaManagerService.getNamespaces(), 
-						gnConfigService.load()).done(function(n, c) {
+				var promises = [];
+				promises.push(gnSchemaManagerService.getNamespaces());
+				promises.push(gnConfigService.load());
+				promises.push(gnSkosThesaurusService.getThesaurusTopConcepts());
+				$q.all(promises).then( function() {
+
         if ($routeParams.id) {
           // Check requested metadata exists
           gnSearchManagerService.gnSearch({
