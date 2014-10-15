@@ -122,35 +122,34 @@ ul.ancestors li {
     margin:4px 0px 5px 6px;
     font-style:italic;
 }
-/* 'skos-concept' relations (broader, narrower, related) display*/
-.skos-concept-relation li:hover {
+/* 'skos-concept' relations display*/
+.skos-concept-relation i:hover {
     background-color:#ddd;
     border-radius:3px;
     color:#2a6496;
 }
-.skos-concept-relation li{
+.skos-concept-relation i{
     text-decoration:none;
     cursor:pointer;
-    display:inline-block;
-    margin: 0 0 0 1em;
-}
-.skos-concept-relation ul{
-    margin: 0;
-    padding: 0 0 0 1.1em;
-    list-style: none;
-    text-indent: -1.1em;
 }
 .skos-concept-relation span{
+		margin: 0 0 0 1em;
+		cursor:pointer;
     color:#428bca;
 }
-.skos-concept-relation-broader li:before{
-    content:'\2196';
+.skos-concept-relation span:hover {
+    background-color:#ddd;
+    border-radius:3px;
+    color:#2a6496;
 }
-.skos-concept-relation-narrower li:before{
-    content:'\2198';
+.skos-concept-relation-previous span{
+		cursor:pointer;
+    color:#428bca;
 }
-.skos-concept-relation-related li:before{
-    content:'\2799';
+.skos-concept-relation-previous span:hover {
+    background-color:#ddd;
+    border-radius:3px;
+    color:#2a6496;
 }
 /* styles for header, containing notation, prefLabel and uri-link */
 .top-alt{
@@ -196,4 +195,8 @@ ul.ancestors li {
 }
 .table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
     background-color: #EEE;
+}
+.vcentre {
+    display: flex;
+		align-items: center;
 }

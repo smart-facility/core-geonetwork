@@ -42,7 +42,12 @@
  *      [concept](http://gbv.github.io/jskos/jskos.html#concepts) to bind to
  * @param {string} language Assignable angular expression with 
  *      preferred language to be used as bounded `language` variable. 
- * @param {string} skos-click function to call when a connected concept is clicked
+ * @param {string} skos-navigate-concept function to call when a connected 
+ *      concept is clicked
+ * @param {string} skos-add-concept function to call when a connected 
+ *      concept is to be added to an applications list of selected concepts
+ * @param {string} skos-top-concept function to call when the top concept
+ *      is required (eg. when resetting the browser navigation)                                                      
  * @param {string} template-url URL of a template to display the concept
  *
  */
@@ -60,8 +65,9 @@
         scope: { 
             concept: '=skosConcept',
             language: '=language',
-            click: '=skosClick'
-            // TODO: simplify use by providing a SkosConceptProvider and properties
+            navigateConcept: '=skosNavigateConcept',
+						addConcept: '=skosAddConcept',
+						topConcept: '=skosTopConcept'
         },
         templateUrl: '../../catalog/components/ng-skos/templates/skos-concept.html',
         link: function link(scope, element, attr) {

@@ -4,7 +4,8 @@
   var module = angular.module('gn_skos_thesaurus_service', []);
 
 	module.value('gnThesaurusTopConcepts', {
-		'external.theme.gcmd_keywords': 'http://gcmdservices.gsfc.nasa.gov/kms/concept/e9f67a66-e9fc-435c-b720-ae32a2c3d8f5'
+		'external.theme.gcmd_keywords': 'http://gcmdservices.gsfc.nasa.gov/kms/concept/e9f67a66-e9fc-435c-b720-ae32a2c3d8f5',
+		'external.place.regions'      : 'http://geonetwork-opensource.org/regions#country'
 	});
 
   module.factory('Keyword', function() {
@@ -109,8 +110,7 @@
     				// expected to promise an array of JSKOS concepts
     				// [concept](http://gbv.github.io/jskos/jskos.html#concepts)
     				var getTopConcept = function(thesaurus) {
-								console.log("Looking for concepts in "+thesaurus+", found: "+thesaurusTopConcepts[thesaurus]);
-        				return thesaurusTopConcepts[thesaurus];
+        				return angular.copy(thesaurusTopConcepts[thesaurus]);
     				};
 
 						var thesaurusTopConcepts = [];

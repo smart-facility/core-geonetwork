@@ -1,28 +1,3 @@
-<div ng-if="concept">
-	<div ng-if="scheme.suggest" style="margin:1em 0em;">
-    <input class="form-control"
-        suggest-typeahead="scheme.suggest"
-        typeahead-on-select="selectNotation($item.description)"
-        ng-model="conceptLabel"
-        placeholder="Search by terms (typeahead)"
-        typeahead-loading="loading"
-        typeahead-editable="false"
-    />
-    <i ng-show="loading" class="glyphicon glyphicon-refresh typeahead-loading"></i>
-	</div>
-	<div ng-if="selectNotation"
-     class="search-top" style="overflow:hidden;margin-bottom:15px;">
-    <form ng-submit="selectNotation(notation)">
-        <span style="float:left;">
-            <input class="form-control search-top-input"
-                ng-model="notation"
-                placeholder="Enter full notation"
-            />
-        </span>
-        <button type="submit" ng-disabled="!notation.length" class="search-top-button" />
-            <span class="glyphicon glyphicon-search"></span>
-        </button>
-    </form>
-	</div>
-	<div skos-concept="concept" skos-click="selectConcept" language="language"></div>
+<div class="col-sm-12" ng-if="concept">
+	<div skos-concept="concept" skos-navigate-concept="selectConcept" skos-add-concept="addConcept" skos-top-concept="topConcept" language="language"></div>
 </div>

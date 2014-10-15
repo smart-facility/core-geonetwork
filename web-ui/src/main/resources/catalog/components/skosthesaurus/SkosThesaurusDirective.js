@@ -186,9 +186,32 @@
                scope.$watch('filter', search);
              };
 
+						 // Used by skos-browser to add keywords from the 
+						 // skos hierarchy to the current list of tags
+						 scope.addThesaurusConcept = function(uri, text) {
+								var textArr = [];
+								textArr['#text'] = text;
+								var k = {
+									uri: uri,
+									value: textArr
+								};
+								var keyword = new Keyword(k);
+
+                var thisId = '#tagsinput_' + scope.elementRef;
+                // Add to tags
+                $(thisId).tagsinput('add', keyword);
+
+                // Update selection and snippet
+                scope.selected = $(thisId).tagsinput('items');
+                getSnippet(); // FIXME: should not be necessary
+                              // as there is a watch on it ?
+
+                // Clear typeahead
+                $(thisId).tagsinput('input').typeahead('setQuery', '');
+						 };
 
              // Init typeahead and tag input
-             var initTagsInput = function() {
+             var initTagsInput = function() {;
                var id = '#tagsinput_' + scope.elementRef;
                $timeout(function() {
                  $(id).tagsinput({

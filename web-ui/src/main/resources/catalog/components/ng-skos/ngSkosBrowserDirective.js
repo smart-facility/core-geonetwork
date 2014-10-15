@@ -66,9 +66,9 @@
     return {
         restrict: 'E',
         replace: true,
-        transclude: true,
         scope: { 
-						concept: '=concept'
+						concept: '=concept',
+						addConcept: '=addConcept'
         },
         templateUrl: '../../catalog/components/ng-skos/templates/skos-browser.html',
         link: function link(scope, element, attr) {
@@ -90,6 +90,7 @@
                 }
             });
 
+						// Select concept for navigation, push previous concept onto stack
             scope.selectConcept = function(concept, previousConcept) {
 								if (!previousConcept) previous.unshift(concept);
                 if (scope.selectURI && concept.uri) {
@@ -100,6 +101,11 @@
                     scope.selectLabel(concept.thesaurus, concept.prefLabel);
                 }
             };
+
+						// Refresh current concept with top concept from thesaurus
+						scope.topConcept = function(thesaurus) {
+							return gnSkosThesaurusService.getTopConcept(thesaurus);
+						};
 
         }
      }
