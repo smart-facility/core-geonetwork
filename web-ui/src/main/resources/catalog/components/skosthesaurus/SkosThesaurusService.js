@@ -3,11 +3,6 @@
 
   var module = angular.module('gn_skos_thesaurus_service', []);
 
-	module.value('gnThesaurusTopConcepts', {
-		'external.theme.gcmd_keywords': 'http://gcmdservices.gsfc.nasa.gov/kms/concept/e9f67a66-e9fc-435c-b720-ae32a2c3d8f5',
-		'external.place.regions'      : 'http://geonetwork-opensource.org/regions#country'
-	});
-
   module.factory('Keyword', function() {
     function Keyword(k) {
       this.props = $.extend(true, {}, k);
@@ -51,9 +46,7 @@
           'gnUrlUtils',
           'Keyword',
           'Thesaurus',
-					'gnThesaurusTopConcepts',
-          function($q, $rootScope, $http, gnUrlUtils, Keyword, Thesaurus, 
-									 gnThesaurusTopConcepts) {
+          function($q, $rootScope, $http, gnUrlUtils, Keyword, Thesaurus) {
             var getKeywordsSearchUrl = function(filter, 
                 thesaurus, max, typeSearch) {
               return gnUrlUtils.append('keywords@json',
@@ -75,10 +68,29 @@
               return listOfKeywords;
             };
 
+						// Get Top Concept from thesaurus
+    				var getTopConcept = function(thesaurus) {
+								var defer = $q.defer();
+        				var url = gnUrlUtils.append('thesaurus.topconcept@json',
+           				gnUrlUtils.toKeyValue({
+             				thesaurus: thesaurus
+            				})
+        				);
+        				$http.get(url, { cache: true }).
+           				success(function(data, status) {
+             				defer.resolve(data);
+           				}).
+           				error(function(data, status) {
+             				//                TODO handle error
+             				//                defer.reject(error);
+           				});
+        				return defer.promise;
+    				};
+
 						// Drive JSKOS API with these functions
     				function getConcept(thesaurus, keywordUris) {
 								var defer = $q.defer();
-        				var url = gnUrlUtils.append('thesaurus.keyword.jskos@json',
+        				var url = gnUrlUtils.append('thesaurus.concept@json',
            				gnUrlUtils.toKeyValue({
              				thesaurus: thesaurus,
              				id: keywordUris instanceof Array ?
@@ -107,36 +119,7 @@
 							return deferred.promise;
 						};
 				
-    				// expected to promise an array of JSKOS concepts
-    				// [concept](http://gbv.github.io/jskos/jskos.html#concepts)
-    				var getTopConcept = function(thesaurus) {
-        				return angular.copy(thesaurusTopConcepts[thesaurus]);
-    				};
-
-						var thesaurusTopConcepts = [];
-
             return {
-							/**
-							 * Get All thesaurus top concepts ready for editor to use 
-							 */
-							getThesaurusTopConcepts: function() {
-								var deferred = $q.defer();
-								var gets = [];
-								for (var thesaurus in gnThesaurusTopConcepts) {
-									gets.push(
-										getConcept(thesaurus, gnThesaurusTopConcepts[thesaurus])
-									);
-								}
-								$q.all(gets).then(function() {
-									for (var i = 0; i < arguments.length; i++) {
-										if (arguments[i][0].thesaurus) {
-											thesaurusTopConcepts[arguments[i][0].thesaurus] = arguments[i][0];
-										}
-									}
-									deferred.resolve();
-								});
-								return deferred.promise;
-							},
               /**
                * Number of keywords returned by search (autocompletion
                * or selection, ...)

@@ -99,7 +99,6 @@
     'gnEditor',
     'gnSearchManagerService',
     'gnSchemaManagerService',
-    'gnSkosThesaurusService',
     'gnConfigService',
     'gnUtilityService',
     'gnCurrentEdit',
@@ -109,7 +108,6 @@
         gnEditor, 
         gnSearchManagerService, 
         gnSchemaManagerService, 
-        gnSkosThesaurusService, 
         gnConfigService,
             gnUtilityService, 
             gnCurrentEdit,
@@ -149,7 +147,6 @@
 				var promises = [];
 				promises.push(gnSchemaManagerService.getNamespaces());
 				promises.push(gnConfigService.load());
-				promises.push(gnSkosThesaurusService.getThesaurusTopConcepts());
 				$q.all(promises).then( function() {
 
         if ($routeParams.id) {

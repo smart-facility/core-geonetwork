@@ -104,7 +104,10 @@
 
 						// Refresh current concept with top concept from thesaurus
 						scope.topConcept = function(thesaurus) {
-							return gnSkosThesaurusService.getTopConcept(thesaurus);
+							gnSkosThesaurusService.getTopConcept(thesaurus).then(
+								function(c) {
+									angular.copy(c, scope.concept);
+								});
 						};
 
         }

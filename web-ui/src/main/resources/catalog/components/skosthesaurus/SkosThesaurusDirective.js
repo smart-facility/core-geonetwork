@@ -380,7 +380,10 @@
 
              if (scope.thesaurusKey) {
                init();
-						 	 scope.concept = gnSkosThesaurusService.getTopConcept(scope.thesaurusKey);
+						 	 gnSkosThesaurusService.getTopConcept(scope.thesaurusKey).then(
+							 		function(c) {
+						 	 			scope.concept = c;
+									});
              }
            }
          };
