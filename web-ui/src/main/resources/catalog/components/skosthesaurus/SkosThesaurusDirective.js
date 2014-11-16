@@ -27,7 +27,8 @@
              elementName: '@',
              elementRef: '@',
 						 schema: '@',
-             domId: '@'
+             domId: '@',
+						 transformation: '@'
            },
            templateUrl: '../../catalog/components/skosthesaurus/' +
            'partials/skosthesaurusselector.html',
@@ -51,7 +52,7 @@
 
              scope.addThesaurus = function(thesaurusIdentifier) {
                gnSkosThesaurusService
-                .getXML(thesaurusIdentifier).then(
+                .getXML(thesaurusIdentifier, '', scope.transformation).then(
                function(data) {
                  // Add the fragment to the form
                  scope.snippet = gnEditorXMLService.
