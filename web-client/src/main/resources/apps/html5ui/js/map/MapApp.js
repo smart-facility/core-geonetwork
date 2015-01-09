@@ -402,24 +402,11 @@ GeoNetwork.mapApp = function() {
 				else {
 					// processing a layer that we add to layersByUrl keyed by url for later capab lookup
 					var baseUrl = layer['url'], layers = layer['layers'], title = layer['name'], 
-							group = parentLayer['name'];
+							group = parentLayer['name'], params = layer['parameters'], 
+							description = layer['description'], singleTile = true;
+					if (params && params['tiled']) singleTile = false; 
 					if (!layersByUrl[baseUrl]) layersByUrl[baseUrl] = [];
-					layersByUrl[baseUrl].push([ title, baseUrl, layers, undefined, group ]);
-					/* Don't add it here because there isn't enough info in the init_nm.json file for the layer 
-					   to display correctly in OpenLayers (we need dimensions etc)
-					   instead group layers by url, then lookup the capabilities for the extra info needed to
-					   add the layer correctly 
-					var extras;
-					var maxExtent = layer['rectangle'], params = layer['parameters'];
-					if (params && params['tiled']) {
-						extras = { isBaseLayer: false, visibility: false, maxExtent: maxExtent, projection: 'EPSG:4326' };
-					} else {
-						extras = { isBaseLayer: false, visibility: false, singleTile: true, ratio: 1, buffer: 0, transitionEffect: 'resize' };
-					}
-					console.log('Adding layer '+layers+' with '+baseUrl+' options '+JSON.stringify(extras));
-
-					map.addLayer(new OpenLayers.Layer.WMS(title, baseUrl, { layers: layers, transparent: true, format: 'image/png', version: '1.3.0' }, extras));
-					*/
+					layersByUrl[baseUrl].push([ title, baseUrl, layers, undefined, group, description, singleTile ]);
 				}
 			});
 		};
@@ -1597,6 +1584,12 @@ GeoNetwork.mapApp = function() {
                 var url = layerList[i][1];
                 var layer = layerList[i][2];
                 var metadata_id = layerList[i][3];
+                var group, description, singleTile = true;
+								if (layerList[i].length == 7) {
+									group	= layerList[i][4];
+									description = layerList[i][5];
+									singleTile = layerList[i][6];
+								}
 
 								//console.log("OL creating wms layer "+name+" at "+url);
 
@@ -1609,7 +1602,7 @@ GeoNetwork.mapApp = function() {
                 }, {
 										visibility : visible,
                     queryable : true,
-                    singleTile : true,
+                    singleTile : singleTile,
                     ratio : 1,
                     buffer : 0,
                     transitionEffect : 'resize',
@@ -1634,13 +1627,15 @@ GeoNetwork.mapApp = function() {
                             ol_layer);
                     if (layerCap) {
                         ol_layer.queryable = layerCap.queryable;
-												if (name !== "") ol_layer.name = name;
+												if (name !== "") ol_layer.name = group + ": " + name;
 												else ol_layer.name = layerCap.title || ol_layer.name;
                         ol_layer.llbbox = layerCap.llbbox;
                         ol_layer.styles = layerCap.styles;
                         ol_layer.dimensions = layerCap.dimensions;
                         ol_layer.metadataURLs = layerCap.metadataURLs;
                         ol_layer.abstractInfo = layerCap['abstract'];
+												ol_layer.groupInfo = group;
+												ol_layer.metadata = { description: description };
                         map.addLayer(ol_layer);
                     } else {
 												if (gfx) {
