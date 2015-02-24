@@ -101,8 +101,7 @@
                };
 
                angular.forEach(org, function(c) {
-                 var id = c['geonet:info'].id,
-                 uuid = c['geonet:info'].uuid;
+                 var uuid = c['geonet:info'].uuid;
                  var params = {uuid: uuid};
 
                  gnHttp.callService(
