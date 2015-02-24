@@ -36,7 +36,8 @@
              domId: '@',
              tagName: '@',
              paramName: '@',
-             templateAddAction: '@'
+             templateAddAction: '@',
+						 root: '@'
            },
            templateUrl: '../../catalog/components/edit/' +
            'organisationentryselector/partials/' +
@@ -51,9 +52,11 @@
              scope.gnConfig = gnConfig;
              scope.templateAddAction = scope.templateAddAction === 'true';
 
-             // Search only for mcp:CI_Organisation subtemplate 
+						 var root = 'mcp:CI_Organisation';
+						 if (scope.root) root = scope.root;
+             // Search only for subtemplate with root element set to root
              scope.params = {
-               _root: 'mcp:CI_Organisation',
+               _root: root,
                _isTemplate: 's',
                fast: 'false'
              };
