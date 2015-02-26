@@ -9,30 +9,30 @@ git clone https://github.com/anzmest/core-geonetwork.git -b 2.10.x --recursive
 
 To build after you have cloned:
 
-cd gast
-git checkout 2.10.x
-git pull
-cd ..
+* cd gast
+* git checkout 2.10.x
+* git pull
+* cd ..
 
-cd geoserver
-git checkout 2.10.x
-git pull
-cd ..
+* cd geoserver
+* git checkout 2.10.x
+* git pull
+* cd ..
 
-cd nationalmap
-git checkout master
-git pull
-cd ..
+* cd nationalmap
+* git checkout master
+* git pull
+* cd ..
 
-cd nationalmap/third_party/cesium
-git checkout nm
-git pull
-cd ../../..
+* cd nationalmap/third_party/cesium
+* git checkout nm
+* git pull
+* cd ../../..
 
-cd schemaPlugins
-git checkout 2.10.x
-git pull
-cd ..
+* cd schemaPlugins
+* git checkout 2.10.x
+* git pull
+* cd ..
 
 With ANZMEST you get GeoNetwork (2.10.x) plus:
 
