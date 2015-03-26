@@ -101,7 +101,7 @@
 		</addXML>
 		<addXML xpath="">
 			<!-- NICTA National Map config
-			     proxyDomains: means use nationalmap corsProxy on these domains 
+			     corsDomains: means use nationalmap corsProxy on these domains 
 			     corsProxyHost: URL of corsProxy host - best if it runs on localhost 
 					 disableCorsProxy: set to false on platforms that can use nationalmap server.js + varnish,
 					               true means everything will go through proxyHost (GeoNetwork)
@@ -118,19 +118,19 @@
 			 -->
 			<nationalmap>
 			{
-			    "proxyDomains" : [
+			    "corsDomains" : [
 						"nicta.com.au",
 						"gov.au",
 						"arcgis.com"
 					],
 					"corsProxyHost"    :  "http://localhost:3001",
-					"disableCorsProxy" :  "false",
+					"disableCorsProxy" :  "true",
 					"proxyHost"        :  "../../proxy/",
 					"baseLayer"        : {
 						     "type" : "wms",
 						     "options" : {
 							        "layers" : "gn:world,gn:ne_50m_boundary_da,gn:ne_50m_boundary_lines_land,gn:ne_50m_coastline",
-							        "url"    : "//localhost:8080/geoserver/ows"
+							        "url"    : "http://localhost:8080/geoserver/ows"
 						     }
 					},
 					"terrainProvider" : {

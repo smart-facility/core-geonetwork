@@ -16,6 +16,9 @@ import javax.servlet.http.HttpServletResponse;
 
 import jeeves.utils.Log;
 
+import java.net.URI;
+import java.net.URISyntaxException;
+
 import org.apache.commons.httpclient.Header;
 import org.apache.commons.httpclient.HttpClient;
 import org.apache.commons.httpclient.HttpStatus;
@@ -28,6 +31,7 @@ import org.apache.commons.httpclient.params.HttpMethodParams;
 import org.apache.commons.lang.StringUtils;
 import org.fao.geonet.constants.Geonet;
 import org.geonetwork.http.proxy.util.RequestUtil;
+import org.geonetwork.http.proxy.util.RequestParamUtil;
 import org.geonetwork.http.proxy.util.ServletConfigUtil;
 
 /**
@@ -113,20 +117,6 @@ public class HttpProxyServlet extends HttpServlet {
             String proxyHost = System.getProperty("http.proxyHost");
             String proxyPort = System.getProperty("http.proxyPort");
 
-            // Get rest of parameters to pass to proxied url
-						List<NameValuePair> alSimpleParams = new ArrayList<NameValuePair>();
-
-
-            @SuppressWarnings("unchecked")
-            Enumeration<String> paramNames = request.getParameterNames();
-            while (paramNames.hasMoreElements()) {
-                String paramName = paramNames.nextElement();
-								//System.out.println("Param "+paramName+" : "+request.getParameter(paramName));
-                if (!paramName.equalsIgnoreCase(PARAM_URL)) {
-										alSimpleParams.add(new NameValuePair(paramName, request.getParameter(paramName)));
-								}
-            }
-
             // Checks if allowed host
             if (!isAllowedHost(host)) {
                 //throw new ServletException("This proxy does not allow you to access that location.");
@@ -144,9 +134,10 @@ public class HttpProxyServlet extends HttpServlet {
                 }
 
                 httpGet = new GetMethod(url);
-								if (alSimpleParams.size() > 0) {
-									httpGet.setQueryString(alSimpleParams.toArray(new NameValuePair[alSimpleParams.size()]));
-								}
+								List<NameValuePair> params = RequestParamUtil.parse(new URI(StringUtils.substringAfter(request.getQueryString(),"url=")), "UTF-8");
+								NameValuePair[] paramsArr = new NameValuePair[params.size()];
+								httpGet.setQueryString(params.toArray(paramsArr));
+
 								//System.out.println("Proxying to "+url+" with params "+httpGet.getQueryString());
                 client.executeMethod(httpGet);
 
@@ -181,7 +172,7 @@ public class HttpProxyServlet extends HttpServlet {
                 //throw new ServletException("only HTTP(S) protocol supported");
                 returnExceptionMessage(response, "only HTTP(S) protocol supported");
             }
-        } catch (Exception e) {
+        } catch (URISyntaxException e) {
             e.printStackTrace();
             //throw new ServletException("Some unexpected error occurred. Error text was: " + e.getMessage());
             returnExceptionMessage(response, "Some unexpected error occurred. Error text was: " + e.getMessage());
