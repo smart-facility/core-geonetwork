@@ -181,7 +181,8 @@ public class Info implements Service {
         	result = checkEntries(scm, schema, entries, parent, name, isoType, false);
         }
         if (result == null) {
-            if (schema.contains("iso19139") && !(schema.equals("iso19139"))) {
+            if ((schema.contains("iso19139") && !(schema.equals("iso19139")))
+						    || (schema.contains("iso19115-2"))) {
                 result = getHelp(scm, elem, fileName, "iso19139", name, parent, xpath, isoType,
                         context);
             } else {
