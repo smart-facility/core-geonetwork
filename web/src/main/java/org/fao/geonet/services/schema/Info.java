@@ -200,13 +200,13 @@ public class Info implements Service {
 
         for (Object o : entries.getChildren()) {
             Element currElem = (Element) o;
-            String currName = currElem.getAttributeValue("name");
+            String theName = currElem.getAttributeValue("name");
             String currContext = currElem.getAttributeValue("context");
 
-            currName = findNamespace(currName, scm, schema);
+            String currName = findNamespace(theName, scm, schema);
             
             if (currName == null) {
-                throw new OperationAbortedEx("No namespace found for : " + currName);
+                throw new OperationAbortedEx("No namespace found for : " + theName);
             }
 
             if(!currName.equals(name)) {
