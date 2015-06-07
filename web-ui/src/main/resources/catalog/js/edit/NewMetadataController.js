@@ -32,6 +32,8 @@
         dataset: 'fa-file',
         project: 'fa-clipboard',
 				dataAccessAgreement: 'fa-check-square-o'
+				datasetAgreement: 'fa-check-square-o',
+				provenanceDocument: 'fa-file'
       };
 
       $scope.$watchCollection('groups', function() {
