@@ -1,4 +1,0 @@
-[submodule "nationalmap"]
-  path = src/main/resources
-	url = https://github.com/anzmest/nationalmap
-	branch = master
