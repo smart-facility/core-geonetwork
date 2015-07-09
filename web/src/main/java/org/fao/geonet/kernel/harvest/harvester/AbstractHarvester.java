@@ -167,6 +167,7 @@ public abstract class AbstractHarvester extends BaseAligner
 		status   = Status.INACTIVE;
 		error    = null;
 		id       = doAdd(dbms, node);
+		dbms.commit();
 	}
 
 	//--------------------------------------------------------------------------
@@ -236,6 +237,7 @@ public abstract class AbstractHarvester extends BaseAligner
 		}
 
 		doDestroy(dbms);
+		dbms.commit();
 	}
 
 	//--------------------------------------------------------------------------
@@ -251,6 +253,7 @@ public abstract class AbstractHarvester extends BaseAligner
 		error      = null;
 		
 		doSchedule();
+		dbms.commit();
 
 		return OperResult.OK;
 	}
@@ -266,6 +269,7 @@ public abstract class AbstractHarvester extends BaseAligner
 
 		doUnschedule();
 		status   = Status.INACTIVE;
+		dbms.commit();
 
 		return OperResult.OK;
 	}
@@ -273,13 +277,14 @@ public abstract class AbstractHarvester extends BaseAligner
 	//--------------------------------------------------------------------------
 
     public synchronized OperResult run(Dbms dbms) throws SQLException, SchedulerException {
-		if (status == Status.INACTIVE)
+		if (status == Status.INACTIVE) {
 			start(dbms);
+			dbms.commit();
+		}
 
-		if (running)
-			return OperResult.ALREADY_RUNNING;
+		if (running) return OperResult.ALREADY_RUNNING;
 
-        getScheduler().triggerJob(jobKey(getParams().uuid, HARVESTER_GROUP_NAME));
+    getScheduler().triggerJob(jobKey(getParams().uuid, HARVESTER_GROUP_NAME));
 
 		return OperResult.OK;
 	}
@@ -289,23 +294,19 @@ public abstract class AbstractHarvester extends BaseAligner
 	public synchronized OperResult invoke(ResourceManager rm)
 	{
 		// Cannot do invoke if this harvester was started (iei active)
-		if (status != Status.INACTIVE)
-			return OperResult.ALREADY_ACTIVE;
+		if (status != Status.INACTIVE) return OperResult.ALREADY_ACTIVE;
 
 		String nodeName = getParams().name +" ("+ getClass().getSimpleName() +")";
 		OperResult result = OperResult.OK;
 
-		try
-		{
+		try {
 			status = Status.ACTIVE;
 			log.info("Started harvesting from node : " + nodeName);
 			doHarvest(log, rm);
 			log.info("Ended harvesting from node : " + nodeName);
 
 			rm.close();
-		}
-		catch(Throwable t)
-		{
+		} catch(Throwable t) {
             context.getMonitorManager().getCounter(AbstractHarvesterErrorCounter.class).inc();
 			result = OperResult.ERROR;
 			log.warning("Raised exception while harvesting from : " + nodeName);
@@ -314,12 +315,9 @@ public abstract class AbstractHarvester extends BaseAligner
 			error = t;
 			t.printStackTrace();
 
-			try
-			{
+			try {
 				rm.abort();
-			}
-			catch (Exception ex)
-			{
+			} catch (Exception ex) {
 				log.warning("CANNOT ABORT EXCEPTION");
 				log.warning(" (C) Exc : " + ex);
 			}
@@ -334,7 +332,8 @@ public abstract class AbstractHarvester extends BaseAligner
 
 	public synchronized void update(Dbms dbms, Element node) throws BadInputEx, SQLException, SchedulerException
 	{
-		doUpdate(dbms, id, node);
+		doUpdate(dbms, id, node);    
+		dbms.commit();
 
 		if (status == Status.ACTIVE)
 		{
@@ -469,6 +468,7 @@ public abstract class AbstractHarvester extends BaseAligner
 			//--- update lastRun
 
 			settingMan.setValue(dbms, "harvesting/id:"+ id +"/info/lastRun", lastRun);
+			dbms.commit();
 
 			//--- proper harvesting
 
@@ -609,6 +609,9 @@ public abstract class AbstractHarvester extends BaseAligner
 		storeCategories(dbms, params, path);
 
 		storeNodeExtra(dbms, params, path, siteId, optionsId);
+
+		// --- Now commit the changes etc ----------------------------
+		dbms.commit();
 	}
 
 	//---------------------------------------------------------------------------
