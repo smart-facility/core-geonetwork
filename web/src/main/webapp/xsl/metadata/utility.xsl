@@ -258,7 +258,7 @@
     
     <xsl:variable name="title">
       <xsl:choose>
-        <xsl:when test="starts-with($schema,'iso19139')">
+        <xsl:when test="starts-with($schema,'iso19139') or starts-with($schema,'iso19115-2')">
 
           <!-- Name with context in current schema -->
           <xsl:variable name="schematitleWithContext"
