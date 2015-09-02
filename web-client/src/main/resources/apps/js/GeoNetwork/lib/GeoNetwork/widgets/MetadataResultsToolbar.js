@@ -633,7 +633,9 @@ GeoNetwork.MetadataResultsToolbar = Ext.extend(Ext.Toolbar, {
                         this.mdImportAction],
             adminActions = [this.ownerAction],
             actions = [this.adminAction, this.otherItem];
-        
+       
+        if (this.myMetadataAction) editingActions.push(this.myMetadataAction);
+
         Ext.each(actions, function(){
             this.setVisible(user);
         });
