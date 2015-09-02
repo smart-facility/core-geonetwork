@@ -369,16 +369,26 @@ GeoNetwork.MetadataResultsToolbar = Ext.extend(Ext.Toolbar, {
             scope: this,
             hidden: hide
         	});
+          this.myMetadataAction = undefined;
 				} else {
+          this.myMetadataAction = new Ext.menu.Item({text: OpenLayers.i18n('myMetadata'),
+            handler: function() {
+              catalogue.myMetadata(null, true);
+            },
+            hidden: hide
+          });
+
           this.createMetadataAction = new Ext.menu.Item({text: OpenLayers.i18n('newMetadata'),
             ctCls: 'gn-bt-main',
             iconCls: 'addIcon',
             handler: function() {
               catalogue.metadataEdit2(null, true);
-            }
+            },
+            hidden: hide
           });
         }
         if(!this.catalogue.isReadOnly()) {
+            if (this.myMetadataAction) this.actionMenu.addItem(this.myMetadataAction);
             this.actionMenu.addItem(this.createMetadataAction);
         }
 
