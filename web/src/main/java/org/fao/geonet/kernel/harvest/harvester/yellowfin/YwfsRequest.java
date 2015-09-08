@@ -37,7 +37,6 @@ import jeeves.utils.Xml;
 
 import com.hof.mi.web.service.AdministrationPerson;
 import com.hof.mi.web.service.AdministrationReport;
-import com.hof.mi.web.service.AdministrationServiceClient;
 import com.hof.mi.web.service.AdministrationServiceResponse;
 import com.hof.mi.web.service.AdministrationServiceRequest;
 import com.hof.mi.web.service.AdministrationServiceService;
@@ -49,8 +48,6 @@ import com.hof.mi.web.service.GISShape;
 import com.hof.mi.web.service.RelatedReport;
 import com.hof.mi.web.service.RelatedReports;
 import com.hof.mi.web.service.ReportSchema;
-import com.hof.mi.web.service.ReportServiceServiceLocator;
-import com.hof.mi.web.service.ReportServiceSoapBindingStub;
 import com.hof.mi.web.service.ReportServiceClient;
 import com.hof.mi.web.service.WebserviceException;
 import com.hof.mi.web.service.i4Report;
@@ -78,8 +75,9 @@ class YwfsRequest
 
 	public YwfsRequest(YellowfinParams params, Logger log) throws Exception {
 		this.params = params;
+		if (params.secure) this.protocol = "https://";
 		this.log = log;
-		this.as = new AdministrationServiceServiceLocator(params.hostname, params.port, baseUrl+"AdministrationService", false);
+		this.as = new AdministrationServiceServiceLocator(params.hostname, params.port, baseUrl+"AdministrationService", params.secure);
     this.assbs = (AdministrationServiceSoapBindingStub) this.as.getAdministrationService();
 
 		AdministrationServiceRequest asr = setupAdminServRequest();
@@ -122,7 +120,7 @@ class YwfsRequest
 
 	public Set<RecordInfo> execute() throws Exception {
 
-		ReportServiceClient rsc = new ReportServiceClient(params.hostname, params.port, params.username, params.password, baseUrl+"ReportService");
+		ReportServiceClient rsc = new ReportServiceClient(params.hostname, params.port, params.username, params.password, baseUrl+"ReportService", params.secure, false, "geonetworkHarvester", true);
 
 		Set<RecordInfo> results = new HashSet<RecordInfo>();
 
@@ -164,7 +162,7 @@ class YwfsRequest
 		// Get the administration report into XML format (again)
 		Element reportXml = streamObject(report);
 		reportXml.addContent(
-			new Element("reportURL").setText("http://"+params.hostname+":"+params.port+"/RunReport.i4?reportUUID="+uuid+"&primaryOrg=1&clientOrg=1"));
+			new Element("reportURL").setText(this.protocol+params.hostname+":"+params.port+"/RunReport.i4?reportUUID="+uuid+"&primaryOrg=1&clientOrg=1"));
 		reportXml.addContent(
 			new Element("dateStamp").setText(new ISODate(new Date().getTime()).toString()));
 		root.addContent(reportXml);
@@ -435,17 +433,17 @@ class YwfsRequest
 	private Logger         log;
 	private YellowfinParams params;
 	private String searchExpression;
-	private AdministrationServiceClient asc;
 	private ReportServiceClient rsc;
 	private AdministrationPerson person;
 	private Map<String, Pair<AdministrationReport, i4Report>> currentReports;
 	private Map<Integer, String> reportsById;
 	private String baseUrl = "/services/";
 	private AdministrationReport[] reports;
-	private AdministrationServiceService as; 
+	private AdministrationServiceService as;
   private AdministrationServiceSoapBindingStub assbs;
 	private Map<Integer,AdministrationPerson> personCache;
 	private Map<String,AdministrationPerson> personNameCache;
+	private String protocol = "http://";
 }
 
 //=============================================================================

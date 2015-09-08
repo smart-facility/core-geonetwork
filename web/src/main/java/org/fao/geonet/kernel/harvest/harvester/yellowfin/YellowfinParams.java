@@ -171,6 +171,7 @@ public class YellowfinParams extends AbstractParams
 	public String outputSchema;
 	public String stylesheet;
 	public String templateId;
+	public boolean secure = true;
 
 	public String icon;
 	
