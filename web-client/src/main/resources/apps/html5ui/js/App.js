@@ -63,12 +63,15 @@ GeoNetwork.app = function() {
 
     function createMainTagCloud() {
 
-        var tagCloudView = new GeoNetwork.TagCloudView({
+        var tagCloudView = Ext.getCmp('cloud-tag-widget');
+				if (!tagCloudView) {
+					tagCloudView = new GeoNetwork.TagCloudView({
             catalogue : catalogue,
             query : 'fast=true&summaryOnly=true&from=1&to=4',
             renderTo : 'cloud-tag',
             onSuccess : 'app.loadResults',
             itemSelector : 'div.tag-cloud',
+						id: 'cloud-tag-widget',
             tpl: new Ext.XTemplate(
                     '<tpl for=".">', 
                         '<div class="tag-cloud">',
@@ -77,7 +80,10 @@ GeoNetwork.app = function() {
                                 '={value}\', app.loadResults, null, null);app.searchApp.firstSearch=true;showSearch();" alt="{value}">{value} ({count})</a>', 
                         '</div>', 
                     '</tpl>')
-        });
+        	});
+				} else {
+					tagCloudView.initComponent();
+				}
 
         return tagCloudView;
     };
