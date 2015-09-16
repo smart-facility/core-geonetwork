@@ -824,6 +824,13 @@ Ext.onReady(function() {
                 Ext.getCmp('advanced-search-options-content-form').fireEvent(
                         'search');
             };
+
+						var mdPanel = Ext.getCmp('metadata-panel');
+						if (mdPanel && mdPanel.isVisible()) {
+							console.log("Will show metadata view");
+						} else {
+							showSearch();
+						}
 });
 
 /**

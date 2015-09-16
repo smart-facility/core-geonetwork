@@ -62,8 +62,8 @@ function showBrowse() {
     //show("latest-metadata");
     //show("popular-metadata");
 
-    app.breadcrumb.setPrevious([]);
-    app.breadcrumb.setCurrent(app.breadcrumb.defaultSteps[0]);
+    //app.breadcrumb.setPrevious([]);
+    //app.breadcrumb.setCurrent(app.breadcrumb.defaultSteps[0]);
 
     Ext.each(Ext.query('a', Ext.get("main-navigation").dom), function(a) {
         Ext.get(a).removeClass("selected");
@@ -88,7 +88,7 @@ function showAbout() {
     hideBigMap();
     hideMetadata();
 
-    app.breadcrumb.setCurrent(app.breadcrumb.defaultSteps[2]);
+    //app.breadcrumb.setCurrent(app.breadcrumb.defaultSteps[2]);
 
     Ext.each(Ext.query('a', Ext.get("main-navigation").dom), function(a) {
         Ext.get(a).removeClass("selected");
@@ -113,10 +113,10 @@ function showBigMap() {
     // Resize the map, to cover all space available:
     //resizeMap();
 
-    app.breadcrumb.setCurrent({
+    /*app.breadcrumb.setCurrent({
         text : OpenLayers.i18n("Map"),
         func : "showBigMap()"
-    });
+    });*/
 
     // Printpanel can be only initiazed once the map is rendered
     // Trigger the print panel init only when the big map is displayed
@@ -147,6 +147,8 @@ function showSearch() {
     Ext.getCmp('resultsPanel').show();
     Ext.get('resultsPanel').show();
     show("main-aside");
+		show("bread-crumb-div");
+		show("bread-crumb-app");
 
     app.breadcrumb.setDefaultPrevious(1);
     app.breadcrumb.setCurrent(app.breadcrumb.defaultSteps[1]);
@@ -172,6 +174,8 @@ function hideSearch() {
     hide("secondary-aside");
     hide("resultsPanel");
     hide("main-aside");
+		hide("bread-crumb-div");
+		hide("bread-crumb-app");
 }
 
 function showMetadata() {
@@ -183,6 +187,7 @@ function showMetadata() {
     hideBigMap();
 
     show("metadata-info");
+		show("bread-crumb-app");
 
     app.breadcrumb.setDefaultPrevious(2);
 
@@ -196,6 +201,7 @@ function showMetadata() {
 function hideMetadata() {
     hide("metadata-info");
     hide("share-capabilities");
+		hide("bread-crumb-app");
 
     // Destroy potential existing panel
     Ext.getCmp('metadata-panel') && Ext.getCmp('metadata-panel').destroy();
