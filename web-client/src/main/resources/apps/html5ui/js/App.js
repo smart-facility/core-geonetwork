@@ -39,11 +39,16 @@ GeoNetwork.app = function() {
         latestStore.on('load', function() {
             Ext.ux.Lightbox.register('a[rel^=lightbox]');
         });
+
+				var oldp = Ext.getCmp('latest-md-panel');
+				if (oldp) oldp.removeAll();
+
         var p = new Ext.Panel({
             border : false,
             bodyCssClass : 'md-view',
             items : latestView,
-            renderTo : 'latest-metadata'
+            renderTo : 'latest-metadata',
+						id: 'latest-md-panel'
         });
         latestView.tpl = GeoNetwork.HTML5UI.Templates.THUMBNAIL_SIMPLER;
         catalogue.kvpSearch(
@@ -57,6 +62,7 @@ GeoNetwork.app = function() {
     };
 
     function createMainTagCloud() {
+
         var tagCloudView = new GeoNetwork.TagCloudView({
             catalogue : catalogue,
             query : 'fast=true&summaryOnly=true&from=1&to=4',
@@ -74,8 +80,8 @@ GeoNetwork.app = function() {
         });
 
         return tagCloudView;
-    }
-    ;
+    };
+
     var createPopularUpdate = function() {
         var latestView = new GeoNetwork.MetadataResultsView({
             catalogue : catalogue,
@@ -87,11 +93,16 @@ GeoNetwork.app = function() {
         latestStore.on('load', function() {
             Ext.ux.Lightbox.register('a[rel^=lightbox]');
         });
+
+				var oldp = Ext.getCmp('popular-md-panel');
+				if (oldp) oldp.removeAll();
+
         var p = new Ext.Panel({
             border : false,
             bodyCssClass : 'md-view',
             items : latestView,
-            renderTo : 'popular-metadata'
+            renderTo : 'popular-metadata',
+						id: 'popular-md-panel'
         });
         latestView.tpl = GeoNetwork.HTML5UI.Templates.THUMBNAIL_SIMPLER;
         catalogue.kvpSearch(
@@ -556,6 +567,11 @@ GeoNetwork.app = function() {
         searchApp : null,
         loginApp : null,
         breadcrumb : null,
+				rebuildBrowse: function() {
+            createLatestUpdate();
+            createPopularUpdate();
+            createMainTagCloud();
+				},
         switchMode : function(i, j) {
         },
         /**

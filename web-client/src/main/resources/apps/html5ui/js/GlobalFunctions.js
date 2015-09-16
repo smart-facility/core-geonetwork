@@ -47,8 +47,9 @@ function toggle(id) {
 }
 
 function showBrowse() {
-    // Reset search for tag cloud
-    // catalogue.kvpSearch("fast=index&from=1&to=5&sortBy=changeDate", null, null, null, true);
+    // Reset search for tag cloud and render the different sections of the page
+    //catalogue.kvpSearch("fast=index&from=1&to=5&sortBy=changeDate", null, null, null, true);
+		app.rebuildBrowse();
 
     show("main");
     hide("search-form");
