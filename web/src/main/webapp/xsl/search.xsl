@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+a?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="2.0"
 	xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:geonet="http://www.fao.org/geonetwork"
 	xmlns:exslt="http://exslt.org/common" exclude-result-prefixes="exslt geonet">
@@ -70,10 +70,7 @@
 								doLoadJS("<xsl:value-of select="concat($baseUrl, '/static/nationalmap.js')"/>");
 						},3000);
 					};
-					var raf = requestAnimationFrame || mozRequestAnimationFrame ||
-					webkitRequestAnimationFrame || msRequestAnimationFrame;
-					if (raf) raf(cbNM);
-					else window.addEventListener('load', cbNM);
+					window.addEventListener('load', cbNM);
 				</script>
 
                  <xsl:choose>
