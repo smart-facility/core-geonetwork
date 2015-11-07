@@ -193,6 +193,8 @@ GeoNetwork.searchApp = function() {
                 		catalogue.services.getSources, catalogue.services.logoUrl, true);
         		var groupField = GeoNetwork.util.SearchFormTools.getGroupField(
                 		catalogue.services.getGroups, true);
+        		var ownerGroupField = GeoNetwork.util.SearchFormTools.getOwnerGroupField(
+                		catalogue.services.getGroups, true);
         		var ownedByField = GeoNetwork.util.SearchFormTools.getOwnedByField(
                 		catalogue.services.getUsers, true);
         		var statusField = GeoNetwork.util.SearchFormTools.getStatusField(
@@ -225,8 +227,8 @@ GeoNetwork.searchApp = function() {
 						    .getServiceTypeField(true);
 
             advancedCriteria.push(
-										categoryField, statusField, groupField, ownedByField, 
-										metadataTypeField, catalogueField,
+										categoryField, statusField, groupField, ownedByField,
+										ownerGroupField, metadataTypeField, catalogueField,
 										validField, spatialTypes, denominatorField,
                     ownerField, isHarvestedField, siteId);
 
