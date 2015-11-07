@@ -193,6 +193,8 @@ GeoNetwork.searchApp = function() {
                 		catalogue.services.getSources, catalogue.services.logoUrl, true);
         		var groupField = GeoNetwork.util.SearchFormTools.getGroupField(
                 		catalogue.services.getGroups, true);
+        		var ownedByField = GeoNetwork.util.SearchFormTools.getOwnedByField(
+                		catalogue.services.getUsers, true);
         		var statusField = GeoNetwork.util.SearchFormTools.getStatusField(
                 		catalogue.services.getStatus, true);
         		var metadataTypeField = GeoNetwork.util.SearchFormTools
@@ -223,8 +225,9 @@ GeoNetwork.searchApp = function() {
 						    .getServiceTypeField(true);
 
             advancedCriteria.push(
-										catalogueField, groupField, statusField, metadataTypeField, 
-										categoryField, validField, spatialTypes, denominatorField,
+										categoryField, statusField, groupField, ownedByField, 
+										metadataTypeField, catalogueField,
+										validField, spatialTypes, denominatorField,
                     ownerField, isHarvestedField, siteId);
 
             var sortByCombo = new Ext.form.TextField({
@@ -352,7 +355,7 @@ GeoNetwork.searchApp = function() {
                    }]
             });
 
-            this.setAdminFieldsCallback([ groupField ]);
+            this.setAdminFieldsCallback([ groupField, ownedByField ]);
 
             return new GeoNetwork.SearchFormPanel({
                 id : 'advanced-search-options-content-form',
