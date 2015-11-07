@@ -189,53 +189,6 @@ GeoNetwork.searchApp = function() {
                         'search');
             });
 
-            // Multi select keyword
-            var themekeyStore = new GeoNetwork.data.OpenSearchSuggestionStore({
-                url : catalogue.services.opensearchSuggest,
-                rootId : 1,
-                baseParams : {
-                    field : 'keyword'
-                }
-            });
-
-            var themekeyField = new Ext.ux.form.SuperBoxSelect({
-                hideLabel : false,
-                minChars : 0,
-                queryParam : 'q',
-                hideTrigger : false,
-                id : 'E_themekey',
-                name : 'E_themekey',
-                store : themekeyStore,
-                valueField : 'value',
-                displayField : 'value',
-                valueDelimiter : ' or ',
-                // tpl: tpl,
-                fieldLabel : OpenLayers.i18n('keyword')
-            });
-
-            var orgNameStore = new GeoNetwork.data.OpenSearchSuggestionStore({
-                url : catalogue.services.opensearchSuggest,
-                rootId : 1,
-                baseParams : {
-                    field : 'orgName'
-                }
-            });
-
-            var orgNameField = new Ext.ux.form.SuperBoxSelect({
-                hideLabel : false,
-                minChars : 0,
-                queryParam : 'q',
-                hideTrigger : false,
-                id : 'E_orgName',
-                name : 'E_orgName',
-                store : orgNameStore,
-                valueField : 'value',
-                displayField : 'value',
-                valueDelimiter : ' or ',
-                // tpl: tpl,
-                fieldLabel : OpenLayers.i18n('org')
-            });
-
         		var catalogueField = GeoNetwork.util.SearchFormTools.getCatalogueField(
                 		catalogue.services.getSources, catalogue.services.logoUrl, true);
         		var groupField = GeoNetwork.util.SearchFormTools.getGroupField(
@@ -269,7 +222,6 @@ GeoNetwork.searchApp = function() {
 						var serviceTypeField = GeoNetwork.util.INSPIRESearchFormTools
 						    .getServiceTypeField(true);
 
-						// Leave out themekeyField and orgNameField - handled elsewhere
             advancedCriteria.push(
 										catalogueField, groupField, statusField, metadataTypeField, 
 										categoryField, validField, spatialTypes, denominatorField,
