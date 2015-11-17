@@ -49,7 +49,7 @@ GeoNetwork.searchApp = function() {
         },
         /**
          * Set event in order to display some search criteria only when user is
-         * logged in.
+         * logged in and administrator.
          */
         setAdminFieldsCallback : function(adminFields) {
             // Hide or show extra fields after login event
@@ -57,28 +57,39 @@ GeoNetwork.searchApp = function() {
                 item.setVisible(catalogue.identifiedUser
                         && catalogue.identifiedUser.role === "Administrator");
             });
-            catalogue
-                    .on(
-                            'afterLogin',
-                            function() {
-                                Ext
-                                        .each(
-                                                adminFields,
-                                                function(item) {
-                                                    item
-                                                            .setVisible(catalogue.identifiedUser
-                                                                    && catalogue.identifiedUser.role === "Administrator");
-                                                });
-                                GeoNetwork.util.SearchFormTools
-                                        .refreshGroupFieldValues();
-                            });
+            catalogue.on('afterLogin', function() {
+                Ext.each(adminFields, function(item) {
+                    item.setVisible(catalogue.identifiedUser && catalogue.identifiedUser.role === "Administrator");
+                });
+                GeoNetwork.util.SearchFormTools.refreshGroupFieldValues();
+            });
             catalogue.on('afterLogout', function() {
                 Ext.each(adminFields, function(item) {
                     item.setVisible(!(catalogue.identifiedUser === undefined));
                 });
                 GeoNetwork.util.SearchFormTools.refreshGroupFieldValues();
             });
-
+        },
+        /**
+         * Set event in order to display some search criteria only when user is
+         * logged in.
+         */
+        setRegisteredUserFieldsCallback : function(registeredUserFields) {
+            // Hide or show extra fields after login event
+						var loggedIn = catalogue.identifiedUser && catalogue.identifiedUser.role !== undefined;
+            Ext.each(registeredUserFields, function(item) {
+                item.setVisible(loggedIn);
+            });
+            catalogue.on('afterLogin', function() {
+                Ext.each(registeredUserFields, function(item) {
+                    item.setVisible(true);
+                });
+            });
+            catalogue.on('afterLogout', function() {
+                Ext.each(registeredUserFields, function(item) {
+                    item.setVisible(false);
+                });
+            });
         },
         generateSimpleSearchForm : function() {
             var field = new GeoNetwork.form.OpenSearchSuggestionTextField({
@@ -189,57 +200,14 @@ GeoNetwork.searchApp = function() {
                         'search');
             });
 
-            // Multi select keyword
-            var themekeyStore = new GeoNetwork.data.OpenSearchSuggestionStore({
-                url : catalogue.services.opensearchSuggest,
-                rootId : 1,
-                baseParams : {
-                    field : 'keyword'
-                }
-            });
-
-            var themekeyField = new Ext.ux.form.SuperBoxSelect({
-                hideLabel : false,
-                minChars : 0,
-                queryParam : 'q',
-                hideTrigger : false,
-                id : 'E_themekey',
-                name : 'E_themekey',
-                store : themekeyStore,
-                valueField : 'value',
-                displayField : 'value',
-                valueDelimiter : ' or ',
-                // tpl: tpl,
-                fieldLabel : OpenLayers.i18n('keyword')
-            });
-
-            var orgNameStore = new GeoNetwork.data.OpenSearchSuggestionStore({
-                url : catalogue.services.opensearchSuggest,
-                rootId : 1,
-                baseParams : {
-                    field : 'orgName'
-                }
-            });
-
-            var orgNameField = new Ext.ux.form.SuperBoxSelect({
-                hideLabel : false,
-                minChars : 0,
-                queryParam : 'q',
-                hideTrigger : false,
-                id : 'E_orgName',
-                name : 'E_orgName',
-                store : orgNameStore,
-                valueField : 'value',
-                displayField : 'value',
-                valueDelimiter : ' or ',
-                // tpl: tpl,
-                fieldLabel : OpenLayers.i18n('org')
-            });
-
         		var catalogueField = GeoNetwork.util.SearchFormTools.getCatalogueField(
                 		catalogue.services.getSources, catalogue.services.logoUrl, true);
         		var groupField = GeoNetwork.util.SearchFormTools.getGroupField(
                 		catalogue.services.getGroups, true);
+        		var ownerGroupField = GeoNetwork.util.SearchFormTools.getOwnerGroupField(
+                		catalogue.services.getGroups, true);
+        		var ownedByField = GeoNetwork.util.SearchFormTools.getOwnedByField(
+                		catalogue.services.getUsers, true);
         		var statusField = GeoNetwork.util.SearchFormTools.getStatusField(
                 		catalogue.services.getStatus, true);
         		var metadataTypeField = GeoNetwork.util.SearchFormTools
@@ -266,14 +234,19 @@ GeoNetwork.searchApp = function() {
                 name : 'E_siteId',
                 hidden : true
             });
+            var hitsPerPage = new Ext.form.TextField({
+                name : 'E_hitsperpage',
+                hidden : true,
+								value: GeoNetwork.Settings.HITSPERPAGE
+            });
 						var serviceTypeField = GeoNetwork.util.INSPIRESearchFormTools
 						    .getServiceTypeField(true);
 
-						// Leave out themekeyField and orgNameField - handled elsewhere
             advancedCriteria.push(
-										catalogueField, groupField, statusField, metadataTypeField, 
-										categoryField, validField, spatialTypes, denominatorField,
-                    ownerField, isHarvestedField, siteId);
+										categoryField, statusField, groupField, ownedByField,
+										ownerGroupField, metadataTypeField, catalogueField,
+										validField, spatialTypes, denominatorField,
+                    ownerField, isHarvestedField, siteId, hitsPerPage);
 
             var sortByCombo = new Ext.form.TextField({
                 name : 'E_sortBy',
@@ -372,7 +345,6 @@ GeoNetwork.searchApp = function() {
                 items:[
                    // MarLIN panel
                    {
-                      title:'Keyword Selectors',
                       margins:'5 5 5 5',
                       layout:'form',
                       autoHeight: true,
@@ -401,7 +373,8 @@ GeoNetwork.searchApp = function() {
                    }]
             });
 
-            this.setAdminFieldsCallback([ groupField ]);
+            this.setAdminFieldsCallback([ groupField, ownedByField, ownerGroupField ]);
+            this.setRegisteredUserFieldsCallback([ statusField ]);
 
             return new GeoNetwork.SearchFormPanel({
                 id : 'advanced-search-options-content-form',
