@@ -14,3 +14,7 @@
 [submodule "web-ui/src/main/resources/catalog/lib/bootstrap-table"]
 	path = web-ui/src/main/resources/catalog/lib/bootstrap-table
 	url = https://github.com/wenzhixin/bootstrap-table.git
+[submodule "schemas/iso19139.mcp"]
+	path = schemas/iso19139.mcp
+	url = https://github.com/metadata101/iso19139.mcp
+	branch = master
