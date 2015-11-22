@@ -13,8 +13,10 @@
    *  yet widely supported.
    */
   module.directive('gnDatePicker',
-      ['$http', '$rootScope', '$filter', 'gnSchemaManagerService', 'gnCurrentEdit',
-       function($http, $rootScope, $filter, gnSchemaManagerService, gnCurrentEdit) {
+      ['$http', '$rootScope', '$filter',
+        'gnSchemaManagerService', 'gnCurrentEdit',
+       function($http, $rootScope, $filter,
+                gnSchemaManagerService, gnCurrentEdit) {
 
          return {
            restrict: 'A',
@@ -146,7 +148,8 @@
                    scope.xmlSnippet = '<' + tag +
                    ' xmlns:' +
                         namespace + '="' +
-                        gnSchemaManagerService.findNamespaceUri(namespace, gnCurrentEdit.schema) + '"' +
+                        gnSchemaManagerService.findNamespaceUri(namespace,
+                   gnCurrentEdit.schema) + '"' +
                    attribute + '>' +
                    scope.dateTime + '</' + tag + '>';
                  } else {
