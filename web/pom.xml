@@ -432,6 +432,11 @@
 		<version>${project.version}</version>
 	</dependency>
 	
+  <dependency>
+    <groupId>${project.groupId}</groupId>
+    <artifactId>nationalmap</artifactId>
+		<version>${project.version}</version>
+	</dependency>
 	
 	</dependencies>
 
@@ -528,9 +533,11 @@
 						<resource>
                 <directory>${project.basedir}/../web-client/src/main/resources</directory>
             </resource>	
+						<!--
 						<resource>
                 <directory>${project.basedir}/../nm/src/main/resources</directory>
             </resource>	
+						-->
 						<resource>
 						  <directory>${project.basedir}/../web-ui/src/main/resources</directory>
 						</resource>
@@ -617,8 +624,8 @@
                 </includes>
             </resource>-->
           </webResources>
-					<!--
           <overlays>
+						<!--
             <overlay>
               <groupId>${project.groupId}</groupId>
               <artifactId>geonetwork-client</artifactId>
@@ -629,8 +636,13 @@
               <artifactId>web-ui</artifactId>
               <type>jar</type>
             </overlay>
+						-->
+            <overlay>
+              <groupId>${project.groupId}</groupId>
+              <artifactId>nationalmap</artifactId>
+              <type>jar</type>
+            </overlay>
           </overlays>
-					-->
           <!-- <packagingExcludes>WEB-INF/data/**</packagingExcludes> -->
           <packagingExcludes>xml/schemas/**</packagingExcludes>
 <!--          <warSourceDirectory>src/main/geonetwork</warSourceDirectory> -->
