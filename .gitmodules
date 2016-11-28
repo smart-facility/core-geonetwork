@@ -17,4 +17,4 @@
 [submodule "schemaPlugins"]
 	path = schemaPlugins
 	url = https://github.com/smart-facility/schema-plugins.git
-	branch = 2.10.x
+	branch = master
