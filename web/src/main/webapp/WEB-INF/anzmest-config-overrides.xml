@@ -81,8 +81,8 @@
     <update linePattern="INSERT INTO Settings \(name, value, datatype, position, internal\) VALUES \('system/selectionmanager/maxrecords', '.+?('.*)">INSERT INTO Settings (name, value, datatype, position, internal) VALUES ('system/selectionmanager/maxrecords', '100000', 1, 910, 'y')\;</update>
     <!-- change download from simple to withdisclaimer -->
     <!-- <update linePattern="(INSERT INTO Settings VALUES \(222,220,'simple',').+?('.*)">$1false$2</update> -->
-    <update linePattern="INSERT INTO Settings (name, value, datatype, position, internal) VALUES ('system/downloadservice/simple', '').+?('.*)">$1false$2</update>
+    <update linePattern="(INSERT INTO Settings \(name, value, datatype, position, internal\) VALUES \('system/downloadservice/simple', ').+?('.*)">$1false$2</update>
 		<!-- <update linePattern="(INSERT INTO Settings VALUES \(223,220,'withdisclaimer',').+?('.*)">$1true$2</update> -->
-    <update linePattern="INSERT INTO Settings (name, value, datatype, position, internal) VALUES ('system/downloadservice/withdisclaimer', ').+?('.*)">$1true$2</update>
+    <update linePattern="(INSERT INTO Settings \(name, value, datatype, position, internal\) VALUES \('system/downloadservice/withdisclaimer', ').+?('.*)">$1true$2</update>
 	</textFile>
 </overrides>
